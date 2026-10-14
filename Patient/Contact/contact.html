@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | MolarCoaster Dental Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <a href="home.html" class="logo">
+      <img src="images/logo2.png" alt="MolarCoaster Dental Clinic logo">
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="home.html">Home</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" aria-current="page">Contact Us</a>
+    </nav>
+    <a href="appointments.html" class="btn btn-accent">Book an Appointment</a>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you!<br>Get in touch with us for any question or assistance.</p>
+      </div>
+      <img class="hero-img" src="images/contact-hero.jpg" alt="Dental staff member in a clinic">
+    </section>
+
+    <div class="container">
+      <!-- Get in Touch + Map -->
+      <div class="grid-two">
+        <section class="card" aria-labelledby="touch-title">
+          <h2 id="touch-title">Get in Touch</h2>
+          <ul class="info-list">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+              <div><strong>Our Location</strong><span>123 St. Smile Manila, Philippines</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 10.4 3.3 2-.8 1.3L11 13V7h2v5.4Z"/></svg>
+              <div><strong>Business Hours</strong><span>Mon - Fri 9:00 AM - 6:00 PM<br>Sat 9:00 AM - 2:00 PM</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.56 3.5a1 1 0 0 1-.25 1l-2.2 2.3Z"/></svg>
+              <div>
+                <strong>Contact Us</strong>
+                <span><a href="tel:+63123456789">+63123456789</a><br><a href="mailto:info@molarcoaster.com">info@molarcoaster.com</a></span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="socials">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="MolarCoaster on Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12Z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="MolarCoaster on Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Zm5-3.2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg>
+            </a>
+          </div>
+          <p class="handle">@molarcoasterdental</p>
+        </section>
+
+        <section class="card" aria-labelledby="map-title">
+          <h2 id="map-title">Find Us</h2>
+          <div class="map-wrap">
+            <!-- Replace the src with your own Share > Embed a map link if you want a different spot -->
+            <iframe
+              title="Map showing the MolarCoaster Dental Clinic location in Manila"
+              src="https://www.google.com/maps?q=Sampaloc,+Manila,+Philippines&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+            <!-- Custom pin + label, laid over the center of the map -->
+            <div class="map-pin" aria-hidden="true">
+              <span class="pin-label">MolarCoaster Dental Clinic</span>
+              <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Contact form -->
+      <section class="card form-card" aria-labelledby="form-title">
+        <h2 id="form-title">Send Us a Message</h2>
+        <form action="send_message.php" method="post">
+          <label for="full-name">Full Name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="full-name" name="full_name" placeholder="Enter your Full Name" autocomplete="name" required>
+
+          <label for="phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your Phone Number" autocomplete="tel"
+                 pattern="[0-9+\s\-()]{7,15}" title="Use 7 to 15 digits. You can include +, spaces, dashes, and parentheses." required>
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your Email Address" autocomplete="email">
+
+          <button type="submit" class="btn btn-primary">Submit Request</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <a href="home.html" class="logo">
+      <img src="images/logo2.png" alt="MolarCoaster Dental Clinic logo">
+    </a>
+    <nav class="main-nav" aria-label="Footer navigation">
+      <a href="home.html">Home</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" aria-current="page">Contact Us</a>
+    </nav>
+    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
