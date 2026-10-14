@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosmetic Dentistry | MolarCoaster Dental Clinic</title>
+  <link rel="stylesheet" href="services.css" />
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="tooth" viewBox="0 0 100 100">
+        <path d="M50 14c-9-6-26-5-31 9-4 12 2 22 5 34 2 10 3 24 10 24 6 0 6-14 9-22 1-4 3-6 7-6s6 2 7 6c3 8 3 22 9 22 7 0 8-14 10-24 3-12 9-22 5-34-5-14-22-15-31-9z"
+              fill="#fff" stroke="#0b2e6e" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="40" cy="42" r="3.2" fill="#0b2e6e"/>
+        <circle cx="60" cy="42" r="3.2" fill="#0b2e6e"/>
+        <path d="M45 50q5 4 10 0" fill="none" stroke="#0b2e6e" stroke-width="2.5" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="arrow" viewBox="0 0 26 12">
+        <path d="M0 6h24M19 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <a href="home.html" class="logo" aria-label="MolarCoaster Dental Clinic">
+      <img src="images/MolarCoaster.jpg" alt="MolarCoaster Logo" />
+      <span class="logo-text">
+        <span class="brand">MolarCoaster</span>
+        <span class="sub">DENTAL CLINIC</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="booking.html">Appointments</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <a href="booking.html" class="btn-book">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="18" rx="3" fill="#0b2e6e"/>
+        <rect x="2" y="4" width="20" height="5" rx="2" fill="#1b4fd8"/>
+        <path d="M7 2v4M17 2v4" stroke="#0b2e6e" stroke-width="2" stroke-linecap="round"/>
+        <g fill="#ffd84d">
+          <rect x="5" y="11" width="3" height="3" rx=".5"/><rect x="10.5" y="11" width="3" height="3" rx=".5"/><rect x="16" y="11" width="3" height="3" rx=".5"/>
+          <rect x="5" y="16" width="3" height="3" rx=".5"/><rect x="10.5" y="16" width="3" height="3" rx=".5"/><rect x="16" y="16" width="3" height="3" rx=".5"/>
+        </g>
+      </svg>
+      Book an Appointment
+    </a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Cosmetic Dentistry</h1>
+        <p>What this treatment involves, step by step</p>
+      </div>
+      <div class="hero-image">
+        <img src="images/hero-dentist.jpg" alt="Dentist attending to a patient" onerror="this.style.display='none'" />
+      </div>
+    </section>
+
+    <div class="details-wrap single">
+        <section id="cosmetic" class="detail-card card-cosmetic">
+          <div class="detail-head">
+            <svg class="icon" aria-hidden="true"><use href="#tooth"/></svg>
+            <h2>Cosmetic Dentistry</h2>
+          </div>
+          <p class="lead">Treatments that improve the color, shape and alignment of your teeth for a smile you feel proud of.</p>
+          <h3>Includes</h3>
+          <ul class="bullets">
+            <li>Teeth whitening</li>
+            <li>Porcelain veneers</li>
+            <li>Dental bonding</li>
+            <li>Smile makeover planning</li>
+          </ul>
+          <h3>Procedure</h3>
+          <ol class="steps">
+            <li><span>Smile consultation and discussion of your goals.</span></li>
+            <li><span>Shade matching and treatment preview.</span></li>
+            <li><span>Teeth are cleaned and prepared for the chosen treatment.</span></li>
+            <li><span>Whitening gel, bonding resin or veneers are applied and shaped.</span></li>
+            <li><span>Final polish, bite check and care instructions.</span></li>
+          </ol>
+          <div class="facts"><span>Whitening: about 1 hour</span><span>Veneers: 2 visits</span><span>Recovery: minimal</span></div>
+        </section>
+
+      <div class="detail-actions">
+        <a href="services.html" class="back-link"><svg aria-hidden="true"><use href="#arrow"/></svg> Back to Services</a>
+        <a href="booking.html" class="btn-book">Book an Appointment</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
+  </footer>
+
+</body>
+</html>
