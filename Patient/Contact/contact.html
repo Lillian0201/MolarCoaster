@@ -6,23 +6,42 @@
   <title>Contact Us | MolarCoaster Dental Clinic</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="contact.css">
 </head>
 <body>
 
   <header class="site-header">
-    <a href="index.html" class="logo">
-      <img src="images/logo2.png" alt="MolarCoaster Dental Clinic logo">
+    <a href="/Patient/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
+      <img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo" />
+      <span class="logo-text">
+        <span class="brand">MolarCoaster</span>
+        <span class="sub">DENTAL CLINIC</span>
+      </span>
     </a>
+
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="appointments.html">Appointments</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html" aria-current="page">Contact Us</a>
+      <ul>
+        <li><a href="/Patient/Home%20Page/home.html">Home</a></li>
+        <li><a href="/Patient/Appointments/appointments.html">Appointments</a></li>
+        <li><a href="/Patient/About/about.html">About Us</a></li>
+        <li><a href="/Patient/Services/services.html">Services</a></li>
+        <li><a href="/Patient/Contact/contact.html" class="active" aria-current="page">Contact Us</a></li>
+      </ul>
     </nav>
-    <a href="appointments.html" class="btn btn-accent">Book an Appointment</a>
+
+    <a href="/Patient/Appointments/appointments.html" class="btn-book">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="18" rx="3" fill="#0b2e6e"/>
+        <rect x="2" y="4" width="20" height="5" rx="2" fill="#1b4fd8"/>
+        <path d="M7 2v4M17 2v4" stroke="#0b2e6e" stroke-width="2" stroke-linecap="round"/>
+        <g fill="#ffd84d">
+          <rect x="5" y="11" width="3" height="3" rx=".5"/><rect x="10.5" y="11" width="3" height="3" rx=".5"/><rect x="16" y="11" width="3" height="3" rx=".5"/>
+          <rect x="5" y="16" width="3" height="3" rx=".5"/><rect x="10.5" y="16" width="3" height="3" rx=".5"/><rect x="16" y="16" width="3" height="3" rx=".5"/>
+        </g>
+      </svg>
+      Book an Appointment
+    </a>
   </header>
 
   <main>
@@ -31,7 +50,7 @@
         <h1>Contact Us</h1>
         <p>We'd love to hear from you!<br>Get in touch with us for any question or assistance.</p>
       </div>
-      <img class="hero-img" src="images/contact-hero.jpg" alt="Dental staff member in a clinic">
+      <img class="hero-img" src="/Patient/images/contact-hero.jpg" alt="Dental staff member in a clinic">
     </section>
 
     <div class="container">
@@ -104,17 +123,7 @@
   </main>
 
   <footer class="site-footer">
-    <a href="index.html" class="logo">
-      <img src="images/logo2.png" alt="MolarCoaster Dental Clinic logo">
-    </a>
-    <nav class="main-nav" aria-label="Footer navigation">
-      <a href="index.html">Home</a>
-      <a href="appointments.html">Appointments</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html" aria-current="page">Contact Us</a>
-    </nav>
-    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved.</p>
+    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
   </footer>
 
 </body>

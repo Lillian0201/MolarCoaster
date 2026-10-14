@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Dental Services | MolarCoaster Dental Clinic</title>
+  <link rel="stylesheet" href="services.css" />
+</head>
+<body>
+
+  <!-- Reusable inline icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="tooth" viewBox="0 0 100 100">
+        <path d="M50 14c-9-6-26-5-31 9-4 12 2 22 5 34 2 10 3 24 10 24 6 0 6-14 9-22 1-4 3-6 7-6s6 2 7 6c3 8 3 22 9 22 7 0 8-14 10-24 3-12 9-22 5-34-5-14-22-15-31-9z"
+              fill="#fff" stroke="#0b2e6e" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="40" cy="42" r="3.2" fill="#0b2e6e"/>
+        <circle cx="60" cy="42" r="3.2" fill="#0b2e6e"/>
+        <path d="M45 50q5 4 10 0" fill="none" stroke="#0b2e6e" stroke-width="2.5" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="arrow" viewBox="0 0 26 12">
+        <path d="M0 6h24M19 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="/Patient/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
+      <img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo" />
+      <span class="logo-text">
+        <span class="brand">MolarCoaster</span>
+        <span class="sub">DENTAL CLINIC</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="/Patient/Home%20Page/home.html">Home</a></li>
+        <li><a href="/Patient/Appointments/appointments.html">Appointments</a></li>
+        <li><a href="/Patient/About/about.html">About Us</a></li>
+        <li><a href="/Patient/Services/services.html" class="active" aria-current="page">Services</a></li>
+        <li><a href="/Patient/Contact/contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <a href="/Patient/Appointments/appointments.html" class="btn-book">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="18" rx="3" fill="#0b2e6e"/>
+        <rect x="2" y="4" width="20" height="5" rx="2" fill="#1b4fd8"/>
+        <path d="M7 2v4M17 2v4" stroke="#0b2e6e" stroke-width="2" stroke-linecap="round"/>
+        <g fill="#ffd84d">
+          <rect x="5" y="11" width="3" height="3" rx=".5"/><rect x="10.5" y="11" width="3" height="3" rx=".5"/><rect x="16" y="11" width="3" height="3" rx=".5"/>
+          <rect x="5" y="16" width="3" height="3" rx=".5"/><rect x="10.5" y="16" width="3" height="3" rx=".5"/><rect x="16" y="16" width="3" height="3" rx=".5"/>
+        </g>
+      </svg>
+      Book an Appointment
+    </a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Our Dental Service</h1>
+        <p>Quality care for every smile, at every stage of life</p>
+      </div>
+      <div class="hero-image">
+        <img src="/Patient/images/doctor.avif" alt="Dentist attending to a patient" onerror="this.style.display='none'" />
+      </div>
+    </section>
+
+    <!-- SERVICE CARDS -->
+    <section class="services" aria-label="Dental services">
+      <div class="services-grid">
+
+        <article class="service-card card-general">
+          <svg class="icon" aria-hidden="true"><use href="#tooth"/></svg>
+          <h2>General Dentistry</h2>
+          <p>Cleanings, checkups and preventive care.</p>
+          <a href="GeneralDentistry.html" class="learn-more">Learn more
+            <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        </article>
+
+        <article class="service-card card-surgery">
+          <svg class="icon" aria-hidden="true"><use href="#tooth"/></svg>
+          <h2>Oral Surgery</h2>
+          <p>Safe and effective surgical care.</p>
+          <a href="OralSurgery.html" class="learn-more">Learn more
+            <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        </article>
+
+        <article class="service-card card-ortho">
+          <svg class="icon" aria-hidden="true"><use href="#tooth"/></svg>
+          <h2>Orthodontics</h2>
+          <p>Straighten your smile with confidence.</p>
+          <a href="Orthodontics.html" class="learn-more">Learn more
+            <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        </article>
+
+        <article class="service-card card-cosmetic">
+          <svg class="icon" aria-hidden="true"><use href="#tooth"/></svg>
+          <h2>Cosmetic Dentistry</h2>
+          <p>Enhance your natural beauty.</p>
+          <a href="CosmeticDentistry.html" class="learn-more">Learn more
+            <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        </article>
+
+        <article class="service-card card-restorative">
+          <svg class="icon" aria-hidden="true"><use href="#tooth"/></svg>
+          <h2>Restorative Dentistry</h2>
+          <p>Restore function and confidence.</p>
+          <a href="RestorativeDentistry.html" class="learn-more">Learn more
+            <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
+  </footer>
+
+</body>
+</html>
