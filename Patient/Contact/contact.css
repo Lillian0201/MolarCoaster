@@ -183,9 +183,14 @@ a { color: var(--blue); }
 .socials a:hover svg { fill: var(--blue); }
 .handle { margin: 0.4rem 0 0; font-size: 0.8rem; color: var(--blue); font-weight: 500; }
 
+/* Map card: heading on top, map fills the rest of the card and stays inside its border */
+.map-card {
+  display: flex;
+  flex-direction: column;
+}
 .map-wrap {
   position: relative;
-  height: 100%;
+  flex: 1 1 auto;
   min-height: 300px;
   border-radius: 12px;
   overflow: hidden;
@@ -424,5 +429,31 @@ a { color: var(--blue); }
   *::after {
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;
+  }
+}
+/* ==========================================================
+   Center the main navigation on the page (desktop)
+   Logo | nav | (empty) -> equal side columns keep the nav in the
+   true middle, same as the Services page.
+   ========================================================== */
+@media (min-width: 1151px) {
+  .site-header {
+    display: grid;
+    grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+    align-items: center;
+  }
+  .logo {
+    justify-self: start;
+  }
+  .main-nav {
+    justify-self: center;
+  }
+  .main-nav ul {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  .site-header > .btn-book {
+    justify-self: end;
+    margin-left: 0;
   }
 }

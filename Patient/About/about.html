@@ -3,51 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MolarCoaster Dental Clinic</title>
+    <title>About Us | MolarCoaster Dental Clinic</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="about.css" />
   </head>
   <body>
+  <header class="site-header">
+    <a href="/Patient/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
+      <img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo" />
+      <span class="logo-text">
+        <span class="brand">MolarCoaster</span>
+        <span class="sub">DENTAL CLINIC</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="/Patient/Home%20Page/home.html">Home</a></li>
+        <li><a href="/Patient/Appointments/appointments.html">Appointments</a></li>
+        <li><a href="/Patient/About/about.html" class="active" aria-current="page">About Us</a></li>
+        <li><a href="/Patient/Services/services.html">Services</a></li>
+        <li><a href="/Patient/Contact/contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>About Us</h1>
+      <p>Our clinic, our team, our commitment, to your smile.</p>
+    </div>
+    <img class="hero-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80" alt="Dentist speaking with young patient" />
+  </section>
+
     <div class="page-shell">
-      <header class="topbar">
-        <div class="logo" aria-label="MolarCoaster Dental Clinic">
-          <img class="logo-image" src="molarcoaster-logo.png" alt="MolarCoaster Dental Clinic" />
-          <div class="brand-wrap" aria-hidden="true">
-            <div class="brand">MolarCoaster</div>
-            <div class="brand-sub">DENTAL CLINIC</div>
-          </div>
-        </div>
-
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="../Home%20Page/home.html">Home</a>
-          <a href="../Appointment%20Booking/booking.html">Appointments</a>
-          <a href="about.html" class="active" aria-current="page">About Us</a>
-          <a href="../Services/services.html">Services</a>
-          <a href="../Contact/contact.html">Contact Us</a>
-        </nav>
-
-        <a class="cta-btn" href="../Appointment%20Booking/booking.html">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3.5" y="5" width="17" height="15" rx="1.5" />
-            <path d="M7.5 3.5v3M16.5 3.5v3M3.5 9h17M8 12.5h2m4 0h2M8 16h2m4 0h2" />
-          </svg>
-          <span>Book an Appointment</span>
-        </a>
-      </header>
-
       <main>
-        <section class="hero-section">
-          <div class="hero-copy">
-            <h1>About Us</h1>
-            <p>Our clinic, our team, our commitment, to your smile.</p>
-          </div>
-          <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80" alt="Dentist speaking with young patient" />
-          </div>
-        </section>
-
         <section class="intro-panel" id="clinic-profile">
           <aside class="side-menu" aria-label="About section navigation">
             <nav>
@@ -72,7 +64,7 @@
           </div>
 
           <figure class="profile-photo">
-            <img src="happy-girl-with-braces.jpg" alt="A girl smiling with braces" />
+            <img src="/Patient/images/happy-girl-with-braces.jpg" alt="A girl smiling with braces" />
             <figcaption>
               Photo by <a href="https://www.flickr.com/people/40645538@N00" target="_blank" rel="noopener noreferrer">D. Sharon Pruitt</a>
               / <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>
@@ -189,16 +181,16 @@
             </article>
             <article class="faq-card">
               <h3>How can I book an appointment?</h3>
-              <p><a href="../Appointment%20Booking/booking.html">Go to the appointment booking page.</a></p>
+              <p><a href="/Patient/Appointments/appointments.html">Go to the appointment booking page.</a></p>
             </article>
           </div>
         </section>
       </main>
-
-      <footer class="site-footer">
-        <p>© 2026 MolarCoaster Dental Clinic. All rights reserved</p>
-      </footer>
     </div>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
+    </footer>
 
     <script>
       document.querySelectorAll('.side-link').forEach(function (link) {
