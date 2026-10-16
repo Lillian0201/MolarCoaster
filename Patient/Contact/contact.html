@@ -12,31 +12,27 @@
 <body>
 
   <header class="site-header">
-    <a href="home.html" class="logo">
-      <img src="images/logo2.png" alt="MolarCoaster Dental Clinic logo">
-    </a>
+  <a href="/Patient/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
+    <img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo" />
+    <span class="logo-text">
+      <span class="brand">MolarCoaster</span>
+      <span class="sub">DENTAL CLINIC</span>
+    </span>
+  </a>
 
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="home.html">Home</a>
-      <a href="appointments.html">Appointments</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html" aria-current="page">Contact Us</a>
-    </nav>
+  <input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle menu" />
+  <label for="menu-check" class="menu-toggle"></label>
 
-    <a href="/Patient/Appointments/appointments.html" class="btn-book">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="2" y="4" width="20" height="18" rx="3" fill="#0b2e6e"/>
-        <rect x="2" y="4" width="20" height="5" rx="2" fill="#1b4fd8"/>
-        <path d="M7 2v4M17 2v4" stroke="#0b2e6e" stroke-width="2" stroke-linecap="round"/>
-        <g fill="#ffd84d">
-          <rect x="5" y="11" width="3" height="3" rx=".5"/><rect x="10.5" y="11" width="3" height="3" rx=".5"/><rect x="16" y="11" width="3" height="3" rx=".5"/>
-          <rect x="5" y="16" width="3" height="3" rx=".5"/><rect x="10.5" y="16" width="3" height="3" rx=".5"/><rect x="16" y="16" width="3" height="3" rx=".5"/>
-        </g>
-      </svg>
-      Book an Appointment
-    </a>
-  </header>
+  <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="/Patient/Home%20Page/home.html">Home</a></li>
+      <li><a href="/Patient/Appointment%20Booking/appointment.html">Appointments</a></li>
+      <li><a href="/Patient/About/about.html">About Us</a></li>
+      <li><a href="/Patient/Services/services.html">Services</a></li>
+      <li><a href="/Patient/Contact/contact.html" class="active" aria-current="page">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main>
     <section class="hero">
@@ -44,7 +40,9 @@
         <h1>Contact Us</h1>
         <p>We'd love to hear from you!<br>Get in touch with us for any question or assistance.</p>
       </div>
-      <img class="hero-img" src="/Patient/images/contact-hero.jpg" alt="Dental staff member in a clinic">
+      <div class="hero-image">
+        <img src="/Patient/images/contact-hero.jpg" alt="Dental staff member in a clinic" onerror="this.style.display='none'" />
+      </div>
     </section>
 
     <div class="container">
@@ -80,7 +78,7 @@
           <p class="handle">@molarcoasterdental</p>
         </section>
 
-        <section class="card" aria-labelledby="map-title">
+        <section class="card map-card" aria-labelledby="map-title">
           <h2 id="map-title">Find Us</h2>
           <div class="map-wrap">
             <iframe
@@ -117,17 +115,7 @@
   </main>
 
   <footer class="site-footer">
-    <a href="home.html" class="logo">
-      <img src="images/logo2.png" alt="MolarCoaster Dental Clinic logo">
-    </a>
-    <nav class="main-nav" aria-label="Footer navigation">
-      <a href="home.html">Home</a>
-      <a href="appointments.html">Appointments</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html" aria-current="page">Contact Us</a>
-    </nav>
-    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved.</p>
+    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
   </footer>
 
 </body>

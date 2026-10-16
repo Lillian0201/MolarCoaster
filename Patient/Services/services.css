@@ -163,9 +163,9 @@ ul {
 /* ---------------- HERO ---------------- */
 .hero {
   background: var(--sky);
-  min-height: 220px;
+  height: 300px;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-between;
   margin-top: 2px;
   overflow: hidden;
@@ -809,4 +809,101 @@ ul {
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;
   }
+}
+/* ==========================================================
+   Center the main navigation on the page (desktop)
+   Logo | nav | button -> equal side columns keep the nav in the
+   true middle even though the logo and button differ in width.
+   Falls back gracefully if the sides need more room.
+   ========================================================== */
+@media (min-width: 1151px) {
+  .site-header {
+    display: grid;
+    grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+    align-items: center;
+  }
+  .logo {
+    justify-self: start;
+  }
+  .main-nav {
+    justify-self: center;
+  }
+  .main-nav ul {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  .site-header > .btn-book {
+    justify-self: end;
+    margin-left: 0;
+  }
+}
+
+/* ===== CSS-only hamburger menu ===== */
+.menu-check {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.menu-toggle { display: none; }
+
+@media (max-width: 768px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 0;
+    gap: 0;
+    padding: 10px 16px;
+  }
+  .logo { margin: 0; }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    border: 2px solid var(--sky);
+    border-radius: 10px;
+    font-size: 22px;
+    color: var(--navy);
+    cursor: pointer;
+  }
+  .menu-toggle::before { content: "☰"; }
+  .menu-check:checked + .menu-toggle::before { content: "✕"; }
+  .menu-check:focus-visible + .menu-toggle {
+    outline: 3px solid var(--royal);
+    outline-offset: 3px;
+  }
+
+  .main-nav {
+    display: none;
+    order: 3;
+    flex: 0 0 100%;
+    width: 100%;
+    position: static;
+    transform: none;
+  }
+  .menu-check:checked ~ .main-nav { display: block; }
+
+  .main-nav ul {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 0;
+    padding-top: 10px;
+  }
+  .main-nav a {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 14px;
+    font-size: 16px;
+    border-top: 1px solid var(--sky);
+  }
+  .main-nav a.active {
+    background: var(--mist);
+    border-left: 4px solid var(--yellow);
+  }
+  .main-nav a.active::after { display: none; }
 }
