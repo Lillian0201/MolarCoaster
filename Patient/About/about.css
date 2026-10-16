@@ -65,14 +65,27 @@ button {
 /* ===== Hero (same as Contact and Services) ===== */
 .hero {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   background: #d9ebfa;
-  min-height: 180px;
+  min-height: 200px;
   overflow: hidden;
 }
-.hero-text { flex: 1 1 50%; padding: 2.5rem 2rem 2.5rem max(2rem, 8vw); align-self: center; }
-.hero h1 { margin: 0 0 0.5rem; font-size: clamp(2rem, 5vw, 2.8rem); color: #0c3b78; line-height: 1.1; }
-.hero p { margin: 0; font-size: 0.95rem; color: #123a6b; }
+.hero-text { 
+  flex: 1 1 50%; 
+  padding: 2.5rem 2rem 2.5rem max(2rem, 8vw); 
+  align-self: center; }
+
+.hero h1 { 
+  margin: 0 0 0.5rem; 
+  font-size: clamp(2rem, 5vw, 2.8rem); 
+  color: #0c3b78; 
+  line-height: 1.1; }
+
+.hero p { 
+  margin: 0; 
+  font-size: 0.95rem; 
+  color: #123a6b; }
+  
 .hero-img {
   flex: 1 1 40%;
   object-fit: cover;

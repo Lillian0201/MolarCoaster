@@ -142,9 +142,9 @@ a { color: var(--blue); }
 
 .hero {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   background: var(--blue-soft);
-  min-height: 180px;
+  min-height: 300px;
   overflow: hidden;
 }
 .hero-text { flex: 1 1 50%; padding: 2.5rem 2rem 2.5rem max(2rem, 8vw); align-self: center; }

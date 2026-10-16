@@ -163,9 +163,9 @@ ul {
 /* ---------------- HERO ---------------- */
 .hero {
   background: var(--sky);
-  min-height: 220px;
+  min-height: 300px;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-between;
   margin-top: 2px;
   overflow: hidden;

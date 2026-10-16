@@ -331,7 +331,7 @@ a { color: var(--blue); }
 /* ----- Urgent care banner ----- */
 .care-banner {
   width: min(1220px, 100%);
-  margin: clamp(40px, 12vw, 175px) auto 0;
+  margin: clamp(40px, 12vw, 175px) auto clamp(40px, 6vw, 70px);
   display: flex;
   align-items: center;
   gap: clamp(20px, 4vw, 42px);
@@ -361,18 +361,19 @@ a { color: var(--blue); }
 .care-text a { color: inherit; text-decoration: none; }
 .care-text a:hover { text-decoration: underline; }
 
-/* ===== Footer (same as the other pages) ===== */
+/* ===== Footer (same as Home) ===== */
 .site-footer {
   background: #c4e4fd;
-  min-height: 110px;
+  min-height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(15px, 1.5vw, 20px);
-  color: #6c93c7;
+  font-family: var(--font-head);
+  font-size: 15px;
+  line-height: 1.4;
+  color: #35598c;
   text-align: center;
   padding: 24px 20px;
-  margin-top: clamp(40px, 6vw, 80px);
 }
 .site-footer p { margin: 0; color: inherit; }
 
