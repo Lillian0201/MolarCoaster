@@ -143,7 +143,7 @@ a { color: var(--blue); }
 /* ===== Hero (same format as Services) ===== */
 .hero {
   background: var(--blue-soft);
-  min-height: 300px;           /* same rule as Services; the photo is absolutely positioned so it can't stretch the hero */
+  height: 300px;           /* same rule as Services; the photo is absolutely positioned so it can't stretch the hero */
   display: flex;
   align-items: stretch;
   justify-content: space-between;
