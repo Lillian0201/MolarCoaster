@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Your Appointment | MolarCoaster Dental Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+
+  <!-- Reusable tooth illustration -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="tooth" viewBox="0 0 100 100">
+        <path d="M50 14c-9-6-26-5-31 9-4 12 2 22 5 34 2 10 3 24 10 24 6 0 6-14 9-22 1-4 3-6 7-6s6 2 7 6c3 8 3 22 9 22 7 0 8-14 10-24 3-12 9-22 5-34-5-14-22-15-31-9z"
+              fill="#fff" stroke="#3b63b8" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M36 42q4 4 8 0M56 42q4 4 8 0M44 52q6 6 12 0" fill="none" stroke="#3b63b8" stroke-width="2.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="heart" viewBox="-20 -14 40 32">
+        <path d="M0 -4C-6 -12 -18 -4 -8 6L0 14 8 6C18 -4 6 -12 0 -4Z" fill="#f26b6b"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+  <a href="/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
+    <img src="/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo" />
+    <span class="logo-text">
+      <span class="brand">MolarCoaster</span>
+      <span class="sub">DENTAL CLINIC</span>
+    </span>
+  </a>
+
+  <input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle menu" />
+  <label for="menu-check" class="menu-toggle"></label>
+
+  <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="/Home%20Page/home.html">Home</a></li>
+      <li><a href="/Appointment%20Booking/appointment.html" class="active" aria-current="page">Appointments</a></li>
+      <li><a href="/About/about.html">About Us</a></li>
+      <li><a href="/Services/services.html">Services</a></li>
+      <li><a href="/Contact/contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>Book Your Appointment</h1>
+          <p>Take the first step toward a healthier smile.<br>Schedule your visit with us today</p>
+        </div>
+        <svg class="hero-art" viewBox="0 0 300 200" role="img" aria-label="Smiling tooth with a stethoscope next to a small tooth holding a heart">
+          <use href="#heart" x="86" y="2" width="30" height="24"/>
+          <use href="#heart" x="124" y="14" width="20" height="16"/>
+          <use href="#tooth" x="12" y="16" width="176" height="176"/>
+          <use href="#tooth" x="196" y="84" width="96" height="96"/>
+          <path d="M44 62c-22 6-26 36-6 52 12 8 28 2 34-8" fill="none" stroke="#8fd3f0" stroke-width="6" stroke-linecap="round"/>
+          <path d="M16 70c8-14 22-14 28-6" fill="none" stroke="#3b63b8" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="156" cy="82" r="11" fill="none" stroke="#3b63b8" stroke-width="5"/>
+          <g fill="#7fd0f2"><path d="M20 24l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/><path d="M276 70l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/></g>
+        </svg>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="grid-two">
+
+        <!-- Date selection -->
+        <section class="card calendar-card" aria-labelledby="date-title">
+          <h2 id="date-title">Select Date</h2>
+          <label for="appt-date">Appointment date<span class="req" aria-hidden="true">*</span></label>
+          <input class="date-input" form="appt-form" type="date" id="appt-date" min="2026-10-16" required>
+          <p class="slots-note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6.5V12l3.5 2.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Select a date and preferred time. The clinic will confirm availability.</span>
+          </p>
+        </section>
+
+        <!-- Form -->
+        <section class="card form-card" aria-labelledby="form-title">
+          <h2 id="form-title">Appointment Form</h2>
+          <form id="appt-form" action="booking-success.html" method="get">
+            <label for="full-name">Full Name<span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="full-name" placeholder="Enter your Full Name" autocomplete="name" required>
+
+            <label for="phone">Phone Number<span class="req" aria-hidden="true">*</span></label>
+            <input type="tel" id="phone" placeholder="Enter your Phone Number" autocomplete="tel"
+                   pattern="\+?[0-9]{7,15}" title="Enter 7 to 15 digits, optionally prefixed by +." required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your Email Address" autocomplete="email">
+
+            <label for="reason">Reason for Visit<span class="req" aria-hidden="true">*</span></label>
+            <select id="reason" required>
+              <option value="" selected disabled>Select a reason</option>
+              <option>General Dentistry (check-up, cleaning)</option>
+              <option>Oral Surgery</option>
+              <option>Orthodontics</option>
+              <option>Cosmetic Dentistry</option>
+              <option>Restorative Dentistry</option>
+              <option>Other / Not sure</option>
+            </select>
+
+            <label for="time">Preferred Time<span class="req" aria-hidden="true">*</span></label>
+            <select id="time" required>
+              <option value="" selected disabled>Select a time</option>
+              <option>9:00 AM</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>12:00 PM</option>
+              <option>1:00 PM</option>
+              <option>2:00 PM</option>
+              <option>3:00 PM</option>
+              <option>4:00 PM</option>
+              <option>5:00 PM</option>
+            </select>
+
+            <button type="submit" class="btn-submit">Submit Request</button>
+          </form>
+        </section>
+
+      </div>
+
+      <!-- Urgent care -->
+      <aside class="care-banner" aria-labelledby="care-title">
+        <svg class="care-art" viewBox="0 0 285 230" aria-hidden="true">
+          <ellipse cx="142" cy="115" rx="138" ry="112" fill="#86abf0" stroke="#6f97ea" stroke-width="4"/>
+          <ellipse cx="92" cy="198" rx="42" ry="8" fill="#5b82cf"/>
+          <ellipse cx="190" cy="204" rx="42" ry="8" fill="#5b82cf"/>
+          <use href="#tooth" x="40" y="80" width="106" height="106"/>
+          <use href="#tooth" x="136" y="62" width="112" height="112"/>
+        </svg>
+        <div class="care-text">
+          <h2 id="care-title">Need immediate care?</h2>
+          <p>For urgent dental care, please call us at <a href="tel:+63123456789">+63123456789</a> during business hours.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MolarCoaster Dental Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Home_Style.css">
+</head>
+<body>
+
+ <header class="site-header">
+  <a href="/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
+    <img src="/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo" />
+    <span class="logo-text">
+      <span class="brand">MolarCoaster</span>
+      <span class="sub">DENTAL CLINIC</span>
+    </span>
+  </a>
+
+  <input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle menu" />
+  <label for="menu-check" class="menu-toggle"></label>
+
+  <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="/Home%20Page/home.html" class="active" aria-current="page">Home</a></li>
+      <li><a href="/Appointment%20Booking/appointment.html">Appointments</a></li>
+      <li><a href="/About/about.html">About Us</a></li>
+      <li><a href="/Services/services.html">Services</a></li>
+      <li><a href="/Contact/contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <!-- ===== Hero image ===== -->
+    <section class="hero" id="home" aria-label="Our clinic">
+      <img src="/images/clinic.jpg" alt="Bright, modern dental treatment room at MolarCoaster Dental Clinic">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Gentle dental care for the whole family</h1>
+          <p>Modern treatment, a friendly team and a calm, comfortable clinic in Manila.</p>
+          <a class="btn-book" href="/Appointment%20Booking/appointment.html">Book an Appointment</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Trust strip (uses facts already on your Contact and Services pages) ===== -->
+    <section class="trust" aria-label="Why patients choose us">
+      <ul class="trust-list">
+        <li><strong>6 days a week</strong><span>Mon&ndash;Sat appointments</span></li>
+        <li><strong>All ages</strong><span>Care for the whole family</span></li>
+        <li><strong>5 treatment areas</strong><span>From checkups to smile makeovers</span></li>
+        <li><strong>Modern clinic</strong><span>Comfortable, up-to-date equipment</span></li>
+      </ul>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="about" id="about">
+      <div class="about-photo">
+        <img src="/images/patient.jpg" alt="Smiling patient being examined by a dentist" loading="lazy">
+      </div>
+
+      <div class="about-copy">
+        <h2>More Than Just Dental Care</h2>
+        <p>We provide a welcoming, comfortable and modern environment where patients of all ages can feel at ease. Our team is committed to delivering high-quality care with compassion, patience and respect.</p>
+
+        <ul class="features">
+          <li>
+            <span class="badge badge-blue">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 54C14 40 8 31 8 22c0-8 6-13 13-13 5 0 9 3 11 7 2-4 6-7 11-7 7 0 13 5 13 13 0 9-6 18-24 32z" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="feature-label">Patient-Centered Approach</span>
+          </li>
+          <li>
+            <span class="badge badge-green">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6l20 7v16c0 14-8 23-20 29C20 52 12 43 12 29V13z" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><path d="M32 11l15 5v13c0 11-6 18-15 23-9-5-15-12-15-23V16z" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M22 31l7 7 14-15" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="feature-label">Modern Technology</span>
+          </li>
+          <li>
+            <span class="badge badge-yellow">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="none" stroke="#fff" stroke-width="2.5"/><path d="M15 33h34c0 10-8 17-17 17s-17-7-17-17z" fill="#fff"/><path d="M20 24c2-3 6-3 8 0M36 24c2-3 6-3 8 0" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </span>
+            <span class="feature-label">A Positive Experience</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Add testimonials here only when you have real patient quotes and permission. -->
+
+    <!-- ===== Call to action ===== -->
+    <section class="cta-wrap" id="appointments">
+      <div class="cta">
+        <div class="cta-main">
+          <span class="cta-badge" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <rect x="10" y="14" width="44" height="42" rx="4" fill="none" stroke="#1d3a7a" stroke-width="3.5"/>
+              <path d="M10 25h44" stroke="#1d3a7a" stroke-width="3.5"/>
+              <g fill="none" stroke="#1d3a7a" stroke-width="3">
+                <rect x="16" y="31" width="6" height="6" rx="1"/><rect x="26" y="31" width="6" height="6" rx="1"/><rect x="36" y="31" width="6" height="6" rx="1"/><rect x="46" y="31" width="4" height="6" rx="1" opacity="0"/>
+                <rect x="16" y="42" width="6" height="6" rx="1"/><rect x="26" y="42" width="6" height="6" rx="1"/><rect x="36" y="42" width="6" height="6" rx="1"/><rect x="46" y="42" width="4" height="6" rx="1" opacity="0"/>
+              </g>
+              <g fill="none" stroke="#1d3a7a" stroke-width="3" stroke-linecap="round">
+                <path d="M17 8v10M26 8v10M35 8v10M44 8v10M52 8v10" opacity=".0"/>
+                <circle cx="16" cy="12" r="2.2"/><circle cx="24" cy="12" r="2.2"/><circle cx="32" cy="12" r="2.2"/><circle cx="40" cy="12" r="2.2"/><circle cx="48" cy="12" r="2.2"/>
+              </g>
+            </svg>
+          </span>
+          <div class="cta-text">
+            <h2>Ready to Smile?</h2>
+            <p>Schedule your appointment today and take the first step toward a healthier, brighter smile.</p>
+          </div>
+        </div>
+
+        <ul class="cta-perks">
+          <li>
+            <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15" fill="none" stroke="#1d3a7a" stroke-width="2.5"/><path d="M20 10v10l7 4" fill="none" stroke="#1d3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Flexible Appointment Times
+          </li>
+          <li>
+            <svg viewBox="0 0 48 40" aria-hidden="true"><g fill="none" stroke="#1d3a7a" stroke-width="2.2" stroke-linejoin="round"><circle cx="24" cy="8" r="4.5"/><circle cx="10" cy="15" r="4"/><circle cx="38" cy="15" r="4"/><path d="M15 26c0-5 4-8 9-8s9 3 9 8v3H15zM2 29v-4c0-4 3-6 8-6M46 29v-4c0-4-3-6-8-6"/><path d="M24 38c-4-3-6-5-6-7.500 0-2 1.500-3 3-3s2.500 1 3 2c.5-1 1.500-2 3-2s3 1 3 3c0 2.500-2 4.500-6 7.500z" fill="#fdf0c2"/></g></svg>
+            Friendly Care for the Whole Family
+          </li>
+          <li>
+            <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 35C8 26 4 20 4 14c0-5 4-8 8-8 4 0 7 2 8 5 1-3 4-5 8-5 4 0 8 3 8 8 0 6-4 12-16 21z" fill="none" stroke="#1d3a7a" stroke-width="2.5" stroke-linejoin="round" transform="translate(0 1)"/><path d="M20 14v12M14 20h12" stroke="#1d3a7a" stroke-width="3.5" stroke-linecap="round"/></svg>
+            For All Ages
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oral Surgery | MolarCoaster Dental Clinic</title>
+  <link rel="stylesheet" href="services.css" />
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="tooth" viewBox="0 0 100 100">
+        <path d="M50 14c-9-6-26-5-31 9-4 12 2 22 5 34 2 10 3 24 10 24 6 0 6-14 9-22 1-4 3-6 7-6s6 2 7 6c3 8 3 22 9 22 7 0 8-14 10-24 3-12 9-22 5-34-5-14-22-15-31-9z"
+              fill="#fff" stroke="#0b2e6e" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="40" cy="42" r="3.2" fill="#0b2e6e"/>
+        <circle cx="60" cy="42" r="3.2" fill="#0b2e6e"/>
+        <path d="M45 50q5 4 10 0" fill="none" stroke="#0b2e6e" stroke-width="2.5" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="arrow" viewBox="0 0 26 12">
+        <path d="M0 6h24M19 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+  <a href="/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
+    <img src="/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo" />
+    <span class="logo-text">
+      <span class="brand">MolarCoaster</span>
+      <span class="sub">DENTAL CLINIC</span>
+    </span>
+  </a>
+
+  <input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle menu" />
+  <label for="menu-check" class="menu-toggle"></label>
+
+  <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="/Home%20Page/home.html">Home</a></li>
+      <li><a href="/Appointment%20Booking/appointment.html">Appointments</a></li>
+      <li><a href="/About/about.html">About Us</a></li>
+      <li><a href="/Services/services.html" class="active" aria-current="page">Services</a></li>
+      <li><a href="/Contact/contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Oral Surgery</h1>
+        <p>What this treatment involves, step by step</p>
+      </div>
+      <div class="hero-image">
+        <img src="/images/doctor.avif" alt="Dentist attending to a patient" />
+      </div>
+    </section>
+
+    <div class="details-wrap single">
+        <section id="surgery" class="detail-card card-surgery">
+          <div class="detail-head">
+            <svg class="icon" aria-hidden="true"><use href="#tooth"/></svg>
+            <h2>Oral Surgery</h2>
+          </div>
+          <p class="lead">Safe, carefully planned surgical care for teeth and tissues that cannot be treated with ordinary procedures.</p>
+          <h3>Includes</h3>
+          <ul class="bullets">
+            <li>Tooth extraction, including wisdom teeth</li>
+            <li>Impacted tooth removal</li>
+            <li>Minor soft-tissue surgery</li>
+            <li>Pre-implant bone and gum preparation</li>
+          </ul>
+          <h3>Procedure</h3>
+          <ol class="steps">
+            <li><span>Consultation, X-rays and a written treatment plan.</span></li>
+            <li><span>Local anesthesia so the area is fully numb.</span></li>
+            <li><span>The tooth or tissue is removed or treated.</span></li>
+            <li><span>Stitches are placed if needed, and gauze controls bleeding.</span></li>
+            <li><span>Aftercare instructions and medication are given; a follow-up is scheduled.</span></li>
+          </ol>
+          <div class="facts"><span>Duration: 30&ndash;90 minutes</span><span>Recovery: 3&ndash;7 days</span><span>Follow-up: 1 week</span></div>
+        </section>
+
+      <div class="detail-actions">
+        <a href="services.html" class="back-link"><svg aria-hidden="true"><use href="#arrow"/></svg> Back to Services</a>
+        <a href="/Appointment%20Booking/appointment.html" class="btn-book">Book an Appointment</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
+  </footer>
+
+</body>
+</html>
