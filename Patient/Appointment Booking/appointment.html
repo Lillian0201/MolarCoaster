@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Your Appointment | MolarCoaster Dental Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+
+  <!-- Reusable tooth illustration -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="tooth" viewBox="0 0 100 100">
+        <path d="M50 14c-9-6-26-5-31 9-4 12 2 22 5 34 2 10 3 24 10 24 6 0 6-14 9-22 1-4 3-6 7-6s6 2 7 6c3 8 3 22 9 22 7 0 8-14 10-24 3-12 9-22 5-34-5-14-22-15-31-9z"
+              fill="#fff" stroke="#3b63b8" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M36 42q4 4 8 0M56 42q4 4 8 0M44 52q6 6 12 0" fill="none" stroke="#3b63b8" stroke-width="2.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="heart" viewBox="-20 -14 40 32">
+        <path d="M0 -4C-6 -12 -18 -4 -8 6L0 14 8 6C18 -4 6 -12 0 -4Z" fill="#f26b6b"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+  <a href="/Patient/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
+    <img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo" />
+    <span class="logo-text">
+      <span class="brand">MolarCoaster</span>
+      <span class="sub">DENTAL CLINIC</span>
+    </span>
+  </a>
+
+  <input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle menu" />
+  <label for="menu-check" class="menu-toggle"></label>
+
+  <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="/Patient/Home%20Page/home.html">Home</a></li>
+      <li><a href="/Patient/Appointment%20Booking/appointment.html" class="active" aria-current="page">Appointments</a></li>
+      <li><a href="/Patient/About/about.html">About Us</a></li>
+      <li><a href="/Patient/Services/services.html">Services</a></li>
+      <li><a href="/Patient/Contact/contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>Book Your Appointment</h1>
+          <p>Take the first step toward a healthier smile.<br>Schedule your visit with us today</p>
+        </div>
+        <svg class="hero-art" viewBox="0 0 300 200" role="img" aria-label="Smiling tooth with a stethoscope next to a small tooth holding a heart">
+          <use href="#heart" x="86" y="2" width="30" height="24"/>
+          <use href="#heart" x="124" y="14" width="20" height="16"/>
+          <use href="#tooth" x="12" y="16" width="176" height="176"/>
+          <use href="#tooth" x="196" y="84" width="96" height="96"/>
+          <path d="M44 62c-22 6-26 36-6 52 12 8 28 2 34-8" fill="none" stroke="#8fd3f0" stroke-width="6" stroke-linecap="round"/>
+          <path d="M16 70c8-14 22-14 28-6" fill="none" stroke="#3b63b8" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="156" cy="82" r="11" fill="none" stroke="#3b63b8" stroke-width="5"/>
+          <g fill="#7fd0f2"><path d="M20 24l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/><path d="M276 70l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/></g>
+        </svg>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="grid-two">
+
+        <!-- Calendar -->
+        <section class="card calendar-card" aria-labelledby="date-title">
+          <h2 id="date-title">Select Date</h2>
+
+          <div class="cal-head">
+            <button type="button" class="cal-nav" id="cal-prev" aria-label="Previous month">
+              <svg viewBox="0 0 28 12" aria-hidden="true"><path d="M27 6H2M7 1 2 6l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="cal-month" id="cal-month" aria-live="polite">September 2026</div>
+            <button type="button" class="cal-nav" id="cal-next" aria-label="Next month">
+              <svg viewBox="0 0 28 12" aria-hidden="true"><path d="M1 6h25M21 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+
+          <div class="cal-grid cal-weekdays" aria-hidden="true">
+            <span class="sun">Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+          </div>
+          <div class="cal-grid" id="cal-days" role="group" aria-label="Choose a day"></div>
+
+          <p class="slots-note" id="slots-note" aria-live="polite">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6.5V12l3.5 2.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span id="slots-text">Available time slots will appear after selecting a date</span>
+          </p>
+        </section>
+
+        <!-- Form -->
+        <section class="card form-card" aria-labelledby="form-title">
+          <h2 id="form-title">Appointment Form</h2>
+          <form id="appt-form" action="book_appointment.php" method="post">
+            <input type="hidden" id="appt-date" name="appointment_date">
+
+            <label for="full-name">Full Name<span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="full-name" name="full_name" placeholder="Enter your Full Name" autocomplete="name" required>
+
+            <label for="phone">Phone Number<span class="req" aria-hidden="true">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your Phone Number" autocomplete="tel"
+                   pattern="[0-9+\s\-()]{7,15}" title="Use 7 to 15 digits. You can include +, spaces, dashes, and parentheses." required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email Address" autocomplete="email">
+
+            <label for="reason">Reason for Visit<span class="req" aria-hidden="true">*</span></label>
+            <select id="reason" name="reason" required>
+              <option value="" selected disabled>Select a reason</option>
+              <option>General Dentistry (check-up, cleaning)</option>
+              <option>Oral Surgery</option>
+              <option>Orthodontics</option>
+              <option>Cosmetic Dentistry</option>
+              <option>Restorative Dentistry</option>
+              <option>Other / Not sure</option>
+            </select>
+
+            <label for="time">Preferred Time<span class="req" aria-hidden="true">*</span></label>
+            <select id="time" name="preferred_time" required disabled>
+              <option value="" selected disabled>Select a time</option>
+            </select>
+
+            <button type="submit" class="btn-submit" id="submit-btn" disabled>Submit Request</button>
+          </form>
+        </section>
+
+      </div>
+
+      <!-- Urgent care -->
+      <aside class="care-banner" aria-labelledby="care-title">
+        <svg class="care-art" viewBox="0 0 285 230" aria-hidden="true">
+          <ellipse cx="142" cy="115" rx="138" ry="112" fill="#86abf0" stroke="#6f97ea" stroke-width="4"/>
+          <ellipse cx="92" cy="198" rx="42" ry="8" fill="#5b82cf"/>
+          <ellipse cx="190" cy="204" rx="42" ry="8" fill="#5b82cf"/>
+          <use href="#tooth" x="40" y="80" width="106" height="106"/>
+          <use href="#tooth" x="136" y="62" width="112" height="112"/>
+        </svg>
+        <div class="care-text">
+          <h2 id="care-title">Need immediate care?</h2>
+          <p>For urgent dental care, please call us at <a href="tel:+63123456789">+63123456789</a> during business hours.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
+  </footer>
+
+  <script>
+    (function () {
+      var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      var DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+      var MAX_MONTHS_AHEAD = 6;
+
+      var today = new Date(); today.setHours(0, 0, 0, 0);
+      var current = new Date(today.getFullYear(), today.getMonth(), 1);
+      var view = new Date(current);
+      var selected = null;
+
+      var daysEl = document.getElementById('cal-days');
+      var monthEl = document.getElementById('cal-month');
+      var prevBtn = document.getElementById('cal-prev');
+      var nextBtn = document.getElementById('cal-next');
+      var dateInput = document.getElementById('appt-date');
+      var timeSel = document.getElementById('time');
+      var noteText = document.getElementById('slots-text');
+      var form = document.getElementById('appt-form');
+      var submitBtn = document.getElementById('submit-btn');
+
+      function iso(d) {
+        var m = d.getMonth() + 1, day = d.getDate();
+        return d.getFullYear() + '-' + (m < 10 ? '0' : '') + m + '-' + (day < 10 ? '0' : '') + day;
+      }
+      function label(h) {
+        var suffix = h >= 12 ? 'PM' : 'AM', hh = h % 12 === 0 ? 12 : h % 12;
+        return hh + ':00 ' + suffix;
+      }
+
+      function render() {
+        monthEl.textContent = MONTHS[view.getMonth()] + ' ' + view.getFullYear();
+        daysEl.innerHTML = '';
+
+        var first = new Date(view.getFullYear(), view.getMonth(), 1).getDay();
+        var count = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+        for (var b = 0; b < first; b++) daysEl.appendChild(document.createElement('span'));
+
+        for (var d = 1; d <= count; d++) {
+          var date = new Date(view.getFullYear(), view.getMonth(), d);
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'day' + (date.getDay() === 0 ? ' sun' : '');
+          btn.textContent = d;
+          btn.setAttribute('aria-label', DAYS[date.getDay()] + ', ' + MONTHS[date.getMonth()] + ' ' + d + ', ' + date.getFullYear());
+          btn.dataset.date = iso(date);
+
+          var closed = date.getDay() === 0;           // clinic is closed on Sundays
+          if (date < today || closed) btn.disabled = true;
+
+          var isSel = selected && iso(selected) === btn.dataset.date;
+          if (isSel) { btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true'); }
+          btn.addEventListener('click', function () { pick(this.dataset.date); });
+          daysEl.appendChild(btn);
+        }
+
+        prevBtn.disabled = view <= current;
+        var limit = new Date(current.getFullYear(), current.getMonth() + MAX_MONTHS_AHEAD, 1);
+        nextBtn.disabled = view >= limit;
+      }
+
+      function pick(isoStr) {
+        var p = isoStr.split('-');
+        selected = new Date(+p[0], +p[1] - 1, +p[2]);
+        dateInput.value = isoStr;
+
+        // Mon-Fri 9AM-6PM, Sat 9AM-2PM (last slot starts an hour before closing)
+        var last = selected.getDay() === 6 ? 13 : 17;
+        timeSel.innerHTML = '<option value="" selected disabled>Select a time</option>';
+        for (var h = 9; h <= last; h++) {
+          var o = document.createElement('option');
+          o.textContent = label(h);
+          timeSel.appendChild(o);
+        }
+        timeSel.disabled = false;
+        noteText.textContent = 'Selected: ' + DAYS[selected.getDay()] + ', ' + MONTHS[selected.getMonth()] + ' ' + selected.getDate() + '. Choose a time on the form.';
+        render();
+        update();
+      }
+
+      function update() {
+        submitBtn.disabled = !(selected && form.checkValidity());
+      }
+
+      prevBtn.addEventListener('click', function () { view = new Date(view.getFullYear(), view.getMonth() - 1, 1); render(); });
+      nextBtn.addEventListener('click', function () { view = new Date(view.getFullYear(), view.getMonth() + 1, 1); render(); });
+      form.addEventListener('input', update);
+      form.addEventListener('change', update);
+
+      render();
+      update();
+    })();
+  </script>
+</body>
+</html>
