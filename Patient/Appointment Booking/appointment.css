@@ -125,7 +125,7 @@ a { color: var(--blue); }
 /* ===== Hero ===== */
 .hero {
   background: var(--blue-soft);
-  min-height: 220px;
+  height: 300px;
   display: flex;
   align-items: center;
   margin-top: 2px;

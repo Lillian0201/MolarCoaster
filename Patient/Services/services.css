@@ -163,7 +163,7 @@ ul {
 /* ---------------- HERO ---------------- */
 .hero {
   background: var(--sky);
-  min-height: 300px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: space-between;
