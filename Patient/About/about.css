@@ -65,7 +65,7 @@ button {
 /* ===== Hero (identical to Services) ===== */
 .hero {
   background: #d9ebf8;
-  min-height: 300px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: space-between;
