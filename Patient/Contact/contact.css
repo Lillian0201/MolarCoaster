@@ -140,22 +140,63 @@ a { color: var(--blue); }
 .btn-primary { background: var(--blue); color: var(--white); padding: 0.85rem 1rem; width: 100%; margin-top: 0.5rem; }
 .btn-primary:hover { background: var(--navy); }
 
+/* ===== Hero (same format as Services) ===== */
 .hero {
-  display: flex;
-  align-items: center;
   background: var(--blue-soft);
-  min-height: 300px;
+  min-height: 300px;           /* same rule as Services; the photo is absolutely positioned so it can't stretch the hero */
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-top: 2px;
   overflow: hidden;
 }
-.hero-text { flex: 1 1 50%; padding: 2.5rem 2rem 2.5rem max(2rem, 8vw); align-self: center; }
-.hero h1 { margin: 0 0 0.5rem; font-size: clamp(2rem, 5vw, 2.8rem); color: var(--navy); line-height: 1.1; }
-.hero p { margin: 0; font-size: 0.95rem; }
-.hero-img {
-  flex: 1 1 40%;
+
+.hero-text {
+  padding: 46px 24px 40px clamp(24px, 6vw, 90px);
+  flex: 1;
+  align-self: center;
+}
+
+.hero-text h1 {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 5vw, 58px);
+  letter-spacing: -1px;
+  color: #0b2e6e;
+  line-height: 1.1;
+}
+
+.hero-text p {
+  margin: 14px 0 0;
+  font-size: clamp(16px, 2vw, 20px);
+  letter-spacing: 1px;
+  font-weight: 300;
+  color: #0b2e6e;
+}
+
+.hero-image {
+  position: relative;
+  width: min(628px, 45%);
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #e7b4bb, #bfd9f5);
+}
+
+.hero-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  width: 40%;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 35%);
-          mask-image: linear-gradient(to right, transparent, #000 35%);
+  display: block;
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(36, 85, 190, 0) 78%, rgba(36, 85, 190, 0.9) 100%);
+  pointer-events: none;
 }
 
 .container { max-width: 1000px; margin: 2rem auto 0; padding: 0 1.25rem; }
@@ -249,9 +290,7 @@ a { color: var(--blue); }
   .grid-two { grid-template-columns: 1fr; }
   .map-wrap { min-height: 320px; }
   .form-card { max-width: none; }
-  .hero { flex-direction: column; }
-  .hero-text { padding: 2rem 1.25rem; }
-  .hero-img { width: 100%; height: 180px; -webkit-mask-image: none; mask-image: none; }
+  .hero-image { width: 40%; }
 }
 
 /* Large phones */
@@ -260,6 +299,9 @@ a { color: var(--blue); }
   .site-header { position: static; }
   .main-nav a { padding: 8px 0; }
   .site-footer { font-size: 15px; }
+  .hero { flex-direction: column; height: auto; }
+  .hero-text { padding: 30px 24px; align-self: auto; }
+  .hero-image { width: 100%; height: 180px; }
 }
 
 /* Phones */
@@ -285,7 +327,7 @@ a { color: var(--blue); }
   .logo-text .sub { font-size: 10px; letter-spacing: 2px; margin-left: 20px; }
   .main-nav ul { gap: 4px 14px; }
   .main-nav a { font-size: 14px; letter-spacing: .5px; }
-  .hero-img { height: 140px; }
+  .hero-text h1 { font-size: 30px; }
   .card { padding: 1rem; }
 }
 
@@ -293,6 +335,7 @@ a { color: var(--blue); }
    Header, navigation and footer - same as Home_Style.css
    ========================================================== */
 .site-header {
+  line-height: normal;         /* same header height as Services */
   min-height: 96px;
   height: auto;
   gap: 22px;
