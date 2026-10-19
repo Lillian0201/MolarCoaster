@@ -1,4 +1,6 @@
+.vscode/
+*.json
+admin/
 node_modules/
 dist/
-test-results/
 .env
