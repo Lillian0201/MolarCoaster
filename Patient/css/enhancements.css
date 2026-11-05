@@ -1,0 +1,69 @@
+/* Styles for the JavaScript features: form status messages,
+   booking confirmation, booked time slots and the FAQ accordion. */
+
+.form-status {
+  margin: 14px 0 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.form-status:not(:empty) {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid;
+}
+.form-status.is-success { color: #1d5e32; background: #e6f7ec; border-color: #9fd8b2; }
+.form-status.is-error   { color: #8a1f14; background: #fdeceb; border-color: #f1aaa3; }
+.form-status.is-info    { color: #123a6b; background: #eaf6ff; border-color: #b7d3f6; }
+
+.field-error {
+  display: block;
+  margin-top: 4px;
+  font-size: 12.5px;
+  color: #d93025;
+}
+input.has-error, select.has-error { border-color: #d93025 !important; }
+
+button[aria-busy="true"] { opacity: .7; cursor: progress; }
+
+/* Booking confirmation */
+.confirm-box { text-align: left; }
+.confirm-box h2 { margin-bottom: 10px; }
+.confirm-box dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 16px;
+  margin: 16px 0 22px;
+  font-size: 15px;
+}
+.confirm-box dt { font-weight: 600; color: #0c3b78; }
+.confirm-box dd { margin: 0; }
+.confirm-box .btn-submit { margin-top: 0; }
+
+/* Time slots that are already taken */
+.slots-note.is-full { color: #d93025; }
+
+/* FAQ accordion (About page) */
+.faq-card .faq-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.faq-card .faq-toggle::after {
+  content: "+";
+  flex: none;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.faq-card .faq-toggle[aria-expanded="true"]::after { content: "\2212"; }
+.faq-card .faq-answer { margin-top: 10px; }
+.faq-card .faq-answer[hidden] { display: none; }
