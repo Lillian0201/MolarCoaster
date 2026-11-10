@@ -9,19 +9,20 @@
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#overview" aria-label="MolarCoaster admin overview">
+      <a class="brand" href="index.html" aria-label="MolarCoaster admin overview">
         <span class="brand-mark" aria-hidden="true">M</span>
         <span><strong>MolarCoaster</strong><small>CLINIC ADMIN</small></span>
       </a>
       <nav class="main-nav" aria-label="Admin navigation">
-        <a class="active" href="#overview">Overview</a>
-        <a href="#patients">Patient Directory</a>
-        <a href="#settings">Clinic Settings</a>
+        <a class="active" href="index.html" aria-current="page">Overview</a>
+        <a href="patients.html">Patient Directory</a>
+        <a href="settings.html">Clinic Settings</a>
       </nav>
       <div class="top-actions">
         <a class="outline-button" href="/customer/Appointment%20Booking/appointment.html">Patient booking page</a>
         <span class="clinic-status"><i></i> Clinic open</span>
-        <span class="avatar" aria-label="Admin account">AD</span>
+        <span class="avatar" aria-hidden="true">AD</span>
+        <a class="sign-out-link" href="login.html">Sign out</a>
       </div>
     </header>
 
@@ -127,7 +128,7 @@
             <div class="panel-heading compact"><div><p class="eyebrow">2 PATIENTS</p><h2 id="waitlist-heading">Waiting list</h2></div><span class="wait-icon" aria-hidden="true">◷</span></div>
             <div class="wait-row"><span class="patient-avatar peach">RG</span><div><strong>Rafael Gomez</strong><small>Crown Recementation</small></div><span class="priority">#1</span></div>
             <div class="wait-row"><span class="patient-avatar lilac">EM</span><div><strong>Evelyn Mercado</strong><small>Emergency Broken Wire</small></div><span class="priority">#2</span></div>
-            <a class="text-link" href="#patients">Open patient directory <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="patients.html">Open patient directory <span aria-hidden="true">→</span></a>
           </section>
         </aside>
       </div>
@@ -135,7 +136,7 @@
       <section class="panel patients-panel" id="patients" aria-labelledby="patients-heading">
         <div class="panel-heading patient-heading">
           <div><p class="eyebrow">YOUR CLINIC</p><h2 id="patients-heading">Recent patients</h2></div>
-          <a class="outline-button" href="#patients-table">View directory</a>
+          <a class="outline-button" href="patients.html">View directory</a>
         </div>
         <div class="table-wrap">
           <table id="patients-table">
@@ -149,13 +150,7 @@
         </div>
       </section>
 
-      <section class="panel settings-panel" id="settings" aria-labelledby="settings-heading">
-        <p class="eyebrow">DEMO INFORMATION</p>
-        <h2 id="settings-heading">Clinic settings</h2>
-        <p class="muted">MolarCoaster Dental Clinic · Monday–Saturday, 8:30 AM–6:00 PM · +63 912 345 6789</p>
-      </section>
-
-      <footer>Admin dashboard demo · Sample information only · <a href="/">Back to site chooser</a></footer>
+      <footer>Admin dashboard demo · Sample information only · <a href="login.html">Sign out</a> · <a href="/">Back to site chooser</a></footer>
     </main>
   </body>
 </html>

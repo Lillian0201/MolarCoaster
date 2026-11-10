@@ -28,6 +28,8 @@ a { color: inherit; }
 .clinic-status { display: inline-flex; align-items: center; gap: 7px; color: #3b7860; font-size: .76rem; font-weight: 700; white-space: nowrap; }
 .clinic-status i { width: 8px; height: 8px; border-radius: 50%; background: #38ad7a; box-shadow: 0 0 0 3px #e6f6ed; }
 .avatar { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid #d8e6fa; border-radius: 50%; background: #eef4fe; color: #3764a0; font-size: .72rem; font-weight: 800; }
+.sign-out-link { color: #718096; font-size: .74rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.sign-out-link:hover { color: #b34d4d; text-decoration: underline; }
 .page { width: min(100% - 48px, 1370px); margin: 0 auto; padding: 34px 0 30px; }
 .welcome-row { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 24px; }
 .eyebrow { margin: 0 0 8px; color: #7d8aa0; font-size: .66rem; font-weight: 800; letter-spacing: .13em; }
@@ -103,10 +105,53 @@ td:first-child { display: flex; align-items: center; gap: 10px; }
 .patient-name strong { color: #35435a; font-size: .75rem; }
 .patient-name small { color: #99a3b1; font-size: .64rem; }
 td .balance { color: #b96849; font-weight: 750; }
-.settings-panel { margin-top: 18px; padding: 20px 21px; scroll-margin-top: 95px; }
-.patients-panel { scroll-margin-top: 95px; }
+.settings-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: start; gap: 18px; }
+.settings-card { padding: 21px; }
+.settings-card-heading { margin-bottom: 18px; }
+.settings-icon { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 11px; background: #edf4ff; color: #3474c3; }
+.details-list { margin: 0; }
+.details-list > div { padding: 15px 0; border-top: 1px solid #eef0f4; }
+.details-list dt { margin-bottom: 6px; color: #8a95a6; font-size: .71rem; }
+.details-list dd { margin: 0; color: #34425a; font-size: .85rem; font-weight: 700; overflow-wrap: anywhere; }
+.hours-list > div { display: grid; min-height: 48px; grid-template-columns: minmax(90px, 1fr) 68px minmax(130px, auto); align-items: center; gap: 12px; border-top: 1px solid #eef0f4; font-size: .75rem; }
+.hours-list strong { color: #34425a; }
+.hours-list time { color: #69778d; text-align: right; white-space: nowrap; }
+.hours-open, .hours-closed { width: max-content; border-radius: 999px; padding: 4px 8px; font-size: .63rem; font-weight: 750; }
+.hours-open { background: #eaf7ef; color: #458263; }
+.hours-closed { background: #f1f3f6; color: #788396; }
+.settings-note { display: flex; grid-column: 1 / -1; gap: 12px; border: 1px solid #dfeafa; border-radius: 13px; background: #f1f6fd; padding: 16px 18px; color: #4774aa; }
+.settings-note > span { font-size: 1.1rem; }
+.settings-note p { margin: 0; color: #63748c; font-size: .78rem; line-height: 1.6; }
+.settings-note strong { color: #3e6392; }
+.directory-panel { overflow: hidden; }
+.directory-tools { display: flex; align-items: center; gap: 14px; padding: 0 21px 16px; }
+.directory-tools .muted { font-size: .75rem; }
+.search-field { display: flex; width: min(100%, 340px); min-height: 40px; align-items: center; gap: 9px; border: 1px solid #e1e6ee; border-radius: 10px; background: #fafbfd; padding: 0 12px; color: #8b97a8; font-size: 1.25rem; }
+.search-field input { width: 100%; border: 0; outline: 0; background: transparent; color: #34425a; font: inherit; font-size: .78rem; }
+.search-field input::placeholder { color: #98a2b1; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+.directory-panel th, .directory-panel td { padding-inline: 21px; }
 footer { padding: 25px 0 0; color: #9aa4b2; font-size: .68rem; text-align: center; }
 footer a { color: #5e7da7; }
+
+.login-page { display: grid; min-height: 100vh; place-items: center; background: radial-gradient(ellipse at 18% 18%, #dcecff 0, transparent 38%), radial-gradient(ellipse at 82% 86%, #e8f4ec 0, transparent 34%), #f5f7fb; padding: 32px 18px; }
+.login-layout { display: grid; width: min(100%, 440px); justify-items: center; gap: 20px; }
+.login-brand { justify-self: center; }
+.login-card { width: 100%; border: 1px solid #e3eaf3; border-radius: 20px; background: #fff; padding: 34px clamp(22px, 6vw, 42px); box-shadow: 0 18px 55px #18396012; }
+.login-emblem { display: grid; width: 48px; height: 48px; place-items: center; margin: 0 auto 20px; border: 1px solid #dce9fa; border-radius: 15px; background: #edf4ff; color: #3474c3; font-size: 1.4rem; }
+.login-card > .eyebrow, .login-card h1, .login-intro { text-align: center; }
+.login-card > .eyebrow { margin-bottom: 7px; }
+.login-card h1 { margin-bottom: 8px; font-size: 1.8rem; }
+.login-intro { margin-bottom: 25px; line-height: 1.5; }
+.login-form { display: grid; gap: 10px; }
+.login-form label { margin-top: 7px; color: #3d4b62; font-size: .78rem; font-weight: 750; }
+.login-form input { width: 100%; min-height: 45px; border: 1px solid #dce3ee; border-radius: 10px; background: #fbfcfe; padding: 0 12px; color: #28374e; font: inherit; font-size: .82rem; }
+.login-form input:focus { border-color: #5890d1; outline: 3px solid #e1edfc; }
+.login-submit { width: 100%; margin-top: 12px; font: inherit; cursor: pointer; }
+.login-demo-note { margin: 19px 0 0; border-radius: 10px; background: #fff8e9; padding: 12px; color: #816b43; font-size: .7rem; line-height: 1.55; }
+.login-demo-note strong { color: #765a25; }
+.login-back { color: #62728a; font-size: .77rem; text-decoration: none; }
+.login-back:hover { color: #2464b3; text-decoration: underline; }
 
 @media (max-width: 1050px) {
   .topbar { flex-wrap: wrap; gap: 0 22px; padding: 12px 24px 0; }
@@ -120,12 +165,16 @@ footer a { color: #5e7da7; }
   .brand { margin-right: auto; }
   .top-actions { margin-left: 0; }
   .top-actions .outline-button { display: none; }
+  .top-actions { gap: 9px; }
+  .sign-out-link { font-size: .7rem; }
   .main-nav { overflow-x: auto; }
   .page { width: min(100% - 28px, 600px); padding-top: 25px; }
   .welcome-row { align-items: start; flex-direction: column; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .stat-card { min-height: 143px; padding: 15px; }
   .content-grid { grid-template-columns: 1fr; }
+  .settings-grid { grid-template-columns: 1fr; }
+  .settings-note { grid-column: auto; }
 }
 @media (max-width: 480px) {
   .clinic-status { display: none; }
@@ -135,4 +184,8 @@ footer a { color: #5e7da7; }
   .schedule-panel { padding-inline: 15px; }
   .chair-panel, .waitlist-panel { padding-inline: 16px; }
   .stat-card > strong { font-size: 1.45rem; }
+  .directory-tools { align-items: stretch; flex-direction: column; }
+  .search-field { width: 100%; }
+  .hours-list > div { grid-template-columns: minmax(70px, 1fr) 62px minmax(110px, auto); gap: 7px; font-size: .68rem; }
+  .settings-card { padding: 16px; }
 }

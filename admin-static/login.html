@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="MolarCoaster Dental Clinic admin demo sign in" />
+    <title>Admin Sign In | MolarCoaster</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="login-page">
+    <main class="login-layout">
+      <a class="brand login-brand" href="/" aria-label="Back to MolarCoaster site chooser">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span><strong>MolarCoaster</strong><small>DENTAL CLINIC</small></span>
+      </a>
+
+      <section class="login-card" aria-labelledby="login-title">
+        <div class="login-emblem" aria-hidden="true">✚</div>
+        <p class="eyebrow">CLINIC ADMINISTRATION</p>
+        <h1 id="login-title">Welcome back</h1>
+        <p class="muted login-intro">Sign in to view the clinic dashboard demo.</p>
+
+        <form class="login-form" action="index.html" method="get">
+          <label for="username">Username</label>
+          <input id="username" type="text" autocomplete="username" placeholder="Enter your username" required />
+
+          <label for="password">Password</label>
+          <input id="password" type="password" autocomplete="current-password" placeholder="Enter your password" required />
+
+          <button class="primary-button login-submit" type="submit">Sign in</button>
+        </form>
+
+        <p class="login-demo-note"><strong>Demo only:</strong> HTML and CSS cannot verify credentials. Any non-empty username and password will continue to the sample dashboard. These fields are not submitted; do not enter real credentials.</p>
+      </section>
+
+      <a class="login-back" href="/">← Back to site chooser</a>
+    </main>
+  </body>
+</html>

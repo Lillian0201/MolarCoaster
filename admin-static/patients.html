@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="MolarCoaster Dental Clinic sample patient directory" />
+    <title>Patient Directory | MolarCoaster Admin</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="MolarCoaster admin overview">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span><strong>MolarCoaster</strong><small>CLINIC ADMIN</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Admin navigation">
+        <a href="index.html">Overview</a>
+        <a class="active" href="patients.html" aria-current="page">Patient Directory</a>
+        <a href="settings.html">Clinic Settings</a>
+      </nav>
+      <div class="top-actions">
+        <a class="outline-button" href="/customer/Appointment%20Booking/appointment.html">Patient booking page</a>
+        <span class="clinic-status"><i></i> Clinic open</span>
+        <span class="avatar" aria-hidden="true">AD</span>
+        <a class="sign-out-link" href="login.html">Sign out</a>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="welcome-row">
+        <div>
+          <p class="eyebrow">YOUR CLINIC</p>
+          <h1>Patient Directory</h1>
+          <p class="muted">A sample overview of patients and their upcoming visits.</p>
+        </div>
+        <a class="primary-button" href="index.html">←&nbsp; Back to overview</a>
+      </section>
+
+      <section class="stats directory-summary" aria-label="Patient summary">
+        <article class="stat-card"><span class="stat-label">Total patients</span><strong>248</strong><span class="stat-foot">Sample clinic records</span></article>
+        <article class="stat-card"><span class="stat-label">Active patients</span><strong>216</strong><span class="stat-foot">Currently receiving care</span></article>
+        <article class="stat-card"><span class="stat-label">Visits this week</span><strong>32</strong><span class="stat-foot">Scheduled appointments</span></article>
+        <article class="stat-card"><span class="stat-label">Balances due</span><strong>9</strong><span class="stat-foot">Accounts need follow-up</span></article>
+      </section>
+
+      <section class="panel directory-panel" aria-labelledby="directory-heading">
+        <div class="panel-heading patient-heading">
+          <div><p class="eyebrow">PATIENT RECORDS</p><h2 id="directory-heading">All patients</h2></div>
+          <span class="quiet-pill">Showing sample records</span>
+        </div>
+        <div class="directory-tools">
+          <label class="search-field">
+            <span class="visually-hidden">Search patient list (visual demo only)</span>
+            <span aria-hidden="true">⌕</span>
+            <input type="search" placeholder="Search patients" />
+          </label>
+          <span class="muted">Search and filters are display examples only.</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Patient</th><th>Status</th><th>Next visit</th><th>Practitioner</th><th>Balance</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="patient-avatar blue-avatar">MC</span><span class="patient-name"><strong>Mikaela Chen</strong><small>ID P-1001 · +63 917 555 0123</small></span></td><td><span class="badge in-chair">In chair</span></td><td>Nov 10, 2026</td><td>Dr. Sarah Jenkins</td><td class="balance">₱2,590</td></tr>
+              <tr><td><span class="patient-avatar peach">PT</span><span class="patient-name"><strong>Patricia Tan</strong><small>ID P-1002 · +63 917 555 0134</small></span></td><td><span class="badge completed">Active</span></td><td>Nov 18, 2026</td><td>Dr. Paolo Reyes</td><td>₱0</td></tr>
+              <tr><td><span class="patient-avatar lilac">HL</span><span class="patient-name"><strong>Hannah Lim</strong><small>ID P-1003 · +63 917 555 0145</small></span></td><td><span class="badge confirmed">Active</span></td><td>Nov 21, 2026</td><td>Dr. Sarah Jenkins</td><td class="balance">₱1,200</td></tr>
+              <tr><td><span class="patient-avatar peach">GR</span><span class="patient-name"><strong>Gabriel Romero</strong><small>ID P-1004 · +63 917 555 0162</small></span></td><td><span class="badge checked-in">Checked in</span></td><td>Nov 10, 2026</td><td>Dr. Sarah Jenkins</td><td>₱0</td></tr>
+              <tr><td><span class="patient-avatar blue-avatar">LC</span><span class="patient-name"><strong>Leo Valenzuela</strong><small>ID P-1005 · +63 917 555 0191</small></span></td><td><span class="badge completed">Active</span></td><td>Nov 25, 2026</td><td>Dr. Paolo Reyes</td><td class="balance">₱850</td></tr>
+              <tr><td><span class="patient-avatar lilac">DO</span><span class="patient-name"><strong>Dominic Cruz</strong><small>ID P-1006 · +63 917 555 0184</small></span></td><td><span class="badge confirmed">Active</span></td><td>Dec 02, 2026</td><td>Dr. Paolo Reyes</td><td>₱0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer>Admin dashboard demo · Sample information only · <a href="login.html">Sign out</a> · <a href="/">Back to site chooser</a></footer>
+    </main>
+  </body>
+</html>
