@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="MolarCoaster Dental Clinic static admin dashboard demo" />
+    <title>Clinic Overview | MolarCoaster Admin</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#overview" aria-label="MolarCoaster admin overview">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span><strong>MolarCoaster</strong><small>CLINIC ADMIN</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Admin navigation">
+        <a class="active" href="#overview">Overview</a>
+        <a href="#patients">Patient Directory</a>
+        <a href="#settings">Clinic Settings</a>
+      </nav>
+      <div class="top-actions">
+        <a class="outline-button" href="/customer/Appointment%20Booking/appointment.html">Patient booking page</a>
+        <span class="clinic-status"><i></i> Clinic open</span>
+        <span class="avatar" aria-label="Admin account">AD</span>
+      </div>
+    </header>
+
+    <main class="page" id="overview">
+      <section class="welcome-row">
+        <div>
+          <p class="eyebrow">TUESDAY, NOVEMBER 10</p>
+          <h1>Clinic overview</h1>
+          <p class="muted">Here’s what’s happening at your clinic today.</p>
+        </div>
+        <a class="primary-button" href="/customer/Appointment%20Booking/appointment.html">＋&nbsp; Book new appointment</a>
+      </section>
+
+      <section class="stats" aria-label="Today's clinic summary">
+        <article class="stat-card">
+          <span class="stat-icon blue" aria-hidden="true">▦</span>
+          <span class="stat-label">Appointments today</span>
+          <strong>14</strong>
+          <span class="stat-foot"><b>10 confirmed</b> · 2 in progress</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon green" aria-hidden="true">✓</span>
+          <span class="stat-label">Checked in</span>
+          <strong>4 <small>/ 14</small></strong>
+          <span class="stat-foot">Next patient at <b>11:00 AM</b></span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon violet" aria-hidden="true">♙</span>
+          <span class="stat-label">Active patients</span>
+          <strong>248</strong>
+          <span class="stat-foot"><b>12 new</b> this month</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon amber" aria-hidden="true">₱</span>
+          <span class="stat-label">Outstanding balance</span>
+          <strong>₱18,450</strong>
+          <span class="stat-foot">Across <b>9 patient accounts</b></span>
+        </article>
+      </section>
+
+      <div class="content-grid">
+        <section class="panel schedule-panel" aria-labelledby="schedule-heading">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">TUESDAY, NOVEMBER 10, 2026</p>
+              <h2 id="schedule-heading">Today’s schedule</h2>
+            </div>
+            <span class="quiet-pill">14 appointments</span>
+          </div>
+          <div class="schedule-list">
+            <article class="appointment">
+              <time>08:30<small>AM</small></time>
+              <span class="timeline-dot done"></span>
+              <div class="appointment-info"><strong>Clara Montes</strong><span>Deep Scaling &amp; Polish · Dr. Paolo Reyes</span></div>
+              <span class="badge completed">Completed</span>
+            </article>
+            <article class="appointment">
+              <time>09:30<small>AM</small></time>
+              <span class="timeline-dot progress"></span>
+              <div class="appointment-info"><strong>Mikaela Chen</strong><span>Full Periodontal Therapy · Dr. Paolo Reyes</span></div>
+              <span class="badge in-chair">In chair</span>
+            </article>
+            <article class="appointment">
+              <time>09:45<small>AM</small></time>
+              <span class="timeline-dot checked"></span>
+              <div class="appointment-info"><strong>Gabriel Romero</strong><span>Orthodontic Adjustment · Dr. Sarah Jenkins</span></div>
+              <span class="badge checked-in">Checked in</span>
+            </article>
+            <article class="appointment">
+              <time>11:00<small>AM</small></time>
+              <span class="timeline-dot confirmed"></span>
+              <div class="appointment-info"><strong>Patricia Tan</strong><span>Dental Prophylaxis &amp; Sealant · Dr. Paolo Reyes</span></div>
+              <span class="badge confirmed">Confirmed</span>
+            </article>
+            <article class="appointment">
+              <time>01:00<small>PM</small></time>
+              <span class="timeline-dot confirmed"></span>
+              <div class="appointment-info"><strong>Arthur Pendelton</strong><span>Root Canal Therapy · Dr. Paolo Reyes</span></div>
+              <span class="badge confirmed">Confirmed</span>
+            </article>
+            <article class="appointment">
+              <time>02:30<small>PM</small></time>
+              <span class="timeline-dot confirmed"></span>
+              <div class="appointment-info"><strong>Hannah Lim</strong><span>Composite Aesthetic Bonding · Dr. Sarah Jenkins</span></div>
+              <span class="badge confirmed">Confirmed</span>
+            </article>
+          </div>
+          <a class="text-link" href="#schedule-heading">View full schedule <span aria-hidden="true">→</span></a>
+        </section>
+
+        <aside class="side-column">
+          <section class="panel chair-panel" aria-labelledby="chair-heading">
+            <div class="panel-heading compact">
+              <div><p class="eyebrow">LIVE STATUS</p><h2 id="chair-heading">Treatment chairs</h2></div>
+              <span class="quiet-pill">3 total</span>
+            </div>
+            <div class="chair-row"><span class="chair-icon">01</span><div><strong>Chair #1</strong><small>Hygiene · Op Room A</small></div><span class="chair-state busy">In use</span></div>
+            <div class="chair-row"><span class="chair-icon">02</span><div><strong>Chair #2</strong><small>Ortho &amp; Pediatric · Room B</small></div><span class="chair-state busy">In use</span></div>
+            <div class="chair-row"><span class="chair-icon">03</span><div><strong>Chair #3</strong><small>Surgical · Op Suite C</small></div><span class="chair-state free">Available</span></div>
+          </section>
+
+          <section class="panel waitlist-panel" aria-labelledby="waitlist-heading">
+            <div class="panel-heading compact"><div><p class="eyebrow">2 PATIENTS</p><h2 id="waitlist-heading">Waiting list</h2></div><span class="wait-icon" aria-hidden="true">◷</span></div>
+            <div class="wait-row"><span class="patient-avatar peach">RG</span><div><strong>Rafael Gomez</strong><small>Crown Recementation</small></div><span class="priority">#1</span></div>
+            <div class="wait-row"><span class="patient-avatar lilac">EM</span><div><strong>Evelyn Mercado</strong><small>Emergency Broken Wire</small></div><span class="priority">#2</span></div>
+            <a class="text-link" href="#patients">Open patient directory <span aria-hidden="true">→</span></a>
+          </section>
+        </aside>
+      </div>
+
+      <section class="panel patients-panel" id="patients" aria-labelledby="patients-heading">
+        <div class="panel-heading patient-heading">
+          <div><p class="eyebrow">YOUR CLINIC</p><h2 id="patients-heading">Recent patients</h2></div>
+          <a class="outline-button" href="#patients-table">View directory</a>
+        </div>
+        <div class="table-wrap">
+          <table id="patients-table">
+            <thead><tr><th>Patient</th><th>Status</th><th>Next visit</th><th>Practitioner</th><th>Balance</th></tr></thead>
+            <tbody>
+              <tr><td><span class="patient-avatar blue-avatar">MC</span><span class="patient-name"><strong>Mikaela Chen</strong><small>ID P-1001</small></span></td><td><span class="badge in-chair">In chair</span></td><td>Nov 10, 2026</td><td>Dr. Sarah Jenkins</td><td class="balance">₱2,590</td></tr>
+              <tr><td><span class="patient-avatar peach">PT</span><span class="patient-name"><strong>Patricia Tan</strong><small>ID P-1002</small></span></td><td><span class="badge completed">Active</span></td><td>Nov 18, 2026</td><td>Dr. Paolo Reyes</td><td>₱0</td></tr>
+              <tr><td><span class="patient-avatar lilac">HL</span><span class="patient-name"><strong>Hannah Lim</strong><small>ID P-1003</small></span></td><td><span class="badge confirmed">Active</span></td><td>Nov 21, 2026</td><td>Dr. Sarah Jenkins</td><td class="balance">₱1,200</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel settings-panel" id="settings" aria-labelledby="settings-heading">
+        <p class="eyebrow">DEMO INFORMATION</p>
+        <h2 id="settings-heading">Clinic settings</h2>
+        <p class="muted">MolarCoaster Dental Clinic · Monday–Saturday, 8:30 AM–6:00 PM · +63 912 345 6789</p>
+      </section>
+
+      <footer>Admin dashboard demo · Sample information only · <a href="/">Back to site chooser</a></footer>
+    </main>
+  </body>
+</html>
