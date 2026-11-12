@@ -8,31 +8,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="/Patient/css/enhancements.css">
+  <script src="/Patient/js/layout.js" defer></script>
 </head>
-<body>
+<body data-page="contact">
 
-  <header class="site-header">
-  <a href="/Patient/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
-    <img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo" />
-    <span class="logo-text">
-      <span class="brand">MolarCoaster</span>
-      <span class="sub">DENTAL CLINIC</span>
-    </span>
-  </a>
-
-  <input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle menu" />
-  <label for="menu-check" class="menu-toggle"></label>
-
-  <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-    <ul>
-      <li><a href="/Patient/Home%20Page/home.html">Home</a></li>
-      <li><a href="/Patient/Appointment%20Booking/appointment.html">Appointments</a></li>
-      <li><a href="/Patient/About/about.html">About Us</a></li>
-      <li><a href="/Patient/Services/services.html">Services</a></li>
-      <li><a href="/Patient/Contact/contact.html" class="active" aria-current="page">Contact Us</a></li>
-    </ul>
-  </nav>
-</header>
+  <header id="site-header" class="site-header"></header>
 
   <main>
     <section class="hero">
@@ -97,7 +78,7 @@
 
       <section class="card form-card" aria-labelledby="form-title">
         <h2 id="form-title">Send Us a Message</h2>
-        <form action="send_message.php" method="post">
+        <form id="contact-form" action="/Patient/api/send_message.php" method="post">
           <label for="full-name">Full Name <span class="req" aria-hidden="true">*</span></label>
           <input type="text" id="full-name" name="full_name" placeholder="Enter your Full Name" autocomplete="name" required>
 
@@ -109,14 +90,14 @@
           <input type="email" id="email" name="email" placeholder="Enter your Email Address" autocomplete="email">
 
           <button type="submit" class="btn btn-primary">Submit Request</button>
+          <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
         </form>
       </section>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
-  </footer>
+  <footer id="site-footer" class="site-footer"></footer>
 
+  <script src="contact.js"></script>
 </body>
 </html>

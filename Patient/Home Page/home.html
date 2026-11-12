@@ -8,34 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="Home_Style.css">
+  <script src="/Patient/js/layout.js" defer></script>
 </head>
-<body>
+<body data-page="home">
 
- <header class="site-header">
-  <a href="/Patient/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
-    <img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo" />
-    <span class="logo-text">
-      <span class="brand">MolarCoaster</span>
-      <span class="sub">DENTAL CLINIC</span>
-    </span>
-  </a>
-
-  <input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle menu" />
-  <label for="menu-check" class="menu-toggle"></label>
-
-  <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-    <ul>
-      <li><a href="/Patient/Home%20Page/home.html" class="active" aria-current="page">Home</a></li>
-      <li><a href="/Patient/Appointment%20Booking/appointment.html">Appointments</a></li>
-      <li><a href="/Patient/About/about.html">About Us</a></li>
-      <li><a href="/Patient/Services/services.html">Services</a></li>
-      <li><a href="/Patient/Contact/contact.html">Contact Us</a></li>
-    </ul>
-  </nav>
-</header>
-
-
-  </header>
+  <header id="site-header" class="site-header"></header>
 
   <main>
     <!-- ===== Hero image ===== -->
@@ -45,12 +22,12 @@
         <div class="hero-content">
           <h1>Gentle dental care for the whole family</h1>
           <p>Modern treatment, a friendly team and a calm, comfortable clinic in Manila.</p>
-          <a class="btn-book" href="/Patient/Appointment Booking/appointment.html">Book an Appointment</a>
+          <a class="btn-book" href="/Patient/Appointment%20Booking/appointment.html">Book an Appointment</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== Trust strip (uses facts already on your Contact and Services pages) ===== -->
+    <!-- ===== Trust strip ===== -->
     <section class="trust" aria-label="Why patients choose us">
       <ul class="trust-list">
         <li><strong>6 days a week</strong><span>Mon&ndash;Sat appointments</span></li>
@@ -137,10 +114,7 @@
     </section>
   </main>
 
-  <!-- ===== Footer ===== -->
-  <footer class="site-footer">
-    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
-  </footer>
+  <footer id="site-footer" class="site-footer"></footer>
 
 </body>
 </html>

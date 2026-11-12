@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Dental Services | MolarCoaster Dental Clinic</title>
   <link rel="stylesheet" href="services.css" />
+  <script src="/Patient/js/layout.js" defer></script>
 </head>
-<body>
+<body data-page="services">
 
   <!-- Reusable inline icons -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -43,13 +44,13 @@
       <li><a href="/Patient/Appointment%20Booking/appointment.html">Appointments</a></li>
       <li><a href="/Patient/About/about.html">About Us</a></li>
       <li><a href="/Patient/Services/services.html" class="active" aria-current="page">Services</a></li>
+      <li><a href="/Patient/Resources/resources.html">Resources</a></li>
       <li><a href="/Patient/Contact/contact.html">Contact Us</a></li>
     </ul>
   </nav>
 </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-text">
         <h1>Our Dental Service</h1>
@@ -60,7 +61,6 @@
       </div>
     </section>
 
-    <!-- SERVICE CARDS -->
     <section class="services" aria-label="Dental services">
       <div class="services-grid">
 
@@ -108,9 +108,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
-  </footer>
+  <footer id="site-footer" class="site-footer"></footer>
 
 </body>
 </html>

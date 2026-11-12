@@ -8,31 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="/Patient/css/enhancements.css" />
+    <script src="/Patient/js/layout.js" defer></script>
   </head>
-  <body>
+  <body data-page="about">
 
-  <header class="site-header">
-  <a href="/Patient/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
-    <img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo" />
-    <span class="logo-text">
-      <span class="brand">MolarCoaster</span>
-      <span class="sub">DENTAL CLINIC</span>
-    </span>
-  </a>
-
-  <input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle menu" />
-  <label for="menu-check" class="menu-toggle"></label>
-
-  <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-    <ul>
-      <li><a href="/Patient/Home%20Page/home.html">Home</a></li>
-      <li><a href="/Patient/Appointment%20Booking/appointment.html">Appointments</a></li>
-      <li><a href="/Patient/About/about.html" class="active" aria-current="page">About Us</a></li>
-      <li><a href="/Patient/Services/services.html">Services</a></li>
-      <li><a href="/Patient/Contact/contact.html">Contact Us</a></li>
-    </ul>
-  </nav>
-</header>
+  <header id="site-header" class="site-header"></header>
 
   <section class="hero">
     <div class="hero-text">
@@ -187,26 +168,15 @@
             </article>
             <article class="faq-card">
               <h3>How can I book an appointment?</h3>
-              <p><a href="/Patient/Appointment Booking/appointment.html">Go to the appointment booking page.</a></p>
+              <p><a href="/Patient/Appointment%20Booking/appointment.html">Go to the appointment booking page.</a></p>
             </article>
           </div>
         </section>
       </main>
     </div>
 
-    <footer class="site-footer">
-      <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
-    </footer>
+    <footer id="site-footer" class="site-footer"></footer>
 
-    <script>
-      document.querySelectorAll('.side-link').forEach(function (link) {
-        link.addEventListener('click', function (event) {
-          document.querySelectorAll('.side-link').forEach(function (item) {
-            item.classList.remove('active');
-          });
-          this.classList.add('active');
-        });
-      });
-    </script>
+    <script src="about.js"></script>
   </body>
 </html>

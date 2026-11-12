@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patient Resources | MolarCoaster Dental Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="resources.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a href="/Patient/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
+      <img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo">
+      <span class="logo-text">
+        <span class="brand">MolarCoaster</span>
+        <span class="sub">DENTAL CLINIC</span>
+      </span>
+    </a>
+
+    <input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle menu">
+    <label for="menu-check" class="menu-toggle"></label>
+
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="/Patient/Home%20Page/home.html">Home</a></li>
+        <li><a href="/Patient/Appointment%20Booking/appointment.html">Appointments</a></li>
+        <li><a href="/Patient/About/about.html">About Us</a></li>
+        <li><a href="/Patient/Services/services.html">Services</a></li>
+        <li><a href="/Patient/Resources/resources.html" class="active" aria-current="page">Resources</a></li>
+        <li><a href="/Patient/Contact/contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Patient Resources</h1>
+        <p class="lead">Guides to help you care for your teeth, and the forms you need before your visit, all in one
+          place.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#educational">Educational Content</a>
+          <a class="btn btn-outline" href="#forms">Downloadable Forms</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="/Patient/images/dentist_teaching_patient.jpg"
+          alt="A dental professional in a blue cap and mask showing a patient a hand mirror during a checkup">
+      </div>
+    </section>
+
+    <section class="section" id="educational" aria-labelledby="edu-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2 id="edu-title">Learn about your oral health</h2>
+            <p class="sub">Videos and trusted guides on caring for your teeth, and what to do and avoid after treatment.
+            </p>
+          </div>
+          <div class="chips" id="chips" role="group" aria-label="Filter guides">
+            <button class="chip is-on" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" data-filter="Daily care" aria-pressed="false">Daily care</button>
+            <button class="chip" data-filter="Treatments" aria-pressed="false">Treatments</button>
+            <button class="chip" data-filter="Aftercare" aria-pressed="false">Aftercare</button>
+            <button class="chip" data-filter="Kids &amp; family" aria-pressed="false">Kids &amp; family</button>
+          </div>
+        </div>
+        <div class="cards" id="cards"></div>
+        <p class="empty" id="empty" hidden>No guides in this category yet. Check back soon.</p>
+        <p class="note">These guides open on other websites. They are for general information and don't replace your
+          dentist's advice.</p>
+      </div>
+    </section>
+
+    <section class="section tint" id="forms" aria-labelledby="forms-title">
+      <div class="wrap">
+        <h2 id="forms-title">Forms to complete before your visit</h2>
+        <p class="sub">Download, fill out and bring them to your appointment. Need a hand? <a href="#">Contact us.</a>
+        </p>
+        <ul class="forms">
+          <li class="form-row">
+            <span class="pdf" aria-hidden="true">PDF</span>
+            <div class="form-info">
+              <h3>Consent for Treatment</h3>
+              <p>Your agreement to proceed with the treatment plan.</p>
+            </div>
+            <span class="meta">PDF · [file size]</span>
+            <a class="btn btn-solid" href="forms/consent-for-treatment.pdf" download>Download</a>
+          </li>
+          <li class="form-row">
+            <span class="pdf" aria-hidden="true">PDF</span>
+            <div class="form-info">
+              <h3>Parent/Guardian Consent</h3>
+              <p>Signed by a parent or legal guardian for patients under 18.</p>
+            </div>
+            <span class="meta">PDF · [file size]</span>
+            <a class="btn btn-solid" href="forms/parent-guardian-consent.pdf" download>Download</a>
+          </li>
+        </ul>
+        <p class="note">Can't print the forms? [Alternative: pick up at the clinic or request by email]</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 MolarCoaster Dental Clinic. All rights reserved</p>
+  </footer>
+
+  <script src="resources.js"></script>
+</body>
+
+</html>
