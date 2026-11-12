@@ -1,8 +1,8 @@
+
 /* Shared header and footer for all MolarCoaster pages.
    Usage:
    <body data-page="home">
    <header id="site-header" class="site-header"></header>
-   ...
    <footer id="site-footer" class="site-footer"></footer>
    <script src="/Patient/js/layout.js" defer></script>
 */
@@ -15,12 +15,13 @@
     { key: 'appointments', label: 'Appointments', href: '/Patient/Appointment%20Booking/appointment.html' },
     { key: 'about', label: 'About Us', href: '/Patient/About/about.html' },
     { key: 'services', label: 'Services', href: '/Patient/Services/services.html' },
+    { key: 'resources', label: 'Resources', href: '/Patient/Resources/resources.html' },
     { key: 'contact', label: 'Contact Us', href: '/Patient/Contact/contact.html' }
   ];
 
   var page = document.body.getAttribute('data-page') || 'home';
 
-  // Allow either "appointment" or "appointments" as the page identifier.
+  // Allow either appointment or appointments.
   if (page === 'appointment') {
     page = 'appointments';
   }
@@ -30,6 +31,7 @@
 
   /* ---------- Shared Header ---------- */
   if (header) {
+
     var navLinks = NAV.map(function (item) {
       var active = item.key === page;
 
@@ -43,17 +45,22 @@
     }).join('');
 
     header.innerHTML =
-      '<a href="/Patient/home.html" class="logo" aria-label="MolarCoaster Dental Clinic Home">' +
+
+      // Logo
+      '<a href="/Patient/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">' +
+        '<img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo">' +
         '<span class="logo-text">' +
           '<span class="brand">MolarCoaster</span>' +
           '<span class="sub">DENTAL CLINIC</span>' +
         '</span>' +
       '</a>' +
 
-      '<input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle navigation">' +
+      // Mobile menu toggle
+      '<input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle menu">' +
 
-      '<label for="menu-check" class="menu-toggle" aria-label="Toggle navigation"></label>' +
+      '<label for="menu-check" class="menu-toggle" aria-label="Toggle menu"></label>' +
 
+      // Navigation links
       '<nav class="main-nav" id="main-nav" aria-label="Main navigation">' +
         '<ul>' + navLinks + '</ul>' +
       '</nav>';
@@ -61,8 +68,11 @@
 
   /* ---------- Shared Footer ---------- */
   if (footer) {
+
     footer.innerHTML =
+
       '<div class="footer-content">' +
+
         '<div class="footer-brand">' +
           '<span class="brand">MolarCoaster</span>' +
           '<span class="sub">DENTAL CLINIC</span>' +
@@ -77,6 +87,7 @@
             }).join('') +
           '</ul>' +
         '</div>' +
+
       '</div>' +
 
       '<div class="footer-bottom">' +
