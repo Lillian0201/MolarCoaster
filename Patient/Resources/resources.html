@@ -9,33 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="resources.css">
+  <script src="/Patient/js/layout.js" defer></script>
+  <link rel="stylesheet" href="/Patient/css/enhancements.css">
 </head>
 
-<body>
+<body data-page="resources">
 
-  <header class="site-header">
-    <a href="/Patient/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
-      <img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo">
-      <span class="logo-text">
-        <span class="brand">MolarCoaster</span>
-        <span class="sub">DENTAL CLINIC</span>
-      </span>
-    </a>
-
-    <input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle menu">
-    <label for="menu-check" class="menu-toggle"></label>
-
-    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="/Patient/Home%20Page/home.html">Home</a></li>
-        <li><a href="/Patient/Appointment%20Booking/appointment.html">Appointments</a></li>
-        <li><a href="/Patient/About/about.html">About Us</a></li>
-        <li><a href="/Patient/Services/services.html">Services</a></li>
-        <li><a href="/Patient/Resources/resources.html" class="active" aria-current="page">Resources</a></li>
-        <li><a href="/Patient/Contact/contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header id="site-header" class="site-header"></header>
 
   <main id="top">
     <section class="hero">
@@ -80,7 +60,8 @@
     <section class="section tint" id="forms" aria-labelledby="forms-title">
       <div class="wrap">
         <h2 id="forms-title">Forms to complete before your visit</h2>
-        <p class="sub">Download, fill out and bring them to your appointment. Need a hand? <a href="#">Contact us.</a>
+        <p class="sub">Download, fill out and bring them to your appointment. Need a hand? 
+          <a href="/Patient/Contact/contact.html">Contact us.</a>
         </p>
         <ul class="forms">
           <li class="form-row">
@@ -107,9 +88,7 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© 2026 MolarCoaster Dental Clinic. All rights reserved</p>
-  </footer>
+  <footer id="site-footer" class="site-footer"></footer>
 
   <script src="resources.js"></script>
 </body>

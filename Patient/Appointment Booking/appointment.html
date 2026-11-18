@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="appointment.css">
   <link rel="stylesheet" href="/Patient/css/enhancements.css">
   <script src="/Patient/js/layout.js" defer></script>
-<script src="/Patient/Appointment Booking/appointment.js" defer></script>
 </head>
 <body data-page="appointments">
 
@@ -81,7 +80,7 @@
         <!-- Form -->
         <section class="card form-card" aria-labelledby="form-title">
           <h2 id="form-title">Appointment Form</h2>
-          <form id="appt-form" action="/Patient/api/book_appointment.php" method="post">
+          <form id="appt-form">
             <input type="hidden" id="appt-date" name="appointment_date">
 
             <label for="full-name">Full Name<span class="req" aria-hidden="true">*</span></label>

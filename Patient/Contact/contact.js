@@ -1,8 +1,12 @@
-/* Contact page: inline validation and fetch submit with status messages. */
+/* Contact page (DEMO, no backend): inline validation, then the message is
+   saved in this browser (localStorage) and a success message is shown.
+
+   To go live later, replace saveMessage() with a fetch() to your server
+   (e.g. POST /Patient/api/send_message.php). */
 (function () {
   'use strict';
 
-  var API = '/Patient/api/send_message.php';
+  var STORE_KEY = 'molarcoaster_demo_messages';
   var form = document.getElementById('contact-form');
   if (!form) return;
 
@@ -20,9 +24,21 @@
     statusEl.className = 'form-status' + (type ? ' is-' + type : '');
   }
 
+  function saveMessage(data) {
+    try {
+      var list = JSON.parse(localStorage.getItem(STORE_KEY) || '[]');
+      if (!Array.isArray(list)) list = [];
+      data.sent_at = new Date().toISOString();
+      list.push(data);
+      localStorage.setItem(STORE_KEY, JSON.stringify(list));
+      return true;
+    } catch (e) { return false; }
+  }
+
   function clearError(input) {
     input.classList.remove('has-error');
     input.removeAttribute('aria-invalid');
+    input.removeAttribute('aria-describedby');
     var next = input.nextElementSibling;
     if (next && next.classList.contains('field-error')) next.remove();
   }
@@ -65,34 +81,18 @@
     var payload = {};
     new FormData(form).forEach(function (v, k) { payload[k] = String(v).trim(); });
 
-    submitBtn.disabled = true;
-    submitBtn.setAttribute('aria-busy', 'true');
-    var original = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-
-    fetch(API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    })
-      .then(function (r) {
-        return r.json().catch(function () { return {}; }).then(function (data) { return { ok: r.ok, data: data }; });
-      })
-      .then(function (res) {
-        if (res.ok && res.data.success) {
-          form.reset();
-          setStatus('Thank you! Your message was sent. We will get back to you soon.', 'success');
-        } else {
-          setStatus(res.data.message || 'Something went wrong. Please try again or call us.', 'error');
-        }
-      })
-      .catch(function () {
-        setStatus('Could not reach the server. Check your connection and try again.', 'error');
-      })
-      .then(function () {
-        submitBtn.disabled = false;
-        submitBtn.removeAttribute('aria-busy');
-        submitBtn.textContent = original;
-      });
+    if (saveMessage(payload)) {
+      form.reset();
+      fields.forEach(clearError);
+      setStatus('Thank you, ' + payload.full_name + '! Your message was sent. We will get back to you soon.', 'success');
+    } else {
+      setStatus('Something went wrong. Please try again or call us.', 'error');
+    }
   });
+
+  // Handy for testing: run MolarCoasterDemo.messages() in the console.
+  window.MolarCoasterDemo = window.MolarCoasterDemo || {};
+  window.MolarCoasterDemo.messages = function () {
+    return JSON.parse(localStorage.getItem(STORE_KEY) || '[]');
+  };
 })();
