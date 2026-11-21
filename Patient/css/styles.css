@@ -1,0 +1,5416 @@
+/* ==========================================================
+   MolarCoaster Dental Clinic - styles.css
+   Combined stylesheet for every page.
+
+   Each page's rules are scoped to a body class, so pages that
+   reuse the same class names (.hero, .card, .btn ...) no longer
+   clash. Add the matching class to <body> on each page:
+
+     index / home ........ <body class="page-home">
+     Services + details .. <body class="page-services">
+     About ............... <body class="page-about">
+     Appointment ......... <body class="page-appointment">
+     Contact ............. <body class="page-contact">
+     Patient Resources ... <body class="page-resources">
+
+   The last section (ENHANCEMENTS) holds the old enhancements.css:
+   form messages, booking confirmation, FAQ accordion, shared footer and
+   the services search. It is not page-scoped and comes last, so its
+   overrides keep winning. No separate enhancements.css file is needed.
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap");
+
+/* ==========================================================
+   HOME (index)  —  from Home_Style.css
+   Applies only when <body class="page-home">
+   ========================================================== */
+/* ===== Tokens ===== */
+body.page-home {
+    --navy: #0e3a78;
+    --navy-deep: #0b2f66;
+    --royal: #1f47c9;
+    --logo-blue: #1d2f8f;
+    --yellow: #ffd84a;
+    --yellow-soft: #fdefc3;
+    --cyan: #84e1e8;
+    --cyan-border: #62c9d3;
+    --green: #4aa08c;
+    --periwinkle: #7fa8ee;
+    --sky: #c6e4fb;
+    --mist: #eef7fe;
+    --footer-text: #35598c;
+    --font-display: "Outfit", "Segoe UI", Arial, sans-serif;
+    --font-ui: "Lexend", "Segoe UI", Arial, sans-serif;
+}
+/* ===== Reset ===== */
+:where(body.page-home) *,
+:where(body.page-home) *::before,
+:where(body.page-home) *::after {
+    box-sizing: border-box;
+}
+html:has(body.page-home) {
+    -webkit-text-size-adjust: 100%;
+}
+body:where(.page-home) {
+    margin: 0;
+    font-family: var(--font-display);
+    color: var(--navy);
+    background: var(--mist);
+    line-height: 1.4;
+}
+:where(body.page-home) img,
+:where(body.page-home) svg {
+    display: block;
+    max-width: 100%;
+}
+:where(body.page-home) ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+:where(body.page-home) a {
+    color: inherit;
+    text-decoration: none;
+}
+:where(body.page-home) :focus-visible {
+    outline: 3px solid var(--royal);
+    outline-offset: 3px;
+}
+/* ===== Header (same as Services) ===== */
+:where(body.page-home) .site-header {
+    height: 128px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px 0 16px;
+    position: relative;
+    flex-wrap: wrap;
+    top: 0;
+    z-index: 20;
+}
+:where(body.page-home) .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+:where(body.page-home) .logo img {
+    height: 86px;
+    width: auto;
+}
+:where(body.page-home) .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+:where(body.page-home) .logo-text .brand {
+    font-family: "Outfit", sans-serif;
+    font-weight: 800;
+    font-size: 42px;
+    color: #0b2e6e;
+    letter-spacing: -1px;
+}
+:where(body.page-home) .logo-text .sub {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 3px;
+    color: #1b4fd8;
+    margin: 10px 0 0 42px;
+}
+:where(body.page-home) .main-nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+:where(body.page-home) .main-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+}
+:where(body.page-home) .main-nav a {
+    display: inline-block;
+    position: relative;
+    transform: none;
+    left: auto;
+    padding-bottom: 4px;
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: #1b4fd8;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+:where(body.page-home) .main-nav a:hover {
+    color: #0b2e6e;
+}
+:where(body.page-home) .main-nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 32px;
+    height: 4px;
+    border-radius: 4px;
+    background: #ffd84d;
+    transform: translateX(-50%);
+}
+:where(body.page-home) .btn-book {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: #ffd84d;
+    color: #0b2e6e;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 16px 28px;
+    border-radius: 14px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+:where(body.page-home) .btn-book svg {
+    width: 24px;
+    height: 24px;
+}
+:where(body.page-home) .btn-book:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(11, 46, 110, 0.18);
+}
+/* ===== Buttons ===== */
+:where(body.page-home) .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    color: var(--navy-deep);
+    border-radius: 14px;
+    transition: filter .2s ease;
+}
+:where(body.page-home) .btn:hover {
+    filter: brightness(.96);
+}
+:where(body.page-home) .icon-cal {
+    width: 24px;
+    height: 24px;
+    flex: none;
+}
+:where(body.page-home) .btn-cyan {
+    background: var(--cyan);
+    border: 2px solid var(--cyan-border);
+    border-radius: 8px;
+    padding: 14px 30px 14px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+    max-width: 392px;
+    margin-top: 14px;
+}
+/* ===== Hero ===== */
+:where(body.page-home) .hero img {
+    width: 100%;
+    height: clamp(280px, 47vw, 640px);
+    object-fit: cover;
+}
+/* ===== Hero overlay ===== */
+:where(body.page-home) .hero {
+    position: relative;
+}
+:where(body.page-home) .hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(11, 47, 102, .82) 0%, rgba(11, 47, 102, .55) 45%, rgba(11, 47, 102, 0) 80%);
+}
+:where(body.page-home) .hero-content {
+    max-width: 600px;
+    padding: 0 24px 0 clamp(24px, 6vw, 90px);
+    color: #fff;
+}
+:where(body.page-home) .hero-content h1 {
+    margin: 0 0 14px;
+    font-size: clamp(30px, 4.6vw, 56px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.5px;
+}
+:where(body.page-home) .hero-content p {
+    margin: 0 0 26px;
+    font-size: clamp(16px, 1.7vw, 21px);
+    line-height: 1.3;
+    font-weight: 400;
+}
+@media (prefers-reduced-motion: no-preference) {
+    :where(body.page-home) .hero-content {
+        animation: hero-in .7s ease-out both;
+    }
+    @keyframes hero-in {
+        from {
+            opacity: 0;
+            transform: translateY(14px);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+/* ===== Trust strip ===== */
+:where(body.page-home) .trust {
+    background: #fff;
+    padding: 36px 40px;
+}
+:where(body.page-home) .trust-list {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+}
+:where(body.page-home) .trust-list li + li {
+    border-left: 2px solid rgba(80, 130, 200, .25);
+}
+:where(body.page-home) .trust-list strong {
+    display: block;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--navy-deep);
+}
+:where(body.page-home) .trust-list span {
+    display: block;
+    margin-top: 4px;
+    font-family: var(--font-ui);
+    font-size: 14.5px;
+    color: var(--navy);
+}
+/* ===== Services preview ===== */
+:where(body.page-home) .svc-preview {
+    padding: 72px 40px;
+    background: #fff;
+    text-align: center;
+}
+:where(body.page-home) .svc-preview h2 {
+    margin: 0 0 8px;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--navy-deep);
+}
+:where(body.page-home) .svc-intro {
+    margin: 0 0 36px;
+    font-size: 19px;
+}
+:where(body.page-home) .svc-row {
+    max-width: 1292px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+:where(body.page-home) .svc-card {
+    flex: 1 1 190px;
+    max-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 22px 18px 18px;
+    border: 2px solid;
+    border-radius: 14px;
+    text-align: center;
+    transition: transform .25s, box-shadow .25s;
+}
+:where(body.page-home) .svc-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(11, 46, 110, .15);
+}
+:where(body.page-home) .svc-card h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+:where(body.page-home) .svc-card p {
+    margin: 0 0 12px;
+    font-size: 15px;
+    line-height: 1.3;
+}
+:where(body.page-home) .svc-more {
+    margin-top: auto;
+    font-weight: 700;
+    font-size: 14px;
+    color: #0b4fc2;
+}
+:where(body.page-home) .svc-card:hover .svc-more {
+    text-decoration: underline;
+}
+:where(body.page-home) .svc-general {
+    background: #fdf0c0;
+    border-color: #e8c53a;
+    color: #7a6420;
+}
+:where(body.page-home) .svc-surgery {
+    background: #e9fbd0;
+    border-color: #a5e05a;
+    color: #2d5a1f;
+}
+:where(body.page-home) .svc-ortho {
+    background: #c5d8fd;
+    border-color: #6aa7f5;
+    color: var(--navy);
+}
+:where(body.page-home) .svc-cosmetic {
+    background: #c8ecff;
+    border-color: #6ab4f5;
+    color: #1a4fb8;
+}
+:where(body.page-home) .svc-restorative {
+    background: #ffe1e3;
+    border-color: #f08a90;
+    color: #7a1f1f;
+}
+/* ===== About ===== */
+:where(body.page-home) .about {
+    display: grid;
+    grid-template-columns: minmax(0, 520px) minmax(0, 1fr);
+    align-items: center;
+    gap: 64px;
+    padding: 72px 110px 72px 75px;
+    background: linear-gradient(135deg, #d4e9fb 0%, #c6e4fb 100%);
+}
+:where(body.page-home) .about-photo img {
+    width: 100%;
+    aspect-ratio: 520 / 360;
+    object-fit: cover;
+    border-radius: 150px 80px 36px 130px / 120px 150px 80px 100px;
+}
+:where(body.page-home) .about-copy h1 {
+    margin: 0 0 20px;
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: var(--navy-deep);
+}
+:where(body.page-home) .about-copy p {
+    margin: 0 0 24px;
+    max-width: 580px;
+    font-size: 19px;
+    line-height: 1.22;
+    font-weight: 400;
+}
+:where(body.page-home) .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+}
+:where(body.page-home) .features li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    padding: 0 10px;
+}
+:where(body.page-home) .features li + li {
+    border-left: 2px solid rgba(80, 130, 200, .35);
+}
+:where(body.page-home) .features li + li {
+    background: none;
+}
+:where(body.page-home) .badge {
+    display: grid;
+    place-items: center;
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+}
+:where(body.page-home) .badge svg {
+    width: 74px;
+    height: 74px;
+}
+:where(body.page-home) .badge-blue {
+    background: var(--periwinkle);
+}
+:where(body.page-home) .badge-green {
+    background: var(--green);
+}
+:where(body.page-home) .badge-yellow {
+    background: var(--yellow);
+}
+:where(body.page-home) .feature-label {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 14.5px;
+    line-height: 1.25;
+    letter-spacing: .3px;
+    color: var(--navy-deep);
+    max-width: 150px;
+}
+/* ===== Call to action ===== */
+:where(body.page-home) .cta-wrap {
+    padding: 72px 40px;
+    background: var(--mist);
+}
+:where(body.page-home) .cta {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+    max-width: 1292px;
+    margin: 0 auto;
+    padding: 44px 40px 44px 70px;
+    background: var(--yellow-soft);
+    border-radius: 56px 56px 56px 56px / 40px 40px 56px 56px;
+}
+:where(body.page-home) .cta-main {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding-right: 40px;
+}
+:where(body.page-home) .cta-badge {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 157px;
+    height: 157px;
+    border-radius: 50%;
+    background: var(--yellow);
+    border: 4px solid #e8c13a;
+}
+:where(body.page-home) .cta-badge svg {
+    width: 100px;
+    height: 100px;
+}
+:where(body.page-home) .cta-text {
+    flex: 1;
+    min-width: 0;
+}
+:where(body.page-home) .cta-text h2 {
+    margin: 0 0 8px;
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    color: var(--navy-deep);
+}
+:where(body.page-home) .cta-text p {
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.2;
+    max-width: 410px;
+}
+:where(body.page-home) .cta-perks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 4px 0 4px 82px;
+    border-left: 3px solid #f0c94a;
+}
+:where(body.page-home) .cta-perks li {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-family: var(--font-ui);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--navy);
+}
+:where(body.page-home) .cta-perks svg {
+    width: 46px;
+    height: 40px;
+    flex: none;
+    margin-left: -6px;
+}
+/* ===== Footer (same as Services) ===== */
+:where(body.page-home) .site-footer {
+    background: #c4e4fd;
+    min-height: 116px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #35598c;
+    text-align: center;
+    padding: 24px 20px;
+}
+/* ===== Responsive ===== */
+/* Laptops / small desktops */
+@media (max-width: 1200px) {
+    :where(body.page-home) .site-header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 16px;
+        gap: 14px;
+        justify-content: center;
+    }
+    :where(body.page-home) .main-nav ul {
+        gap: 22px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    :where(body.page-home) .about {
+        padding: 56px 48px 64px;
+        gap: 40px;
+    }
+    :where(body.page-home) .cta {
+        padding: 40px;
+    }
+    :where(body.page-home) .cta-perks {
+        padding-left: 40px;
+    }
+}
+/* Tablets */
+@media (max-width: 900px) {
+    :where(body.page-home) .about {
+        grid-template-columns: 1fr;
+    }
+    :where(body.page-home) .about-photo {
+        max-width: 520px;
+        margin: 0 auto;
+    }
+    :where(body.page-home) .about-copy {
+        text-align: center;
+    }
+    :where(body.page-home) .about-copy p {
+        margin-inline: auto;
+    }
+    :where(body.page-home) .cta {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+    :where(body.page-home) .cta-main {
+        padding-right: 0;
+    }
+    :where(body.page-home) .cta-perks {
+        border-left: 0;
+        border-top: 3px solid #f0c94a;
+        padding: 28px 0 0;
+    }
+}
+/* Large phones */
+@media (max-width: 700px) {
+    /* a tall sticky header would cover too much of a small screen */
+    :where(body.page-home) .site-header {
+        position: static;
+    }
+    :where(body.page-home) .main-nav a {
+        padding: 8px 0;
+    }
+}
+/* Phones */
+@media (max-width: 780px) {
+    :where(body.page-home) .logo img {
+        height: 64px;
+    }
+    :where(body.page-home) .logo-text .brand {
+        font-size: 30px;
+    }
+    :where(body.page-home) .logo-text .sub {
+        font-size: 12px;
+        margin-left: 28px;
+    }
+    :where(body.page-home) .main-nav ul {
+        gap: 6px 18px;
+    }
+    :where(body.page-home) .main-nav a {
+        font-size: 15px;
+    }
+    :where(body.page-home) .btn-book {
+        font-size: 15px;
+        padding: 12px 22px;
+    }
+    :where(body.page-home) .hero img {
+        height: 240px;
+    }
+    :where(body.page-home) .about {
+        padding: 40px 20px 48px;
+    }
+    :where(body.page-home) .about-photo img {
+        border-radius: 90px 50px 24px 80px / 80px 90px 50px 60px;
+    }
+    :where(body.page-home) .about-copy p {
+        font-size: 17px;
+    }
+    :where(body.page-home) .features {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+    :where(body.page-home) .features li + li {
+        border-left: 0;
+        border-top: 2px solid rgba(80, 130, 200, .35);
+        padding-top: 28px;
+    }
+    :where(body.page-home) .cta-wrap {
+        padding: 28px 16px;
+    }
+    :where(body.page-home) .cta {
+        padding: 28px 22px;
+        border-radius: 36px;
+    }
+    :where(body.page-home) .cta-main {
+        flex-direction: column;
+        text-align: center;
+    }
+    :where(body.page-home) .cta-badge {
+        width: 120px;
+        height: 120px;
+    }
+    :where(body.page-home) .cta-badge svg {
+        width: 76px;
+        height: 76px;
+    }
+    :where(body.page-home) .cta-text h2 {
+        font-size: 34px;
+    }
+    :where(body.page-home) .cta-text p {
+        font-size: 17px;
+        margin-inline: auto;
+    }
+    :where(body.page-home) .btn-cyan {
+        max-width: none;
+        justify-content: center;
+        font-size: 16px;
+        padding: 14px 18px;
+    }
+    :where(body.page-home) .cta-perks li {
+        font-size: 16px;
+    }
+    :where(body.page-home) .site-footer {
+        font-size: 15px;
+    }
+}
+/* Very small phones (320px - 400px) */
+@media (max-width: 400px) {
+    :where(body.page-home) .logo img {
+        height: 52px;
+    }
+    :where(body.page-home) .logo-text .brand {
+        font-size: 25px;
+    }
+    :where(body.page-home) .logo-text .sub {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-left: 20px;
+    }
+    :where(body.page-home) .main-nav ul {
+        gap: 4px 14px;
+    }
+    :where(body.page-home) .main-nav a {
+        font-size: 14px;
+        letter-spacing: .5px;
+    }
+    :where(body.page-home) .about {
+        padding: 32px 16px 40px;
+    }
+    :where(body.page-home) .badge {
+        width: 100px;
+        height: 100px;
+    }
+    :where(body.page-home) .badge svg {
+        width: 64px;
+        height: 64px;
+    }
+    :where(body.page-home) .cta {
+        padding: 24px 16px;
+    }
+    :where(body.page-home) .cta-text h2 {
+        font-size: 30px;
+    }
+}
+/* ===== Responsive additions for new sections ===== */
+@media (max-width: 900px) {
+    :where(body.page-home) .trust-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    :where(body.page-home) .trust-list li:nth-child(3) {
+        border-left: 0;
+    }
+    :where(body.page-home) .trust,
+:where(body.page-home) .svc-preview,
+:where(body.page-home) .cta-wrap {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+@media (max-width: 600px) {
+    :where(body.page-home) .hero img {
+        height: 400px;
+    }
+    :where(body.page-home) .hero-overlay {
+        background: linear-gradient(180deg, rgba(11, 47, 102, .35) 0%, rgba(11, 47, 102, .8) 100%);
+        align-items: flex-end;
+        padding-bottom: 28px;
+    }
+    :where(body.page-home) .hero-content {
+        padding: 0 20px;
+    }
+    :where(body.page-home) .trust {
+        padding: 28px 16px;
+    }
+    :where(body.page-home) .trust-list strong {
+        font-size: 18px;
+    }
+    :where(body.page-home) .trust-list span {
+        font-size: 13px;
+    }
+    :where(body.page-home) .svc-preview {
+        padding: 48px 16px;
+    }
+    :where(body.page-home) .svc-card {
+        max-width: none;
+        flex-basis: 100%;
+    }
+    :where(body.page-home) .about {
+        padding-top: 48px;
+    }
+}
+@media (max-width: 400px) {
+    :where(body.page-home) .trust-list {
+        grid-template-columns: 1fr;
+    }
+    :where(body.page-home) .trust-list li + li {
+        border-left: 0;
+    }
+    :where(body.page-home) .hero-content p {
+        display: none;
+    }
+}
+/* ===== Focused layout refinements ===== */
+html:has(body.page-home) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+}
+body:where(.page-home) {
+    overflow-wrap: break-word;
+}
+:where(body.page-home) .site-header {
+    min-height: 96px;
+    height: auto;
+    gap: 22px;
+    padding: 14px clamp(16px, 2.5vw, 36px);
+}
+:where(body.page-home) .logo {
+    flex: 0 1 auto;
+    min-width: 0;
+}
+:where(body.page-home) .logo img {
+    height: clamp(54px, 5.2vw, 76px);
+}
+:where(body.page-home) .logo-text .brand {
+    font-size: clamp(25px, 2.4vw, 36px);
+    letter-spacing: -0.8px;
+    white-space: nowrap;
+}
+:where(body.page-home) .logo-text .sub {
+    font-size: clamp(10px, 1vw, 14px);
+    letter-spacing: clamp(1.5px, .2vw, 2.5px);
+    margin: 7px 0 0 clamp(12px, 2vw, 30px);
+    white-space: nowrap;
+}
+:where(body.page-home) .main-nav {
+    min-width: 0;
+}
+:where(body.page-home) .main-nav ul {
+    gap: clamp(12px, 2vw, 28px);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+:where(body.page-home) .main-nav a {
+    font-size: clamp(13px, 1.15vw, 16px);
+    letter-spacing: .2px;
+}
+:where(body.page-home) .site-header > .btn-book {
+    flex: 0 0 auto;
+    padding: 13px 18px;
+    gap: 9px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+:where(body.page-home) .hero img {
+    height: clamp(360px, 43vw, 590px);
+}
+:where(body.page-home) .hero-overlay {
+    background: linear-gradient(
+    90deg,
+    rgba(11, 47, 102, .88) 0%,
+    rgba(11, 47, 102, .66) 43%,
+    rgba(11, 47, 102, .12) 100%
+  );
+}
+:where(body.page-home) .hero-content {
+    max-width: 760px;
+    padding-right: 28px;
+}
+:where(body.page-home) .hero-content h1 {
+    max-width: 620px;
+    font-size: clamp(34px, 4.1vw, 58px);
+    line-height: 1.08;
+    margin-bottom: 18px;
+}
+:where(body.page-home) .hero-content p {
+    max-width: 510px;
+    line-height: 1.55;
+    margin-bottom: 28px;
+}
+:where(body.page-home) .hero-content .btn-book {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+:where(body.page-home) .trust {
+    padding: 30px clamp(16px, 3vw, 40px);
+}
+:where(body.page-home) .trust-list {
+    max-width: 1200px;
+    gap: 18px;
+}
+:where(body.page-home) .trust-list li {
+    padding: 4px 12px;
+}
+:where(body.page-home) .trust-list strong {
+    font-size: clamp(17px, 1.7vw, 22px);
+}
+:where(body.page-home) .trust-list span {
+    line-height: 1.5;
+}
+:where(body.page-home) .about {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: clamp(28px, 5vw, 64px);
+    padding: clamp(48px, 6vw, 76px) clamp(24px, 7vw, 100px);
+}
+:where(body.page-home) .about-photo img {
+    min-height: 280px;
+}
+:where(body.page-home) .about-copy h2 {
+    margin: 0 0 18px;
+    font-size: clamp(30px, 3.4vw, 46px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -.5px;
+    color: var(--navy-deep);
+}
+:where(body.page-home) .about-copy p {
+    line-height: 1.55;
+}
+:where(body.page-home) .features {
+    gap: 12px;
+}
+:where(body.page-home) .features li {
+    gap: 16px;
+}
+:where(body.page-home) .badge {
+    width: clamp(82px, 8vw, 108px);
+    height: clamp(82px, 8vw, 108px);
+}
+:where(body.page-home) .badge svg {
+    width: 62%;
+    height: 62%;
+}
+/* Services preview */
+:where(body.page-home) .svc-preview {
+    padding: clamp(48px, 6vw, 76px) clamp(16px, 4vw, 40px);
+}
+:where(body.page-home) .svc-heading {
+    max-width: 760px;
+    margin: 0 auto 34px;
+}
+:where(body.page-home) .section-eyebrow {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #1b4fd8;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+:where(body.page-home) .svc-preview h2 {
+    margin-bottom: 12px;
+}
+:where(body.page-home) .svc-intro {
+    max-width: 680px;
+    margin: 0 auto;
+    color: #355174;
+    line-height: 1.6;
+    font-size: 16px;
+}
+:where(body.page-home) .svc-row {
+    align-items: stretch;
+    gap: 18px;
+}
+:where(body.page-home) .svc-card {
+    min-width: 0;
+    max-width: 250px;
+    padding: 24px 18px 20px;
+    border-width: 1px;
+    box-shadow: 0 6px 20px rgba(11, 46, 110, .06);
+}
+:where(body.page-home) .svc-card h3 {
+    line-height: 1.3;
+}
+:where(body.page-home) .svc-card p {
+    line-height: 1.55;
+}
+:where(body.page-home) .svc-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 8px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .72);
+    font-size: 27px;
+    font-weight: 700;
+}
+:where(body.page-home) .svc-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 36px;
+}
+:where(body.page-home) .cta {
+    gap: 28px;
+    border-radius: 36px;
+    box-shadow: 0 12px 36px rgba(11, 46, 110, .06);
+}
+:where(body.page-home) .cta-main {
+    min-width: 0;
+    gap: 20px;
+}
+:where(body.page-home) .cta-text h2 {
+    font-size: clamp(30px, 3.2vw, 42px);
+}
+:where(body.page-home) .cta-text p {
+    line-height: 1.55;
+}
+:where(body.page-home) .cta-perks {
+    padding-left: clamp(22px, 4vw, 60px);
+}
+:where(body.page-home) .cta-perks li {
+    line-height: 1.4;
+}
+:where(body.page-home) .site-footer {
+    min-height: 90px;
+    font-size: 15px;
+}
+/* Medium screens */
+@media (max-width: 1150px) {
+    :where(body.page-home) .site-header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    :where(body.page-home) .logo {
+        margin-right: auto;
+    }
+    :where(body.page-home) .site-header > .btn-book {
+        margin-left: auto;
+    }
+    :where(body.page-home) .main-nav {
+        order: 3;
+        flex: 1 0 100%;
+    }
+    :where(body.page-home) .about {
+        padding-inline: 40px;
+    }
+    :where(body.page-home) .cta {
+        padding: 36px;
+    }
+    :where(body.page-home) .cta-badge {
+        width: 112px;
+        height: 112px;
+    }
+    :where(body.page-home) .cta-badge svg {
+        width: 72px;
+        height: 72px;
+    }
+}
+@media (max-width: 900px) {
+    :where(body.page-home) .about {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    :where(body.page-home) .about-photo {
+        width: 100%;
+        max-width: 560px;
+        margin: 0 auto;
+    }
+    :where(body.page-home) .about-copy {
+        text-align: center;
+    }
+    :where(body.page-home) .about-copy p {
+        margin-inline: auto;
+    }
+    :where(body.page-home) .features {
+        max-width: 620px;
+        margin: 0 auto;
+    }
+    :where(body.page-home) .svc-card {
+        flex-basis: calc(33.333% - 18px);
+        max-width: none;
+    }
+    :where(body.page-home) .cta {
+        grid-template-columns: 1fr;
+    }
+    :where(body.page-home) .cta-perks {
+        border-left: 0;
+        border-top: 2px solid #f0c94a;
+        padding: 26px 0 0;
+    }
+}
+@media (max-width: 600px) {
+    :where(body.page-home) .site-header {
+        padding: 14px 16px 18px;
+        gap: 16px;
+    }
+    :where(body.page-home) .logo {
+        margin: 0;
+    }
+    :where(body.page-home) .logo img {
+        height: 56px;
+    }
+    :where(body.page-home) .logo-text .brand {
+        font-size: clamp(23px, 7vw, 30px);
+    }
+    :where(body.page-home) .logo-text .sub {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+        margin-left: 20px;
+    }
+    :where(body.page-home) .main-nav {
+        order: initial;
+        flex: 0 0 100%;
+    }
+    :where(body.page-home) .main-nav ul {
+        gap: 10px 18px;
+    }
+    :where(body.page-home) .main-nav a {
+        font-size: 13px;
+    }
+    :where(body.page-home) .site-header > .btn-book {
+        margin: 0;
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+    :where(body.page-home) .hero img {
+        height: 430px;
+    }
+    :where(body.page-home) .hero-overlay {
+        background: linear-gradient(
+      180deg,
+      rgba(11, 47, 102, .18) 0%,
+      rgba(11, 47, 102, .86) 65%,
+      rgba(11, 47, 102, .93) 100%
+    );
+        align-items: flex-end;
+        padding-bottom: 30px;
+    }
+    :where(body.page-home) .hero-content {
+        padding: 0 20px;
+    }
+    :where(body.page-home) .hero-content h1 {
+        font-size: clamp(32px, 8.5vw, 42px);
+    }
+    :where(body.page-home) .hero-content p {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    :where(body.page-home) .hero-content .btn-book {
+        white-space: normal;
+    }
+    :where(body.page-home) .trust-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 10px;
+    }
+    :where(body.page-home) .trust-list li + li {
+        border-left: 0;
+    }
+    :where(body.page-home) .trust-list li:nth-child(even) {
+        border-left: 1px solid rgba(80, 130, 200, .25);
+    }
+    :where(body.page-home) .about {
+        padding: 42px 20px 48px;
+    }
+    :where(body.page-home) .features {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+    :where(body.page-home) .features li {
+        gap: 12px;
+    }
+    :where(body.page-home) .features li + li {
+        border-left: 0;
+        border-top: 1px solid rgba(80, 130, 200, .35);
+        padding-top: 22px;
+    }
+    :where(body.page-home) .svc-preview {
+        padding: 46px 18px;
+    }
+    :where(body.page-home) .svc-card {
+        flex-basis: 100%;
+    }
+    :where(body.page-home) .cta-wrap {
+        padding: 28px 16px;
+    }
+    :where(body.page-home) .cta {
+        padding: 28px 20px;
+        gap: 26px;
+    }
+    :where(body.page-home) .cta-main {
+        flex-direction: column;
+        padding: 0;
+        text-align: center;
+    }
+    :where(body.page-home) .cta-text h2 {
+        font-size: 32px;
+    }
+    :where(body.page-home) .btn-cyan {
+        justify-content: center;
+        max-width: 100%;
+        font-size: 16px;
+    }
+    :where(body.page-home) .cta-perks {
+        gap: 16px;
+    }
+    :where(body.page-home) .cta-perks li {
+        font-size: 15px;
+        gap: 12px;
+    }
+}
+@media (max-width: 380px) {
+    :where(body.page-home) .logo img {
+        height: 48px;
+    }
+    :where(body.page-home) .logo-text .brand {
+        font-size: 22px;
+    }
+    :where(body.page-home) .logo-text .sub {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+        margin-left: 12px;
+    }
+    :where(body.page-home) .trust-list {
+        grid-template-columns: 1fr;
+    }
+    :where(body.page-home) .trust-list li:nth-child(even) {
+        border-left: 0;
+    }
+    :where(body.page-home) .trust-list li + li {
+        border-top: 1px solid rgba(80, 130, 200, .25);
+        padding-top: 16px;
+    }
+    :where(body.page-home) .hero-content p {
+        display: block;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    html:has(body.page-home) {
+        scroll-behavior: auto;
+    }
+    :where(body.page-home) *,
+:where(body.page-home) *::before,
+:where(body.page-home) *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+@media (max-width: 1150px) {
+    :where(body.page-home) .site-header {
+        height: auto;
+        min-height: 96px;
+        padding: 14px 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+    :where(body.page-home) .main-nav {
+        position: static;
+        transform: none;
+        width: 100%;
+    }
+    :where(body.page-home) .main-nav ul {
+        flex-wrap: wrap;
+        gap: 10px 22px;
+    }
+}
+@media (max-width: 600px) {
+    :where(body.page-home) .main-nav ul {
+        gap: 10px 16px;
+    }
+    :where(body.page-home) .main-nav a {
+        font-size: 13px;
+        letter-spacing: 0;
+    }
+}
+/* ===== CSS-only hamburger menu ===== */
+:where(body.page-home) .menu-check {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+:where(body.page-home) .menu-toggle {
+    display: none;
+}
+@media (max-width: 768px) {
+    :where(body.page-home) .site-header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        min-height: 0;
+        gap: 0;
+        padding: 10px 16px;
+    }
+    :where(body.page-home) .logo {
+        margin: 0;
+    }
+    :where(body.page-home) .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: #fff;
+        border: 2px solid var(--sky);
+        border-radius: 10px;
+        font-size: 22px;
+        color: var(--navy);
+        cursor: pointer;
+    }
+    :where(body.page-home) .menu-toggle::before {
+        content: "☰";
+    }
+    :where(body.page-home) .menu-check:checked + .menu-toggle::before {
+        content: "✕";
+    }
+    :where(body.page-home) .menu-check:focus-visible + .menu-toggle {
+        outline: 3px solid var(--royal);
+        outline-offset: 3px;
+    }
+    :where(body.page-home) .main-nav {
+        display: none;
+        order: 3;
+        flex: 0 0 100%;
+        width: 100%;
+        position: static;
+        transform: none;
+    }
+    :where(body.page-home) .menu-check:checked ~ .main-nav {
+        display: block;
+    }
+    :where(body.page-home) .main-nav ul {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 10px;
+    }
+    :where(body.page-home) .main-nav a {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 0 14px;
+        font-size: 16px;
+        border-top: 1px solid #c6e4fb;
+    }
+    :where(body.page-home) .main-nav a.active {
+        background: var(--transparent);
+        border-left: 4px solid var(--yellow);
+    }
+    :where(body.page-home) .main-nav a.active::after {
+        display: none;
+    }
+}
+
+/* ==========================================================
+   SERVICES + SERVICE DETAILS  —  from services.css
+   Applies only when <body class="page-services">
+   ========================================================== */
+/* ==========================================================
+   MolarCoaster Dental Clinic - Services.css
+   Used by Services.html and ServiceDetails.html
+   ========================================================== */
+body.page-services {
+    --navy: #0b2e6e;
+    --blue: #1b4fd8;
+    --blue-dark: #1a3fa0;
+    --sky: #d9ebf8;
+    --footer-sky: #c4e4fd;
+    --yellow: #ffd84d;
+    --white: #ffffff;
+    --text: #0b2e6e;
+}
+:where(body.page-services) * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html:has(body.page-services) {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+:where(body.page-services) img,
+:where(body.page-services) svg {
+    display: block;
+    max-width: 100%;
+}
+:where(body.page-services) :focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 3px;
+}
+body:where(.page-services) {
+    font-family: "Lexend", Arial, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+:where(body.page-services) a {
+    text-decoration: none;
+    color: inherit;
+}
+:where(body.page-services) ul {
+    list-style: none;
+}
+/* ---------------- HEADER ---------------- */
+:where(body.page-services) .site-header {
+    height: 128px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px 0 16px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+:where(body.page-services) .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+:where(body.page-services) .logo img {
+    height: 86px;
+    width: auto;
+}
+:where(body.page-services) .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+:where(body.page-services) .logo-text .brand {
+    font-family: "Outfit", sans-serif;
+    font-weight: 800;
+    font-size: 42px;
+    color: var(--navy);
+    letter-spacing: -1px;
+}
+:where(body.page-services) .logo-text .sub {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 3px;
+    color: var(--blue);
+    margin: 10px 0 0 42px;
+}
+:where(body.page-services) .main-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+}
+:where(body.page-services) .main-nav a {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: var(--blue);
+    padding-bottom: 4px;
+    position: relative;
+    transition: color 0.2s;
+}
+:where(body.page-services) .main-nav a:hover {
+    color: var(--navy);
+}
+:where(body.page-services) .main-nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 32px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--yellow);
+    transform: translateX(-50%);
+}
+:where(body.page-services) .btn-book {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--yellow);
+    color: var(--navy);
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 16px 28px;
+    border-radius: 14px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+:where(body.page-services) .btn-book svg {
+    width: 24px;
+    height: 24px;
+}
+:where(body.page-services) .btn-book:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(11, 46, 110, 0.18);
+}
+/* ---------------- HERO ---------------- */
+:where(body.page-services) .hero {
+    background: var(--sky);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2px;
+    overflow: hidden;
+}
+:where(body.page-services) .hero-text {
+    padding: 46px 24px 40px clamp(24px, 6vw, 90px);
+    flex: 1;
+    align-self: center;
+}
+:where(body.page-services) .hero-text h1 {
+    font-family: "Outfit", sans-serif;
+    font-weight: 800;
+    font-size: clamp(32px, 5vw, 58px);
+    letter-spacing: -1px;
+    color: var(--navy);
+    line-height: 1.1;
+}
+:where(body.page-services) .hero-text p {
+    margin-top: 14px;
+    font-size: clamp(16px, 2vw, 20px);
+    letter-spacing: 1px;
+    font-weight: 300;
+    color: var(--navy);
+}
+:where(body.page-services) .hero-image {
+    position: relative;
+    width: min(628px, 45%);
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #e7b4bb, #bfd9f5);
+}
+:where(body.page-services) .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+:where(body.page-services) .hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(36, 85, 190, 0) 78%, rgba(36, 85, 190, 0.9) 100%);
+    pointer-events: none;
+}
+/* ---------------- SERVICE CARDS ---------------- */
+:where(body.page-services) .services {
+    flex: 1;
+    padding: 30px 20px 70px;
+}
+:where(body.page-services) .services-grid {
+    max-width: 975px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px 30px;
+}
+:where(body.page-services) .service-card {
+    min-height: 214px;
+    border-radius: 14px;
+    border: 2px solid;
+    padding: 16px 18px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+:where(body.page-services) .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(11, 46, 110, 0.15);
+}
+:where(body.page-services) .service-card .icon {
+    width: 84px;
+    height: 84px;
+    margin-bottom: 8px;
+}
+:where(body.page-services) .service-card h2 {
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+}
+:where(body.page-services) .service-card p {
+    font-size: 15px;
+    line-height: 1.3;
+    letter-spacing: 0.4px;
+    margin-top: 6px;
+    max-width: 200px;
+}
+:where(body.page-services) .learn-more {
+    margin-top: auto;
+    padding-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    color: #0b4fc2;
+}
+:where(body.page-services) .learn-more svg {
+    width: 26px;
+    height: 12px;
+    transition: transform 0.2s;
+}
+:where(body.page-services) .learn-more:hover svg {
+    transform: translateX(6px);
+}
+/* Card colour themes */
+:where(body.page-services) .card-general {
+    background: #fdf0c0;
+    border-color: #e8c53a;
+    color: #7a6420;
+}
+:where(body.page-services) .card-surgery {
+    background: #e9fbd0;
+    border-color: #a5e05a;
+    color: #2d5a1f;
+}
+:where(body.page-services) .card-ortho {
+    background: #c5d8fd;
+    border-color: #6aa7f5;
+    color: var(--navy);
+}
+:where(body.page-services) .card-cosmetic {
+    background: #c8ecff;
+    border-color: #6ab4f5;
+    color: #1a4fb8;
+}
+:where(body.page-services) .card-restorative {
+    background: #ffe1e3;
+    border-color: #f08a90;
+    color: #7a1f1f;
+}
+/* ---------------- FOOTER ---------------- */
+:where(body.page-services) .site-footer {
+    background: var(--footer-sky);
+    min-height: 116px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #6c93c7;
+    text-align: center;
+    padding: 24px 20px;
+}
+/* ==========================================================
+   SERVICE DETAILS PAGE (ServiceDetails.html)
+   ========================================================== */
+:where(body.page-services) .details-wrap {
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 70px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+:where(body.page-services) .details-menu {
+    position: sticky;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+:where(body.page-services) .details-menu a {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: #eef6fd;
+    color: var(--blue);
+    border-left: 5px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
+}
+:where(body.page-services) .details-menu a:hover,
+:where(body.page-services) .details-menu a.current {
+    background: var(--sky);
+    border-left-color: var(--yellow);
+}
+:where(body.page-services) .detail-card {
+    border: 2px solid;
+    border-radius: 16px;
+    padding: 30px 34px;
+    margin-bottom: 36px;
+    scroll-margin-top: 150px;
+}
+:where(body.page-services) .detail-head {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 14px;
+}
+:where(body.page-services) .detail-head .icon {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+}
+:where(body.page-services) .detail-head h2 {
+    font-family: "Outfit", sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+}
+:where(body.page-services) .detail-card .lead {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+:where(body.page-services) .detail-card h3 {
+    font-family: "Outfit", sans-serif;
+    font-size: 18px;
+    margin: 18px 0 8px;
+}
+:where(body.page-services) .detail-card ul.bullets {
+    list-style: disc;
+    padding-left: 22px;
+    line-height: 1.7;
+    font-size: 15px;
+}
+:where(body.page-services) .detail-card ol.steps {
+    counter-reset: step;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+:where(body.page-services) .detail-card ol.steps li {
+    counter-increment: step;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 15px;
+    line-height: 1.5;
+}
+:where(body.page-services) .detail-card ol.steps li::before {
+    content: counter(step);
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: currentColor;
+    display: grid;
+    place-items: center;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    /* number colour set below */
+}
+:where(body.page-services) .detail-card ol.steps li > span {
+    padding-top: 3px;
+}
+:where(body.page-services) .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+:where(body.page-services) .facts span {
+    background: rgba(255, 255, 255, 0.65);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+}
+:where(body.page-services) .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    color: var(--blue);
+}
+:where(body.page-services) .back-link svg {
+    width: 26px;
+    height: 12px;
+    transform: rotate(180deg);
+}
+/* Single-service detail pages */
+:where(body.page-services) .details-wrap.single {
+    display: block;
+    max-width: 820px;
+}
+:where(body.page-services) .details-wrap.single .detail-card {
+    margin-bottom: 28px;
+}
+:where(body.page-services) .card-general ol.steps li::before {
+    color: #fdf0c0;
+}
+:where(body.page-services) .card-surgery ol.steps li::before {
+    color: #e9fbd0;
+}
+:where(body.page-services) .card-ortho ol.steps li::before {
+    color: #c5d8fd;
+}
+:where(body.page-services) .card-cosmetic ol.steps li::before {
+    color: #c8ecff;
+}
+:where(body.page-services) .card-restorative ol.steps li::before {
+    color: #ffe1e3;
+}
+:where(body.page-services) .detail-card ol.steps li > span {
+    color: var(--navy);
+}
+:where(body.page-services) .detail-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+/* ---------------- RESPONSIVE (same breakpoints as Home) ---------------- */
+/* Laptops / small desktops */
+@media (max-width: 1200px) {
+    :where(body.page-services) .site-header {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 16px;
+        gap: 14px;
+        justify-content: center;
+    }
+    :where(body.page-services) .main-nav ul {
+        gap: 22px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+/* Tablets */
+@media (max-width: 900px) {
+    :where(body.page-services) .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 640px;
+    }
+    :where(body.page-services) .hero-image {
+        width: 40%;
+    }
+    :where(body.page-services) .details-wrap {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    :where(body.page-services) .details-menu {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+/* Large phones */
+@media (max-width: 700px) {
+    /* a tall sticky header would cover too much of a small screen */
+    :where(body.page-services) .site-header {
+        position: static;
+    }
+    :where(body.page-services) .main-nav a {
+        padding: 8px 0;
+    }
+    :where(body.page-services) .hero {
+        flex-direction: column;
+        min-height: 0;
+    }
+    :where(body.page-services) .hero-text {
+        padding: 30px 24px;
+        align-self: auto;
+    }
+    :where(body.page-services) .hero-image {
+        width: 100%;
+        height: 180px;
+    }
+    :where(body.page-services) .services {
+        padding: 24px 16px 48px;
+    }
+    :where(body.page-services) .details-wrap {
+        padding: 28px 16px 48px;
+    }
+    :where(body.page-services) .detail-card {
+        padding: 24px 22px;
+        scroll-margin-top: 16px;
+    }
+    :where(body.page-services) .detail-head h2 {
+        font-size: 26px;
+    }
+    :where(body.page-services) .detail-actions {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    :where(body.page-services) .detail-actions .back-link {
+        justify-content: center;
+    }
+    :where(body.page-services) .detail-actions .btn-book {
+        justify-content: center;
+    }
+    :where(body.page-services) .site-footer {
+        font-size: 15px;
+    }
+}
+/* Phones */
+@media (max-width: 600px) {
+    :where(body.page-services) .logo img {
+        height: 64px;
+    }
+    :where(body.page-services) .logo-text .brand {
+        font-size: 30px;
+    }
+    :where(body.page-services) .logo-text .sub {
+        font-size: 12px;
+        margin-left: 28px;
+    }
+    :where(body.page-services) .main-nav ul {
+        gap: 6px 18px;
+    }
+    :where(body.page-services) .main-nav a {
+        font-size: 15px;
+    }
+    :where(body.page-services) .btn-book {
+        font-size: 15px;
+        padding: 12px 22px;
+    }
+    :where(body.page-services) .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 360px;
+    }
+    :where(body.page-services) .detail-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    :where(body.page-services) .detail-head .icon {
+        width: 56px;
+        height: 56px;
+    }
+    :where(body.page-services) .detail-head h2 {
+        font-size: 24px;
+    }
+    :where(body.page-services) .facts span {
+        font-size: 12px;
+    }
+}
+/* Very small phones (320px - 400px) */
+@media (max-width: 400px) {
+    :where(body.page-services) .logo img {
+        height: 52px;
+    }
+    :where(body.page-services) .logo-text .brand {
+        font-size: 25px;
+    }
+    :where(body.page-services) .logo-text .sub {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-left: 20px;
+    }
+    :where(body.page-services) .main-nav ul {
+        gap: 4px 14px;
+    }
+    :where(body.page-services) .main-nav a {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+    :where(body.page-services) .hero-text h1 {
+        font-size: 30px;
+    }
+    :where(body.page-services) .detail-card {
+        padding: 20px 16px;
+    }
+}
+/* ==========================================================
+   Header, navigation and footer - same as Home_Style.css
+   ========================================================== */
+:where(body.page-services) .site-header {
+    min-height: 96px;
+    height: auto;
+    gap: 22px;
+    padding: 14px clamp(16px, 2.5vw, 36px);
+}
+:where(body.page-services) .logo {
+    flex: 0 1 auto;
+    min-width: 0;
+}
+:where(body.page-services) .logo img {
+    height: clamp(54px, 5.2vw, 76px);
+}
+:where(body.page-services) .logo-text .brand {
+    font-size: clamp(25px, 2.4vw, 36px);
+    letter-spacing: -0.8px;
+    white-space: nowrap;
+}
+:where(body.page-services) .logo-text .sub {
+    font-size: clamp(10px, 1vw, 14px);
+    letter-spacing: clamp(1.5px, .2vw, 2.5px);
+    margin: 7px 0 0 clamp(12px, 2vw, 30px);
+    white-space: nowrap;
+}
+:where(body.page-services) .main-nav {
+    min-width: 0;
+}
+:where(body.page-services) .main-nav ul {
+    gap: clamp(12px, 2vw, 28px);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+:where(body.page-services) .main-nav a {
+    font-size: clamp(13px, 1.15vw, 16px);
+    letter-spacing: .2px;
+}
+:where(body.page-services) .site-header > .btn-book {
+    flex: 0 0 auto;
+    padding: 13px 18px;
+    gap: 9px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+:where(body.page-services) .site-footer {
+    min-height: 90px;
+    font-size: 15px;
+    color: #35598c;
+    padding: 24px 20px;
+}
+/* Medium screens */
+@media (max-width: 1150px) {
+    :where(body.page-services) .site-header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    :where(body.page-services) .logo {
+        margin-right: auto;
+    }
+    :where(body.page-services) .site-header > .btn-book {
+        margin-left: auto;
+    }
+    :where(body.page-services) .main-nav {
+        order: 3;
+        flex: 1 0 100%;
+    }
+}
+@media (max-width: 600px) {
+    :where(body.page-services) .site-header {
+        padding: 14px 16px 18px;
+        gap: 16px;
+    }
+    :where(body.page-services) .logo {
+        margin: 0;
+    }
+    :where(body.page-services) .logo img {
+        height: 56px;
+    }
+    :where(body.page-services) .logo-text .brand {
+        font-size: clamp(23px, 7vw, 30px);
+    }
+    :where(body.page-services) .logo-text .sub {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+        margin-left: 20px;
+    }
+    :where(body.page-services) .main-nav {
+        order: initial;
+        flex: 0 0 100%;
+    }
+    :where(body.page-services) .main-nav ul {
+        gap: 10px 18px;
+    }
+    :where(body.page-services) .main-nav a {
+        font-size: 13px;
+    }
+    :where(body.page-services) .site-header > .btn-book {
+        margin: 0;
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+}
+@media (max-width: 380px) {
+    :where(body.page-services) .logo img {
+        height: 48px;
+    }
+    :where(body.page-services) .logo-text .brand {
+        font-size: 22px;
+    }
+    :where(body.page-services) .logo-text .sub {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+        margin-left: 12px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    html:has(body.page-services) {
+        scroll-behavior: auto;
+    }
+    :where(body.page-services) *,
+:where(body.page-services) *::before,
+:where(body.page-services) *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+/* ==========================================================
+   Center the main navigation on the page (desktop)
+   Logo | nav | button -> equal side columns keep the nav in the
+   true middle even though the logo and button differ in width.
+   Falls back gracefully if the sides need more room.
+   ========================================================== */
+@media (min-width: 1151px) {
+    :where(body.page-services) .site-header {
+        display: grid;
+        grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+        align-items: center;
+    }
+    :where(body.page-services) .logo {
+        justify-self: start;
+    }
+    :where(body.page-services) .main-nav {
+        justify-self: center;
+    }
+    :where(body.page-services) .main-nav ul {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    :where(body.page-services) .site-header > .btn-book {
+        justify-self: end;
+        margin-left: 0;
+    }
+}
+/* ===== CSS-only hamburger menu ===== */
+:where(body.page-services) .menu-check {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+:where(body.page-services) .menu-toggle {
+    display: none;
+}
+@media (max-width: 768px) {
+    :where(body.page-services) .site-header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        min-height: 0;
+        gap: 0;
+        padding: 10px 16px;
+    }
+    :where(body.page-services) .logo {
+        margin: 0;
+    }
+    :where(body.page-services) .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: #fff;
+        border: 2px solid #c6e4fb;
+        border-radius: 10px;
+        font-size: 22px;
+        color: var(--navy);
+        cursor: pointer;
+    }
+    :where(body.page-services) .menu-toggle::before {
+        content: "☰";
+    }
+    :where(body.page-services) .menu-check:checked + .menu-toggle::before {
+        content: "✕";
+    }
+    :where(body.page-services) .menu-check:focus-visible + .menu-toggle {
+        outline: 3px solid #1f47c9;
+        outline-offset: 3px;
+    }
+    :where(body.page-services) .main-nav {
+        display: none;
+        order: 3;
+        flex: 0 0 100%;
+        width: 100%;
+        position: static;
+        transform: none;
+    }
+    :where(body.page-services) .menu-check:checked ~ .main-nav {
+        display: block;
+    }
+    :where(body.page-services) .main-nav ul {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 10px;
+    }
+    :where(body.page-services) .main-nav a {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 0 14px;
+        font-size: 16px;
+        border-top: 1px solid #c6e4fb;
+    }
+    :where(body.page-services) .main-nav a.active {
+        background: var(--transparent);
+        border-left: 4px solid var(--yellow);
+    }
+    :where(body.page-services) .main-nav a.active::after {
+        display: none;
+    }
+}
+
+/* ==========================================================
+   ABOUT  —  from about.css
+   Applies only when <body class="page-about">
+   ========================================================== */
+body.page-about {
+    --bg-page: #eaf6ff;
+    --panel: #f1f9ff;
+    --panel-strong: #dff2ff;
+    --panel-soft: #e6f2fb;
+    --primary: #2d88c8;
+    --primary-deep: #1a5d9c;
+    --primary-soft: #d5ecff;
+    --border: #a9d6ed;
+    --text: #1c4f7a;
+    --muted: #6789af;
+    --white: #ffffff;
+    --shadow: rgba(22, 79, 121, 0.08);
+}
+:where(body.page-about) * {
+    box-sizing: border-box;
+}
+html:has(body.page-about) {
+    scroll-behavior: smooth;
+}
+body:where(.page-about) {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg-page);
+    color: var(--text);
+    font-family: "Lexend", "Segoe UI", sans-serif;
+}
+:where(body.page-about) img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+:where(body.page-about) a {
+    text-decoration: none;
+    color: inherit;
+}
+:where(body.page-about) button {
+    font: inherit;
+}
+:where(body.page-about) .page-shell {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+/* ===== Hero (identical to Services) ===== */
+:where(body.page-about) .hero {
+    background: #d9ebf8;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2px;
+    overflow: hidden;
+}
+:where(body.page-about) .hero-text {
+    padding: 46px 24px 40px clamp(24px, 6vw, 90px);
+    flex: 1;
+    align-self: center;
+}
+:where(body.page-about) .hero-text h1 {
+    margin: 0;
+    font-family: "Outfit", sans-serif;
+    font-weight: 800;
+    font-size: clamp(32px, 5vw, 58px);
+    letter-spacing: -1px;
+    color: #0b2e6e;
+    line-height: 1.1;
+}
+:where(body.page-about) .hero-text p {
+    margin: 14px 0 0;
+    font-size: clamp(16px, 2vw, 20px);
+    letter-spacing: 1px;
+    font-weight: 300;
+    color: #0b2e6e;
+}
+:where(body.page-about) .hero-image {
+    position: relative;
+    width: min(628px, 45%);
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #e7b4bb, #bfd9f5);
+}
+:where(body.page-about) .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+:where(body.page-about) .hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(36, 85, 190, 0) 78%, rgba(36, 85, 190, 0.9) 100%);
+    pointer-events: none;
+}
+@media (max-width: 900px) {
+    :where(body.page-about) .hero-image {
+        width: 40%;
+    }
+}
+@media (max-width: 700px) {
+    :where(body.page-about) .hero {
+        flex-direction: column;
+        min-height: 0;
+    }
+    :where(body.page-about) .hero-text {
+        padding: 30px 24px;
+        align-self: auto;
+    }
+    :where(body.page-about) .hero-image {
+        width: 100%;
+        height: 180px;
+    }
+}
+@media (max-width: 400px) {
+    :where(body.page-about) .hero-text h1 {
+        font-size: 30px;
+    }
+}
+:where(body.page-about) main {
+    padding: 0 2px;
+}
+:where(body.page-about) .intro-panel {
+    display: grid;
+    grid-template-columns: 250px 1.1fr 260px;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.68);
+    border: 2px solid rgba(117, 183, 233, 0.28);
+    border-radius: 18px;
+    margin-top: 32px;
+    padding: 20px 24px 22px;
+    box-shadow: 0 6px 18px rgba(25, 80, 125, 0.04);
+}
+:where(body.page-about) .side-menu {
+    background: #d9eefb;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 10px 12px;
+}
+:where(body.page-about) .side-menu nav {
+    display: block;
+}
+:where(body.page-about) .side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+:where(body.page-about) .side-menu li {
+    display: block;
+    margin: 6px 0;
+}
+:where(body.page-about) .side-link {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: var(--primary-deep);
+    font-size: 0.94rem;
+    font-weight: 700;
+    opacity: 0.9;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+:where(body.page-about) .side-link:hover,
+:where(body.page-about) .side-link:focus-visible {
+    background: rgba(255, 255, 255, 0.22);
+    outline: none;
+    transform: translateX(2px);
+}
+:where(body.page-about) .side-link.active {
+    background: linear-gradient(180deg, #2d88c8, #4aa4df);
+    color: white;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+:where(body.page-about) .profile-copy {
+    padding: 10px 8px 8px 8px;
+}
+:where(body.page-about) .profile-copy h2 {
+    margin: 0 0 12px;
+    font-family: "Outfit", "Segoe UI", sans-serif;
+    font-size: 2.2rem;
+    line-height: 1;
+    color: var(--primary-deep);
+}
+:where(body.page-about) .profile-copy p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--primary-deep);
+    max-width: 615px;
+}
+:where(body.page-about) .profile-photo {
+    position: relative;
+    width: 100%;
+    height: 170px;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(117, 183, 233, 0.38);
+    border-radius: 16px;
+    background: #d9eefb;
+}
+:where(body.page-about) .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+}
+:where(body.page-about) .profile-photo figcaption {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    padding: 3px 6px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--primary-deep);
+    font-size: 0.58rem;
+    line-height: 1.3;
+}
+:where(body.page-about) .profile-photo figcaption a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+:where(body.page-about) .info-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: #d8edf9;
+    border: 2px solid rgba(117, 183, 233, 0.28);
+    border-radius: 18px;
+    margin-top: 32px;
+    overflow: hidden;
+}
+:where(body.page-about) .info-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px 28px 22px 26px;
+    background: rgba(202, 231, 250, 0.7);
+    min-height: 132px;
+}
+:where(body.page-about) .info-card + .info-card {
+    border-left: 1px solid rgba(97, 154, 199, 0.45);
+}
+:where(body.page-about) .info-icon {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    color: var(--primary-deep);
+}
+:where(body.page-about) .info-icon svg {
+    width: 100%;
+    height: 100%;
+}
+:where(body.page-about) .info-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--primary-deep);
+}
+:where(body.page-about) .info-content h3 {
+    margin: 0 0 8px;
+    font-family: "Outfit", "Segoe UI", sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+}
+:where(body.page-about) .info-content p {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.4;
+    max-width: 500px;
+}
+:where(body.page-about) .team-section {
+    padding: 42px 10px 0;
+}
+:where(body.page-about) .about-section {
+    padding: 42px 10px 0;
+    scroll-margin-top: 20px;
+}
+:where(body.page-about) .section-title-wrap {
+    margin-bottom: 24px;
+    text-align: center;
+}
+:where(body.page-about) .section-title-wrap h2 {
+    margin: 0;
+    font-family: "Outfit", "Segoe UI", sans-serif;
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--primary-deep);
+}
+:where(body.page-about) .section-title-wrap p {
+    margin: 8px auto 0;
+    color: var(--primary-deep);
+    font-size: 1.08rem;
+    font-weight: 600;
+}
+:where(body.page-about) .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(170px, 1fr));
+    gap: 28px;
+    padding: 10px 0 0;
+}
+:where(body.page-about) .member-card {
+    background: rgba(195, 228, 248, 0.72);
+    border: 1px solid rgba(116, 176, 224, 0.5);
+    border-radius: 18px;
+    padding: 18px 16px 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(20, 71, 116, 0.04);
+}
+:where(body.page-about) .member-photo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(98, 170, 219, 0.8);
+    background: #dbeefb;
+}
+:where(body.page-about) .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+:where(body.page-about) .member-name {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--primary-deep);
+    margin: 8px 0 2px;
+}
+:where(body.page-about) .member-role {
+    font-size: 0.93rem;
+    color: var(--primary-deep);
+    opacity: 0.9;
+}
+:where(body.page-about) .foundation-grid,
+:where(body.page-about) .faq-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+:where(body.page-about) .foundation-card,
+:where(body.page-about) .faq-card {
+    padding: 20px;
+    border: 1px solid rgba(116, 176, 224, 0.5);
+    border-radius: 16px;
+    background: rgba(195, 228, 248, 0.72);
+    color: var(--primary-deep);
+}
+:where(body.page-about) .foundation-card h3,
+:where(body.page-about) .faq-card h3 {
+    margin: 0 0 8px;
+    font-family: "Outfit", "Segoe UI", sans-serif;
+    font-size: 1.35rem;
+    line-height: 1.1;
+}
+:where(body.page-about) .foundation-card p,
+:where(body.page-about) .faq-card p {
+    margin: 0;
+    line-height: 1.5;
+}
+:where(body.page-about) .faq-card a {
+    color: var(--primary-deep);
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+@media (max-width: 980px) {
+    :where(body.page-about) .intro-panel {
+        grid-template-columns: 1fr;
+    }
+    :where(body.page-about) .info-strip {
+        grid-template-columns: 1fr;
+    }
+    :where(body.page-about) .info-card + .info-card {
+        border-left: none;
+        border-top: 1px solid rgba(97, 154, 199, 0.45);
+    }
+    :where(body.page-about) .team-grid {
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+    }
+    :where(body.page-about) .foundation-grid,
+:where(body.page-about) .faq-list {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 560px) {
+    :where(body.page-about) .page-shell {
+        padding: 0 10px;
+    }
+    :where(body.page-about) .profile-copy h2,
+:where(body.page-about) .section-title-wrap h2,
+:where(body.page-about) .info-content h3 {
+        font-size: 2.1rem;
+    }
+    :where(body.page-about) .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+html:has(body.page-about) {
+    -webkit-text-size-adjust: 100%;
+}
+:where(body.page-about) :focus-visible {
+    outline: 3px solid var(--primary-deep);
+    outline-offset: 2px;
+}
+/* ===== Header (same as Home and Services) ===== */
+:where(body.page-about) .site-header {
+    height: 128px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px 0 16px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+:where(body.page-about) .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+:where(body.page-about) .logo img {
+    height: 86px;
+    width: auto;
+}
+:where(body.page-about) .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+:where(body.page-about) .logo-text .brand {
+    font-family: "Outfit", sans-serif;
+    font-weight: 800;
+    font-size: 42px;
+    color: #0b2e6e;
+    letter-spacing: -1px;
+}
+:where(body.page-about) .logo-text .sub {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 3px;
+    color: #1b4fd8;
+    margin: 10px 0 0 42px;
+}
+:where(body.page-about) .main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 42px;
+}
+:where(body.page-about) .main-nav a {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: #1b4fd8;
+    text-decoration: none;
+    padding-bottom: 4px;
+    position: relative;
+    transition: color 0.2s;
+}
+:where(body.page-about) .main-nav a:hover {
+    color: #0b2e6e;
+}
+:where(body.page-about) .main-nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 32px;
+    height: 4px;
+    border-radius: 4px;
+    background: #ffd84d;
+    transform: translateX(-50%);
+}
+:where(body.page-about) .btn-book {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: #ffd84d;
+    color: #0b2e6e;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 16px 28px;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+:where(body.page-about) .btn-book svg {
+    width: 24px;
+    height: 24px;
+}
+:where(body.page-about) .btn-book:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(11, 46, 110, 0.18);
+}
+/* ===== Footer (same as Home and Services) ===== */
+:where(body.page-about) .site-footer {
+    background: #c4e4fd;
+    min-height: 116px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #6c93c7;
+    text-align: center;
+    padding: 24px 20px;
+    margin-top: 3rem;
+}
+:where(body.page-about) .site-footer p {
+    margin: 0;
+    color: inherit;
+}
+@media (max-width: 1200px) {
+    :where(body.page-about) .site-header {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 16px;
+        gap: 14px;
+        justify-content: center;
+    }
+    :where(body.page-about) .main-nav ul {
+        gap: 22px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+@media (max-width: 700px) {
+    :where(body.page-about) .site-header {
+        position: static;
+    }
+    :where(body.page-about) .main-nav a {
+        padding: 8px 0;
+    }
+    :where(body.page-about) .site-footer {
+        font-size: 15px;
+    }
+}
+@media (max-width: 600px) {
+    :where(body.page-about) .logo img {
+        height: 64px;
+    }
+    :where(body.page-about) .logo-text .brand {
+        font-size: 30px;
+    }
+    :where(body.page-about) .logo-text .sub {
+        font-size: 12px;
+        margin-left: 28px;
+    }
+    :where(body.page-about) .main-nav ul {
+        gap: 6px 18px;
+    }
+    :where(body.page-about) .main-nav a {
+        font-size: 15px;
+    }
+}
+@media (max-width: 400px) {
+    :where(body.page-about) .logo img {
+        height: 52px;
+    }
+    :where(body.page-about) .logo-text .brand {
+        font-size: 25px;
+    }
+    :where(body.page-about) .logo-text .sub {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-left: 20px;
+    }
+    :where(body.page-about) .main-nav ul {
+        gap: 4px 14px;
+    }
+    :where(body.page-about) .main-nav a {
+        font-size: 14px;
+        letter-spacing: .5px;
+    }
+}
+/* ==========================================================
+   Header, navigation and footer - same as Home_Style.css
+   ========================================================== */
+:where(body.page-about) .site-header {
+    min-height: 96px;
+    height: auto;
+    gap: 22px;
+    padding: 14px clamp(16px, 2.5vw, 36px);
+}
+:where(body.page-about) .logo {
+    flex: 0 1 auto;
+    min-width: 0;
+}
+:where(body.page-about) .logo img {
+    height: clamp(54px, 5.2vw, 76px);
+}
+:where(body.page-about) .logo-text .brand {
+    font-size: clamp(25px, 2.4vw, 36px);
+    letter-spacing: -0.8px;
+    white-space: nowrap;
+}
+:where(body.page-about) .logo-text .sub {
+    font-size: clamp(10px, 1vw, 14px);
+    letter-spacing: clamp(1.5px, .2vw, 2.5px);
+    margin: 7px 0 0 clamp(12px, 2vw, 30px);
+    white-space: nowrap;
+}
+:where(body.page-about) .main-nav {
+    min-width: 0;
+}
+:where(body.page-about) .main-nav ul {
+    gap: clamp(12px, 2vw, 28px);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+:where(body.page-about) .main-nav a {
+    font-size: clamp(13px, 1.15vw, 16px);
+    letter-spacing: .2px;
+}
+:where(body.page-about) .site-header > .btn-book {
+    flex: 0 0 auto;
+    padding: 13px 18px;
+    gap: 9px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+:where(body.page-about) .site-footer {
+    min-height: 90px;
+    font-size: 15px;
+    color: #35598c;
+    padding: 24px 20px;
+}
+/* Medium screens */
+@media (max-width: 1150px) {
+    :where(body.page-about) .site-header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    :where(body.page-about) .logo {
+        margin-right: auto;
+    }
+    :where(body.page-about) .site-header > .btn-book {
+        margin-left: auto;
+    }
+    :where(body.page-about) .main-nav {
+        order: 3;
+        flex: 1 0 100%;
+    }
+}
+@media (max-width: 600px) {
+    :where(body.page-about) .site-header {
+        padding: 14px 16px 18px;
+        gap: 16px;
+    }
+    :where(body.page-about) .logo {
+        margin: 0;
+    }
+    :where(body.page-about) .logo img {
+        height: 56px;
+    }
+    :where(body.page-about) .logo-text .brand {
+        font-size: clamp(23px, 7vw, 30px);
+    }
+    :where(body.page-about) .logo-text .sub {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+        margin-left: 20px;
+    }
+    :where(body.page-about) .main-nav {
+        order: initial;
+        flex: 0 0 100%;
+    }
+    :where(body.page-about) .main-nav ul {
+        gap: 10px 18px;
+    }
+    :where(body.page-about) .main-nav a {
+        font-size: 13px;
+    }
+    :where(body.page-about) .site-header > .btn-book {
+        margin: 0;
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+}
+@media (max-width: 380px) {
+    :where(body.page-about) .logo img {
+        height: 48px;
+    }
+    :where(body.page-about) .logo-text .brand {
+        font-size: 22px;
+    }
+    :where(body.page-about) .logo-text .sub {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+        margin-left: 12px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    html:has(body.page-about) {
+        scroll-behavior: auto;
+    }
+    :where(body.page-about) *,
+:where(body.page-about) *::before,
+:where(body.page-about) *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+/* ==========================================================
+   Center the main navigation on the page (desktop)
+   Logo | nav | (empty) -> equal side columns keep the nav in the
+   true middle, same as the Services page.
+   ========================================================== */
+@media (min-width: 1151px) {
+    :where(body.page-about) .site-header {
+        display: grid;
+        grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+        align-items: center;
+    }
+    :where(body.page-about) .logo {
+        justify-self: start;
+    }
+    :where(body.page-about) .main-nav {
+        justify-self: center;
+    }
+    :where(body.page-about) .main-nav ul {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    :where(body.page-about) .site-header > .btn-book {
+        justify-self: end;
+        margin-left: 0;
+    }
+}
+/* ===== CSS-only hamburger menu ===== */
+:where(body.page-about) .menu-check {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+:where(body.page-about) .menu-toggle {
+    display: none;
+}
+@media (max-width: 768px) {
+    :where(body.page-about) .site-header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        min-height: 0;
+        gap: 0;
+        padding: 10px 16px;
+    }
+    :where(body.page-about) .logo {
+        margin: 0;
+    }
+    :where(body.page-about) .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: #ffffff;
+        border: 2px solid #c6e4fb;
+        border-radius: 10px;
+        font-size: 22px;
+        color: #0e3a78;
+        cursor: pointer;
+    }
+    :where(body.page-about) .menu-toggle::before {
+        content: "☰";
+    }
+    :where(body.page-about) .menu-check:checked + .menu-toggle::before {
+        content: "✕";
+    }
+    :where(body.page-about) .menu-check:focus-visible + .menu-toggle {
+        outline: 3px solid #1f47c9;
+        outline-offset: 3px;
+    }
+    :where(body.page-about) .main-nav {
+        display: none;
+        order: 3;
+        flex: 0 0 100%;
+        width: 100%;
+        position: static;
+        transform: none;
+    }
+    :where(body.page-about) .menu-check:checked ~ .main-nav {
+        display: block;
+    }
+    :where(body.page-about) .main-nav ul {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 10px;
+    }
+    :where(body.page-about) .main-nav a {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 0 14px;
+        font-size: 16px;
+        border-top: 1px solid #c6e4fb;
+    }
+    :where(body.page-about) .main-nav a.active {
+        background: transparent;
+        border-left: 4px solid #ffd84a;
+    }
+    :where(body.page-about) .main-nav a.active::after {
+        display: none;
+    }
+}
+
+/* ==========================================================
+   APPOINTMENT  —  from appointment.css
+   Applies only when <body class="page-appointment">
+   ========================================================== */
+body.page-appointment {
+    --navy: #0c3b78;
+    --blue: #1a6bc4;
+    --sky-blue: #35a7e4;
+    --blue-soft: #d9ebfa;
+    --border: #c3d4f8;
+    --yellow: #ffd84d;
+    --white: #ffffff;
+    --text: #123a6b;
+    --red: #d93a2b;
+    --font: "Lexend", "Segoe UI", Arial, sans-serif;
+    --font-head: "Outfit", "Lexend", sans-serif;
+    --sky: #35a7e4;
+    --royal: #1a6bc4;
+    --mist: #eaf6ff;
+}
+:where(body.page-appointment) * {
+    box-sizing: border-box;
+}
+html:has(body.page-appointment) {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+body:where(.page-appointment) {
+    margin: 0;
+    font-family: var(--font);
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+:where(body.page-appointment) main {
+    flex: 1;
+}
+:where(body.page-appointment) img,
+:where(body.page-appointment) svg {
+    max-width: 100%;
+}
+:where(body.page-appointment) a {
+    color: var(--blue);
+}
+:where(body.page-appointment) :focus-visible {
+    outline: 3px solid var(--navy);
+    outline-offset: 2px;
+}
+/* ===== Header (same as Home, Services, About and Contact) ===== */
+:where(body.page-appointment) .site-header {
+    min-height: 96px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    padding: 14px clamp(16px, 2.5vw, 36px);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+:where(body.page-appointment) .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 1 auto;
+    min-width: 0;
+    text-decoration: none;
+}
+:where(body.page-appointment) .logo img {
+    display: block;
+    height: clamp(54px, 5.2vw, 76px);
+    width: auto;
+}
+:where(body.page-appointment) .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+:where(body.page-appointment) .logo-text .brand {
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: clamp(25px, 2.4vw, 36px);
+    color: #0b2e6e;
+    letter-spacing: -0.8px;
+    white-space: nowrap;
+}
+:where(body.page-appointment) .logo-text .sub {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: clamp(10px, 1vw, 14px);
+    letter-spacing: clamp(1.5px, .2vw, 2.5px);
+    color: #1b4fd8;
+    margin: 7px 0 0 clamp(12px, 2vw, 30px);
+    white-space: nowrap;
+}
+:where(body.page-appointment) .main-nav {
+    min-width: 0;
+}
+:where(body.page-appointment) .main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(12px, 2vw, 28px);
+}
+:where(body.page-appointment) .main-nav a {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: clamp(13px, 1.15vw, 16px);
+    letter-spacing: .2px;
+    color: #1b4fd8;
+    text-decoration: none;
+    padding-bottom: 4px;
+    position: relative;
+    transition: color 0.2s;
+}
+:where(body.page-appointment) .main-nav a:hover {
+    color: #0b2e6e;
+}
+:where(body.page-appointment) .main-nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 32px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--yellow);
+    transform: translateX(-50%);
+}
+/* Center the main navigation on the page (desktop).
+   Logo | nav | (empty) -> equal side columns keep the nav in the true middle. */
+@media (min-width: 1151px) {
+    :where(body.page-appointment) .site-header {
+        display: grid;
+        grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+        align-items: center;
+    }
+    :where(body.page-appointment) .logo {
+        justify-self: start;
+    }
+    :where(body.page-appointment) .main-nav {
+        justify-self: center;
+    }
+    :where(body.page-appointment) .main-nav ul {
+        flex-wrap: nowrap;
+    }
+}
+/* ===== Hero ===== */
+:where(body.page-appointment) .hero {
+    background: var(--blue-soft);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+    overflow: hidden;
+}
+:where(body.page-appointment) .hero-inner {
+    width: min(1182px, calc(100% - 2 * clamp(16px, 4vw, 92px)));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+:where(body.page-appointment) .hero-text {
+    padding: 28px 0;
+}
+:where(body.page-appointment) .hero h1 {
+    margin: 0;
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: clamp(32px, 5vw, 58px);
+    letter-spacing: -1px;
+    line-height: 1.1;
+    color: var(--navy);
+}
+:where(body.page-appointment) .hero p {
+    margin: 14px 0 0;
+    font-size: clamp(16px, 1.7vw, 20px);
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    color: var(--navy);
+}
+:where(body.page-appointment) .hero-art {
+    flex: 0 0 auto;
+    width: clamp(200px, 24vw, 320px);
+    height: auto;
+    margin-right: clamp(0px, 4vw, 60px);
+}
+/* ===== Layout and cards ===== */
+:where(body.page-appointment) .container {
+    width: min(1182px, calc(100% - 2 * clamp(16px, 4vw, 92px)));
+    margin: 22px auto 0;
+}
+:where(body.page-appointment) .grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 54px;
+    align-items: stretch;
+}
+:where(body.page-appointment) .card {
+    background: var(--white);
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    padding: clamp(24px, 3.4vw, 46px) clamp(20px, 3.4vw, 46px);
+}
+:where(body.page-appointment) .card h2 {
+    margin: 0 0 22px;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(22px, 2.2vw, 28px);
+    color: var(--blue);
+}
+/* ----- Calendar ----- */
+:where(body.page-appointment) .cal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 -14px 14px;
+}
+:where(body.page-appointment) .cal-month {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(20px, 2vw, 26px);
+    color: var(--blue);
+    text-align: center;
+}
+:where(body.page-appointment) .cal-nav {
+    width: 44px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 8px;
+    background: none;
+    color: var(--sky-blue);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+:where(body.page-appointment) .cal-nav svg {
+    width: 28px;
+    height: 12px;
+}
+:where(body.page-appointment) .cal-nav:hover:not(:disabled) {
+    background: #eaf6ff;
+    color: var(--blue);
+}
+:where(body.page-appointment) .cal-nav:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+:where(body.page-appointment) .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    row-gap: 3px;
+}
+:where(body.page-appointment) .cal-weekdays {
+    margin-bottom: 4px;
+}
+:where(body.page-appointment) .cal-weekdays span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #2c4a77;
+    padding: 6px 0;
+}
+:where(body.page-appointment) .cal-weekdays .sun {
+    color: var(--red);
+}
+:where(body.page-appointment) .day {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    font-family: var(--font);
+    font-size: 18px;
+    color: #3c557d;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+:where(body.page-appointment) .day.sun {
+    color: var(--red);
+}
+:where(body.page-appointment) .day:hover:not(:disabled) {
+    background: #e3f3fd;
+}
+:where(body.page-appointment) .day.selected,
+:where(body.page-appointment) .day.selected:hover {
+    background: #c4ecfc;
+    color: var(--navy);
+    font-weight: 600;
+}
+:where(body.page-appointment) .day:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+:where(body.page-appointment) .slots-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0 0;
+    font-size: 14px;
+    line-height: 1.3;
+    color: var(--sky-blue);
+}
+:where(body.page-appointment) .slots-note svg {
+    flex: none;
+    width: 32px;
+    height: 32px;
+}
+/* ----- Form ----- */
+:where(body.page-appointment) .form-card label {
+    display: block;
+    margin: 14px 0 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--navy);
+}
+:where(body.page-appointment) .form-card label:first-of-type {
+    margin-top: 0;
+}
+:where(body.page-appointment) .req {
+    color: var(--red);
+}
+:where(body.page-appointment) .form-card input,
+:where(body.page-appointment) .form-card select {
+    display: block;
+    width: 100%;
+    height: 42px;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 0 12px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--text);
+}
+:where(body.page-appointment) .form-card input::placeholder {
+    color: #a7c3f4;
+}
+:where(body.page-appointment) .form-card input:focus,
+:where(body.page-appointment) .form-card select:focus {
+    outline: 3px solid var(--blue);
+    outline-offset: 0;
+    border-color: var(--blue);
+}
+:where(body.page-appointment) .form-card input:user-invalid,
+:where(body.page-appointment) .form-card select:user-invalid {
+    border-color: var(--red);
+}
+:where(body.page-appointment) .form-card select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a6bc4' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 9 7 7 7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 22px;
+    cursor: pointer;
+}
+:where(body.page-appointment) .form-card select:disabled {
+    background-color: #f6faff;
+    color: #8aa6cf;
+    cursor: not-allowed;
+}
+:where(body.page-appointment) .btn-submit {
+    display: block;
+    width: 100%;
+    height: 42px;
+    margin-top: 18px;
+    border: 2px solid var(--blue);
+    border-radius: 6px;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font);
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+:where(body.page-appointment) .btn-submit:hover:not(:disabled) {
+    background: var(--navy);
+    border-color: var(--navy);
+}
+:where(body.page-appointment) .btn-submit:disabled {
+    background: #86abf0;
+    border-color: #a3bff4;
+    cursor: not-allowed;
+}
+/* ----- Urgent care banner ----- */
+:where(body.page-appointment) .care-banner {
+    width: min(1220px, 100%);
+    margin: clamp(40px, 12vw, 175px) auto clamp(40px, 6vw, 70px);
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 4vw, 42px);
+    padding: 16px clamp(16px, 2.6vw, 34px);
+    background: #dbf3ff;
+    border: 2px solid #b7d3f6;
+    border-radius: 14px;
+    position: relative;
+    left: 0;
+}
+:where(body.page-appointment) .care-art {
+    flex: none;
+    width: clamp(160px, 21vw, 285px);
+    height: auto;
+}
+:where(body.page-appointment) .care-text h2 {
+    margin: 0 0 14px;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(22px, 2.4vw, 30px);
+    color: var(--blue);
+}
+:where(body.page-appointment) .care-text p {
+    margin: 0;
+    max-width: 560px;
+    font-size: clamp(16px, 1.7vw, 22px);
+    font-weight: 300;
+    line-height: 1.4;
+    color: var(--blue);
+}
+:where(body.page-appointment) .care-text a {
+    color: inherit;
+    text-decoration: none;
+}
+:where(body.page-appointment) .care-text a:hover {
+    text-decoration: underline;
+}
+/* ===== Footer (same as Home) ===== */
+:where(body.page-appointment) .site-footer {
+    background: #c4e4fd;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-head);
+    font-size: 15px;
+    line-height: 1.4;
+    color: #35598c;
+    text-align: center;
+    padding: 24px 20px;
+}
+:where(body.page-appointment) .site-footer p {
+    margin: 0;
+    color: inherit;
+}
+/* ===== Responsive (same breakpoints as Home) ===== */
+/* Medium screens: header wraps, nav gets its own centered row */
+@media (max-width: 1150px) {
+    :where(body.page-appointment) .site-header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    :where(body.page-appointment) .logo {
+        margin-right: auto;
+    }
+    :where(body.page-appointment) .main-nav {
+        order: 3;
+        flex: 1 0 100%;
+    }
+}
+/* Tablets */
+@media (max-width: 900px) {
+    :where(body.page-appointment) .grid-two {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    :where(body.page-appointment) .calendar-card {
+        max-width: 520px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    :where(body.page-appointment) .form-card {
+        max-width: 720px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+/* Large phones */
+@media (max-width: 700px) {
+    /* a tall sticky header would cover too much of a small screen */
+    :where(body.page-appointment) .site-header {
+        position: static;
+    }
+    :where(body.page-appointment) .main-nav a {
+        padding: 8px 0;
+    }
+    :where(body.page-appointment) .hero-art {
+        display: none;
+    }
+    :where(body.page-appointment) .care-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    :where(body.page-appointment) .care-text p {
+        margin-inline: auto;
+    }
+}
+/* Phones */
+@media (max-width: 600px) {
+    :where(body.page-appointment) .site-header {
+        padding: 14px 16px 18px;
+        gap: 16px;
+    }
+    :where(body.page-appointment) .logo {
+        margin: 0;
+    }
+    :where(body.page-appointment) .logo img {
+        height: 56px;
+    }
+    :where(body.page-appointment) .logo-text .brand {
+        font-size: clamp(23px, 7vw, 30px);
+    }
+    :where(body.page-appointment) .logo-text .sub {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+        margin-left: 20px;
+    }
+    :where(body.page-appointment) .main-nav {
+        order: initial;
+        flex: 0 0 100%;
+    }
+    :where(body.page-appointment) .main-nav ul {
+        gap: 10px 18px;
+    }
+    :where(body.page-appointment) .main-nav a {
+        font-size: 13px;
+    }
+    :where(body.page-appointment) .day {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    :where(body.page-appointment) .cal-weekdays span {
+        font-size: 16px;
+    }
+    :where(body.page-appointment) .cal-head {
+        margin-inline: -8px;
+    }
+}
+@media (max-width: 380px) {
+    :where(body.page-appointment) .logo img {
+        height: 48px;
+    }
+    :where(body.page-appointment) .logo-text .brand {
+        font-size: 22px;
+    }
+    :where(body.page-appointment) .logo-text .sub {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+        margin-left: 12px;
+    }
+    :where(body.page-appointment) .day {
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    html:has(body.page-appointment) {
+        scroll-behavior: auto;
+    }
+    :where(body.page-appointment) *,
+:where(body.page-appointment) *::before,
+:where(body.page-appointment) *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+/* ===== CSS-only hamburger menu ===== */
+/* ===== CSS-only hamburger menu ===== */
+:where(body.page-appointment) .menu-check {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+:where(body.page-appointment) .menu-toggle {
+    display: none;
+}
+@media (max-width: 768px) {
+    :where(body.page-appointment) .site-header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        min-height: 0;
+        gap: 0;
+        padding: 10px 16px;
+    }
+    :where(body.page-appointment) .logo {
+        margin: 0;
+    }
+    :where(body.page-appointment) .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: #fff;
+        border: 2px solid #c6e4fb;
+        border-radius: 10px;
+        font-size: 22px;
+        color: var(--navy);
+        cursor: pointer;
+    }
+    :where(body.page-appointment) .menu-toggle::before {
+        content: "☰";
+    }
+    :where(body.page-appointment) .menu-check:checked + .menu-toggle::before {
+        content: "✕";
+    }
+    :where(body.page-appointment) .menu-check:focus-visible + .menu-toggle {
+        outline: 3px solid #1f47c9;
+        outline-offset: 3px;
+    }
+    :where(body.page-appointment) .main-nav {
+        display: none;
+        order: 3;
+        flex: 0 0 100%;
+        width: 100%;
+        position: static;
+        transform: none;
+    }
+    :where(body.page-appointment) .menu-check:checked ~ .main-nav {
+        display: block;
+    }
+    :where(body.page-appointment) .main-nav ul {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 10px;
+    }
+    :where(body.page-appointment) .main-nav a {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 0 14px;
+        font-size: 16px;
+        border-top: 1px solid #c6e4fb;
+    }
+    :where(body.page-appointment) .main-nav a.active {
+        background: transparent;
+        border-left: 4px solid var(--yellow);
+    }
+    :where(body.page-appointment) .main-nav a.active::after {
+        display: none;
+    }
+}
+
+/* ==========================================================
+   CONTACT  —  from contact.css
+   Applies only when <body class="page-contact">
+   ========================================================== */
+body.page-contact {
+    --navy: #0c3b78;
+    --blue: #1a6bc4;
+    --blue-soft: #d9ebfa;
+    --blue-pale: #eaf6ff;
+    --border: #bcd6f5;
+    --yellow: #ffd95a;
+    --white: #ffffff;
+    --text: #123a6b;
+    --font: "Lexend", "Segoe UI", Arial, sans-serif;
+}
+:where(body.page-contact) * {
+    box-sizing: border-box;
+}
+html:has(body.page-contact) {
+    -webkit-text-size-adjust: 100%;
+}
+body:where(.page-contact) {
+    margin: 0;
+    font-family: var(--font);
+    color: var(--text);
+    background: var(--blue-pale);
+    line-height: 1.5;
+}
+:where(body.page-contact) img {
+    max-width: 100%;
+    display: block;
+}
+:where(body.page-contact) a {
+    color: var(--blue);
+}
+:where(body.page-contact) :focus-visible {
+    outline: 3px solid var(--navy);
+    outline-offset: 2px;
+}
+/* ===== Header (same as Home and Services) ===== */
+:where(body.page-contact) .site-header {
+    height: 128px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px 0 16px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+:where(body.page-contact) .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+:where(body.page-contact) .logo img {
+    height: 86px;
+    width: auto;
+}
+:where(body.page-contact) .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+:where(body.page-contact) .logo-text .brand {
+    font-family: "Outfit", sans-serif;
+    font-weight: 800;
+    font-size: 42px;
+    color: #0b2e6e;
+    letter-spacing: -1px;
+}
+:where(body.page-contact) .logo-text .sub {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 3px;
+    color: #1b4fd8;
+    margin: 10px 0 0 42px;
+}
+:where(body.page-contact) .main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 42px;
+}
+:where(body.page-contact) .main-nav a {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: #1b4fd8;
+    text-decoration: none;
+    padding-bottom: 4px;
+    position: relative;
+    transition: color 0.2s;
+}
+:where(body.page-contact) .main-nav a:hover {
+    color: #0b2e6e;
+}
+:where(body.page-contact) .main-nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 32px;
+    height: 4px;
+    border-radius: 4px;
+    background: #ffd84d;
+    transform: translateX(-50%);
+}
+:where(body.page-contact) .btn-book {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: #ffd84d;
+    color: #0b2e6e;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 16px 28px;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+:where(body.page-contact) .btn-book svg {
+    width: 24px;
+    height: 24px;
+}
+:where(body.page-contact) .btn-book:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(11, 46, 110, 0.18);
+}
+/* ===== Footer (same as Home and Services) ===== */
+:where(body.page-contact) .site-footer {
+    background: #c4e4fd;
+    min-height: 116px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #6c93c7;
+    text-align: center;
+    padding: 24px 20px;
+    margin-top: 3rem;
+}
+:where(body.page-contact) .site-footer p {
+    margin: 0;
+    color: inherit;
+}
+:where(body.page-contact) .btn {
+    display: inline-block;
+    border: 0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+:where(body.page-contact) .btn-primary {
+    background: var(--blue);
+    color: var(--white);
+    padding: 0.85rem 1rem;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+:where(body.page-contact) .btn-primary:hover {
+    background: var(--navy);
+}
+/* ===== Hero (same format as Services) ===== */
+:where(body.page-contact) .hero {
+    background: var(--blue-soft);
+    height: 300px;
+    /* same rule as Services; the photo is absolutely positioned so it can't stretch the hero */
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-top: 2px;
+    overflow: hidden;
+}
+:where(body.page-contact) .hero-text {
+    padding: 46px 24px 40px clamp(24px, 6vw, 90px);
+    flex: 1;
+    align-self: center;
+}
+:where(body.page-contact) .hero-text h1 {
+    margin: 0;
+    font-family: "Outfit", sans-serif;
+    font-weight: 800;
+    font-size: clamp(32px, 5vw, 58px);
+    letter-spacing: -1px;
+    color: #0b2e6e;
+    line-height: 1.1;
+}
+:where(body.page-contact) .hero-text p {
+    margin: 14px 0 0;
+    font-size: clamp(16px, 2vw, 20px);
+    letter-spacing: 1px;
+    font-weight: 300;
+    color: #0b2e6e;
+}
+:where(body.page-contact) .hero-image {
+    position: relative;
+    width: min(628px, 45%);
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #e7b4bb, #bfd9f5);
+}
+:where(body.page-contact) .hero-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+:where(body.page-contact) .hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(36, 85, 190, 0) 78%, rgba(36, 85, 190, 0.9) 100%);
+    pointer-events: none;
+}
+:where(body.page-contact) .container {
+    max-width: 1000px;
+    margin: 2rem auto 0;
+    padding: 0 1.25rem;
+}
+:where(body.page-contact) .grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 1.25rem;
+    align-items: stretch;
+}
+:where(body.page-contact) .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+}
+:where(body.page-contact) .card h2 {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    color: var(--blue);
+}
+:where(body.page-contact) .info-list {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+:where(body.page-contact) .info-list li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+:where(body.page-contact) .info-list svg {
+    width: 26px;
+    height: 26px;
+    flex: none;
+    fill: var(--blue);
+    margin-top: 2px;
+}
+:where(body.page-contact) .info-list strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--blue);
+}
+:where(body.page-contact) .info-list span {
+    font-size: 0.85rem;
+}
+:where(body.page-contact) .info-list a {
+    text-decoration: none;
+}
+:where(body.page-contact) .info-list a:hover {
+    text-decoration: underline;
+}
+:where(body.page-contact) .socials {
+    display: flex;
+    gap: 0.75rem;
+}
+:where(body.page-contact) .socials a {
+    display: inline-flex;
+    border-radius: 8px;
+}
+:where(body.page-contact) .socials svg {
+    width: 34px;
+    height: 34px;
+    fill: var(--navy);
+}
+:where(body.page-contact) .socials a:hover svg {
+    fill: var(--blue);
+}
+:where(body.page-contact) .handle {
+    margin: 0.4rem 0 0;
+    font-size: 0.8rem;
+    color: var(--blue);
+    font-weight: 500;
+}
+/* Map card: heading on top, map fills the rest of the card and stays inside its border */
+:where(body.page-contact) .map-card {
+    display: flex;
+    flex-direction: column;
+}
+:where(body.page-contact) .map-wrap {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+:where(body.page-contact) .map-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+:where(body.page-contact) .map-pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+:where(body.page-contact) .pin-label {
+    background: var(--white);
+    color: var(--navy);
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 0.35rem 0.7rem;
+    border: 2px solid var(--blue);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+:where(body.page-contact) .map-pin svg {
+    width: 44px;
+    height: 44px;
+    fill: #d93025;
+    margin-top: 2px;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+}
+:where(body.page-contact) .form-card {
+    max-width: 560px;
+    margin-top: 1.25rem;
+}
+:where(body.page-contact) .form-card label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0.9rem 0 0.35rem;
+}
+:where(body.page-contact) .req {
+    color: #d93025;
+}
+:where(body.page-contact) .form-card input {
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+}
+:where(body.page-contact) .form-card input::placeholder {
+    color: #7ba1cf;
+}
+:where(body.page-contact) .form-card input:focus {
+    outline: 3px solid var(--blue);
+    outline-offset: 0;
+    border-color: var(--blue);
+}
+:where(body.page-contact) .form-card input:user-invalid {
+    border-color: #d93025;
+}
+/* ===== Responsive (same breakpoints as Home) ===== */
+/* Laptops / small desktops */
+@media (max-width: 1200px) {
+    :where(body.page-contact) .site-header {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 16px;
+        gap: 14px;
+        justify-content: center;
+    }
+    :where(body.page-contact) .main-nav ul {
+        gap: 22px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+/* Tablets */
+@media (max-width: 900px) {
+    :where(body.page-contact) .grid-two {
+        grid-template-columns: 1fr;
+    }
+    :where(body.page-contact) .map-wrap {
+        min-height: 320px;
+    }
+    :where(body.page-contact) .form-card {
+        max-width: none;
+    }
+    :where(body.page-contact) .hero-image {
+        width: 40%;
+    }
+}
+/* Large phones */
+@media (max-width: 700px) {
+    /* a tall sticky header would cover too much of a small screen */
+    :where(body.page-contact) .site-header {
+        position: static;
+    }
+    :where(body.page-contact) .main-nav a {
+        padding: 8px 0;
+    }
+    :where(body.page-contact) .site-footer {
+        font-size: 15px;
+    }
+    :where(body.page-contact) .hero {
+        flex-direction: column;
+        height: auto;
+    }
+    :where(body.page-contact) .hero-text {
+        padding: 30px 24px;
+        align-self: auto;
+    }
+    :where(body.page-contact) .hero-image {
+        width: 100%;
+        height: 180px;
+    }
+}
+/* Phones */
+@media (max-width: 600px) {
+    :where(body.page-contact) .logo img {
+        height: 64px;
+    }
+    :where(body.page-contact) .logo-text .brand {
+        font-size: 30px;
+    }
+    :where(body.page-contact) .logo-text .sub {
+        font-size: 12px;
+        margin-left: 28px;
+    }
+    :where(body.page-contact) .main-nav ul {
+        gap: 6px 18px;
+    }
+    :where(body.page-contact) .main-nav a {
+        font-size: 15px;
+    }
+    :where(body.page-contact) .btn-book {
+        font-size: 15px;
+        padding: 12px 22px;
+    }
+    :where(body.page-contact) .container {
+        padding: 0 1rem;
+    }
+    :where(body.page-contact) .card {
+        padding: 1.15rem;
+    }
+    :where(body.page-contact) .map-wrap {
+        min-height: 260px;
+    }
+    :where(body.page-contact) .pin-label {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+    :where(body.page-contact) .map-pin svg {
+        width: 36px;
+        height: 36px;
+    }
+}
+/* Very small phones (320px - 400px) */
+@media (max-width: 400px) {
+    :where(body.page-contact) .logo img {
+        height: 52px;
+    }
+    :where(body.page-contact) .logo-text .brand {
+        font-size: 25px;
+    }
+    :where(body.page-contact) .logo-text .sub {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-left: 20px;
+    }
+    :where(body.page-contact) .main-nav ul {
+        gap: 4px 14px;
+    }
+    :where(body.page-contact) .main-nav a {
+        font-size: 14px;
+        letter-spacing: .5px;
+    }
+    :where(body.page-contact) .hero-text h1 {
+        font-size: 30px;
+    }
+    :where(body.page-contact) .card {
+        padding: 1rem;
+    }
+}
+/* ==========================================================
+   Header, navigation and footer - same as Home_Style.css
+   ========================================================== */
+:where(body.page-contact) .site-header {
+    line-height: normal;
+    /* same header height as Services */
+    min-height: 96px;
+    height: auto;
+    gap: 22px;
+    padding: 14px clamp(16px, 2.5vw, 36px);
+}
+:where(body.page-contact) .logo {
+    flex: 0 1 auto;
+    min-width: 0;
+}
+:where(body.page-contact) .logo img {
+    height: clamp(54px, 5.2vw, 76px);
+}
+:where(body.page-contact) .logo-text .brand {
+    font-size: clamp(25px, 2.4vw, 36px);
+    letter-spacing: -0.8px;
+    white-space: nowrap;
+}
+:where(body.page-contact) .logo-text .sub {
+    font-size: clamp(10px, 1vw, 14px);
+    letter-spacing: clamp(1.5px, .2vw, 2.5px);
+    margin: 7px 0 0 clamp(12px, 2vw, 30px);
+    white-space: nowrap;
+}
+:where(body.page-contact) .main-nav {
+    min-width: 0;
+}
+:where(body.page-contact) .main-nav ul {
+    gap: clamp(12px, 2vw, 28px);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+:where(body.page-contact) .main-nav a {
+    font-size: clamp(13px, 1.15vw, 16px);
+    letter-spacing: .2px;
+}
+:where(body.page-contact) .site-header > .btn-book {
+    flex: 0 0 auto;
+    padding: 13px 18px;
+    gap: 9px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+:where(body.page-contact) .site-footer {
+    min-height: 90px;
+    font-size: 15px;
+    color: #35598c;
+    padding: 24px 20px;
+}
+/* Medium screens */
+@media (max-width: 1150px) {
+    :where(body.page-contact) .site-header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    :where(body.page-contact) .logo {
+        margin-right: auto;
+    }
+    :where(body.page-contact) .site-header > .btn-book {
+        margin-left: auto;
+    }
+    :where(body.page-contact) .main-nav {
+        order: 3;
+        flex: 1 0 100%;
+    }
+}
+@media (max-width: 600px) {
+    :where(body.page-contact) .site-header {
+        padding: 14px 16px 18px;
+        gap: 16px;
+    }
+    :where(body.page-contact) .logo {
+        margin: 0;
+    }
+    :where(body.page-contact) .logo img {
+        height: 56px;
+    }
+    :where(body.page-contact) .logo-text .brand {
+        font-size: clamp(23px, 7vw, 30px);
+    }
+    :where(body.page-contact) .logo-text .sub {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+        margin-left: 20px;
+    }
+    :where(body.page-contact) .main-nav {
+        order: initial;
+        flex: 0 0 100%;
+    }
+    :where(body.page-contact) .main-nav ul {
+        gap: 10px 18px;
+    }
+    :where(body.page-contact) .main-nav a {
+        font-size: 13px;
+    }
+    :where(body.page-contact) .site-header > .btn-book {
+        margin: 0;
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+}
+@media (max-width: 380px) {
+    :where(body.page-contact) .logo img {
+        height: 48px;
+    }
+    :where(body.page-contact) .logo-text .brand {
+        font-size: 22px;
+    }
+    :where(body.page-contact) .logo-text .sub {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+        margin-left: 12px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    html:has(body.page-contact) {
+        scroll-behavior: auto;
+    }
+    :where(body.page-contact) *,
+:where(body.page-contact) *::before,
+:where(body.page-contact) *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+/* ==========================================================
+   Center the main navigation on the page (desktop)
+   Logo | nav | (empty) -> equal side columns keep the nav in the
+   true middle, same as the Services page.
+   ========================================================== */
+@media (min-width: 1151px) {
+    :where(body.page-contact) .site-header {
+        display: grid;
+        grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+        align-items: center;
+    }
+    :where(body.page-contact) .logo {
+        justify-self: start;
+    }
+    :where(body.page-contact) .main-nav {
+        justify-self: center;
+    }
+    :where(body.page-contact) .main-nav ul {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    :where(body.page-contact) .site-header > .btn-book {
+        justify-self: end;
+        margin-left: 0;
+    }
+}
+/* ===== CSS-only hamburger menu ===== */
+:where(body.page-contact) .menu-check {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+:where(body.page-contact) .menu-toggle {
+    display: none;
+}
+@media (max-width: 768px) {
+    :where(body.page-contact) .site-header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        min-height: 0;
+        gap: 0;
+        padding: 10px 16px;
+    }
+    :where(body.page-contact) .logo {
+        margin: 0;
+    }
+    :where(body.page-contact) .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: #fff;
+        border: 2px solid #c6e4fb;
+        border-radius: 10px;
+        font-size: 22px;
+        color: var(--navy);
+        cursor: pointer;
+    }
+    :where(body.page-contact) .menu-toggle::before {
+        content: "☰";
+    }
+    :where(body.page-contact) .menu-check:checked + .menu-toggle::before {
+        content: "✕";
+    }
+    :where(body.page-contact) .menu-check:focus-visible + .menu-toggle {
+        outline: 3px solid #1f47c9;
+        outline-offset: 3px;
+    }
+    :where(body.page-contact) .main-nav {
+        display: none;
+        order: 3;
+        flex: 0 0 100%;
+        width: 100%;
+        position: static;
+        transform: none;
+    }
+    :where(body.page-contact) .menu-check:checked ~ .main-nav {
+        display: block;
+    }
+    :where(body.page-contact) .main-nav ul {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 10px;
+    }
+    :where(body.page-contact) .main-nav a {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 0 14px;
+        font-size: 16px;
+        border-top: 1px solid #c6e4fb;
+    }
+    :where(body.page-contact) .main-nav a.active {
+        background: var(--transparent);
+        border-left: 4px solid var(--yellow);
+    }
+    :where(body.page-contact) .main-nav a.active::after {
+        display: none;
+    }
+}
+
+/* ==========================================================
+   PATIENT RESOURCES  —  from resources.css
+   Applies only when <body class="page-resources">
+   ========================================================== */
+/* ==========================================================
+   MolarCoaster Dental Clinic - styles.css (Patient Resources)
+   Header, navigation and footer use the same markup and styling
+   as services.css. Colours, Outfit headings, hero, cards match too.
+   ========================================================== */
+body.page-resources {
+    --navy: #0b2e6e;
+    --ink: #0b2e6e;
+    --blue: #1b4fd8;
+    --yellow: #ffd84d;
+    --hero: #d9ebf8;
+    --sky: #d9ebf8;
+    --footer-sky: #c4e4fd;
+    --mist: #f3f9fe;
+    --muted: #6c93c7;
+    --card-y: #fdf0c0;
+    --card-y-b: #e8c53a;
+    --card-y-t: #7a6420;
+    --card-g: #e9fbd0;
+    --card-g-b: #a5e05a;
+    --card-g-t: #2d5a1f;
+    --card-b: #c5d8fd;
+    --card-b-b: #6aa7f5;
+    --card-b-t: #0b2e6e;
+    --card-s: #c8ecff;
+    --card-s-b: #6ab4f5;
+    --card-s-t: #1a4fb8;
+    --card-p: #ffe1e3;
+    --card-p-b: #f08a90;
+    --card-p-t: #7a1f1f;
+    --radius: 14px;
+}
+:where(body.page-resources) * {
+    box-sizing: border-box
+}
+html:has(body.page-resources) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+    -webkit-text-size-adjust: 100%
+}
+body:where(.page-resources) {
+    margin: 0;
+    font-family: 'Lexend', Arial, sans-serif;
+    color: var(--navy);
+    background: #fff;
+    line-height: 1.5
+}
+:where(body.page-resources) a {
+    color: var(--blue)
+}
+:where(body.page-resources) img {
+    max-width: 100%;
+    display: block
+}
+:where(body.page-resources) :focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 3px
+}
+:where(body.page-resources) .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px
+}
+/* ---------------- HEADER / NAV (same as services.css) ---------------- */
+:where(body.page-resources) .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+    align-items: center;
+    gap: 22px;
+    min-height: 96px;
+    padding: 14px clamp(16px, 2.5vw, 36px);
+    background: #fff
+}
+:where(body.page-resources) .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 1 auto;
+    min-width: 0;
+    justify-self: start;
+    text-decoration: none;
+    color: var(--navy)
+}
+:where(body.page-resources) .logo img {
+    height: clamp(54px, 5.2vw, 76px);
+    width: auto
+}
+:where(body.page-resources) .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1
+}
+:where(body.page-resources) .logo-text .brand {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: clamp(25px, 2.4vw, 36px);
+    letter-spacing: -.8px;
+    color: var(--navy);
+    white-space: nowrap
+}
+:where(body.page-resources) .logo-text .sub {
+    max-width: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: clamp(10px, 1vw, 14px);
+    letter-spacing: clamp(1.5px, .2vw, 2.5px);
+    color: var(--blue);
+    margin: 7px 0 0 clamp(12px, 2vw, 30px);
+    white-space: nowrap
+}
+:where(body.page-resources) .main-nav {
+    min-width: 0;
+    justify-self: center
+}
+:where(body.page-resources) .main-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: clamp(12px, 2vw, 28px);
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+:where(body.page-resources) .main-nav a {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: clamp(13px, 1.15vw, 16px);
+    letter-spacing: .2px;
+    color: var(--blue);
+    padding-bottom: 4px;
+    transition: color .2s
+}
+:where(body.page-resources) .main-nav a:hover {
+    color: var(--navy)
+}
+:where(body.page-resources) .main-nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 32px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--yellow);
+    transform: translateX(-50%)
+}
+/* CSS-only hamburger (hidden on desktop) */
+:where(body.page-resources) .menu-check {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none
+}
+:where(body.page-resources) .menu-toggle {
+    display: none
+}
+/* ---------------- hero ---------------- */
+:where(body.page-resources) .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 300px;
+    margin-top: 2px;
+    background: var(--hero);
+    overflow: hidden
+}
+:where(body.page-resources) .hero-text {
+    flex: 1;
+    align-self: center;
+    padding: 46px 24px 40px clamp(24px, 6vw, 90px)
+}
+:where(body.page-resources) .hero h1 {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(32px, 5vw, 58px);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--navy)
+}
+:where(body.page-resources) .lead {
+    margin: 14px 0 24px;
+    max-width: 46ch;
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 300;
+    letter-spacing: 1px
+}
+:where(body.page-resources) .hero-img {
+    position: relative;
+    width: min(628px, 45%);
+    flex-shrink: 0;
+    align-self: stretch;
+    min-height: 240px;
+    background: linear-gradient(135deg, #e7b4bb, #bfd9f5)
+}
+:where(body.page-resources) .hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+:where(body.page-resources) .hero-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(36, 85, 190, 0) 78%, rgba(36, 85, 190, .9) 100%);
+    pointer-events: none
+}
+:where(body.page-resources) .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px
+}
+/* ---------------- buttons ---------------- */
+:where(body.page-resources) .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 22px;
+    border-radius: 14px;
+    font: 700 15px 'Outfit', sans-serif;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s, background .2s
+}
+:where(body.page-resources) .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(11, 46, 110, .18)
+}
+:where(body.page-resources) .btn-solid {
+    background: var(--navy);
+    color: #fff
+}
+:where(body.page-resources) .btn-solid:hover {
+    background: var(--blue)
+}
+:where(body.page-resources) .btn-outline {
+    background: #fff;
+    color: var(--navy);
+    border-color: var(--navy)
+}
+:where(body.page-resources) .btn-outline:hover {
+    background: var(--sky)
+}
+:where(body.page-resources) .btn-yellow {
+    background: var(--yellow);
+    color: var(--navy)
+}
+/* ---------------- sections ---------------- */
+:where(body.page-resources) .section {
+    padding: 64px 0
+}
+:where(body.page-resources) .section.tint {
+    background: var(--mist)
+}
+:where(body.page-resources) h2 {
+    margin: 0 0 6px;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 800;
+    letter-spacing: -.5px;
+    line-height: 1.15
+}
+:where(body.page-resources) .sub {
+    margin: 0;
+    max-width: 60ch
+}
+:where(body.page-resources) .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 28px
+}
+:where(body.page-resources) .chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap
+}
+:where(body.page-resources) .chip {
+    font: 600 14px 'Outfit', sans-serif;
+    letter-spacing: .3px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 2px solid var(--sky);
+    background: #fff;
+    color: var(--navy);
+    cursor: pointer;
+    transition: background .2s
+}
+:where(body.page-resources) .chip:hover {
+    background: var(--sky)
+}
+:where(body.page-resources) .chip.is-on {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #fff
+}
+/* ---------------- cards ---------------- */
+:where(body.page-resources) .cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px 30px
+}
+:where(body.page-resources) .card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid;
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .25s, box-shadow .25s
+}
+:where(body.page-resources) .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(11, 46, 110, .15)
+}
+:where(body.page-resources) .card[data-tone="y"] {
+    background: var(--card-y);
+    border-color: var(--card-y-b);
+    color: var(--card-y-t)
+}
+:where(body.page-resources) .card[data-tone="g"] {
+    background: var(--card-g);
+    border-color: var(--card-g-b);
+    color: var(--card-g-t)
+}
+:where(body.page-resources) .card[data-tone="b"] {
+    background: var(--card-b);
+    border-color: var(--card-b-b);
+    color: var(--card-b-t)
+}
+:where(body.page-resources) .card[data-tone="s"] {
+    background: var(--card-s);
+    border-color: var(--card-s-b);
+    color: var(--card-s-t)
+}
+:where(body.page-resources) .card[data-tone="p"] {
+    background: var(--card-p);
+    border-color: var(--card-p-b);
+    color: var(--card-p-t)
+}
+:where(body.page-resources) .thumb {
+    position: relative;
+    height: 170px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, .55)
+}
+:where(body.page-resources) .thumb svg {
+    width: 84px;
+    height: 84px
+}
+:where(body.page-resources) .badge {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--navy)
+}
+:where(body.page-resources) .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 18px 14px;
+    flex: 1
+}
+:where(body.page-resources) .tag {
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .75)
+}
+:where(body.page-resources) .card h3 {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: .5px
+}
+:where(body.page-resources) .card p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.3;
+    letter-spacing: .4px;
+    color: var(--navy);
+    opacity: .85
+}
+:where(body.page-resources) .card-foot {
+    margin-top: auto;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px
+}
+:where(body.page-resources) .card-foot .go {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    letter-spacing: .6px;
+    color: #0b4fc2;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px
+}
+:where(body.page-resources) .card-foot .go svg {
+    width: 26px;
+    height: 12px;
+    transition: transform .2s
+}
+:where(body.page-resources) .card:hover .go svg {
+    transform: translateX(6px)
+}
+:where(body.page-resources) .empty {
+    padding: 28px;
+    text-align: center;
+    background: var(--mist);
+    border-radius: var(--radius)
+}
+:where(body.page-resources) .note {
+    margin: 24px 0 0;
+    font-size: 14px;
+    color: var(--muted)
+}
+/* ---------------- forms ---------------- */
+:where(body.page-resources) .forms {
+    list-style: none;
+    margin: 28px 0 0;
+    padding: 0;
+    border: 2px solid var(--sky);
+    border-radius: var(--radius);
+    background: #fff;
+    overflow: hidden
+}
+:where(body.page-resources) .form-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px
+}
+:where(body.page-resources) .form-row+.form-row {
+    border-top: 2px solid var(--sky)
+}
+:where(body.page-resources) .pdf {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: var(--card-y);
+    border: 2px solid var(--card-y-b);
+    font: 700 12px 'Outfit', sans-serif;
+    color: var(--card-y-t)
+}
+:where(body.page-resources) .form-info h3 {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px
+}
+:where(body.page-resources) .form-info p {
+    margin: 2px 0 0;
+    font-size: 15px
+}
+:where(body.page-resources) .meta {
+    font-size: 14px;
+    color: var(--muted)
+}
+/* ---------------- footer ---------------- */
+:where(body.page-resources) .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90px;
+    padding: 24px 20px;
+    background: var(--footer-sky);
+    text-align: center
+}
+:where(body.page-resources) .footer p {
+    margin: 0;
+    color: #35598c;
+    font-size: 15px;
+    font-weight: 400
+}
+/* ---------------- responsive ---------------- */
+/* Medium screens: logo on the left, nav drops to its own row */
+@media (max-width:1150px) {
+    :where(body.page-resources) .site-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center
+    }
+    :where(body.page-resources) .logo {
+        margin-right: auto
+    }
+    :where(body.page-resources) .main-nav {
+        order: 3;
+        flex: 1 0 100%
+    }
+    :where(body.page-resources) .main-nav ul {
+        flex-wrap: wrap
+    }
+}
+@media (max-width:980px) {
+    :where(body.page-resources) .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+    :where(body.page-resources) .hero-img {
+        width: 40%
+    }
+}
+/* Hamburger menu (CSS only, same as services.css) */
+@media (max-width:768px) {
+    :where(body.page-resources) .site-header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        min-height: 0;
+        gap: 0;
+        padding: 10px 16px
+    }
+    :where(body.page-resources) .logo {
+        margin: 0
+    }
+    :where(body.page-resources) .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: #fff;
+        border: 2px solid #c6e4fb;
+        border-radius: 10px;
+        font-size: 22px;
+        color: var(--navy);
+        cursor: pointer
+    }
+    :where(body.page-resources) .menu-toggle::before {
+        content: "☰"
+    }
+    :where(body.page-resources) .menu-check:checked+.menu-toggle::before {
+        content: "✕"
+    }
+    :where(body.page-resources) .menu-check:focus-visible+.menu-toggle {
+        outline: 3px solid #1f47c9;
+        outline-offset: 3px
+    }
+    :where(body.page-resources) .main-nav {
+        display: none;
+        order: 3;
+        flex: 0 0 100%;
+        width: 100%;
+        position: static;
+        transform: none
+    }
+    :where(body.page-resources) .menu-check:checked~.main-nav {
+        display: block
+    }
+    :where(body.page-resources) .main-nav ul {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 10px
+    }
+    :where(body.page-resources) .main-nav a {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 0 14px;
+        font-size: 16px;
+        border-top: 1px solid #c6e4fb
+    }
+    :where(body.page-resources) .main-nav a.active {
+        background: var(--transparent);
+        border-left: 4px solid var(--yellow)
+    }
+    :where(body.page-resources) .main-nav a.active::after {
+        display: none
+    }
+}
+@media (max-width:700px) {
+    /* a tall sticky header would cover too much of a small screen */
+    :where(body.page-resources) .site-header {
+        position: static
+    }
+    :where(body.page-resources) .hero {
+        flex-direction: column;
+        min-height: 0
+    }
+    :where(body.page-resources) .hero-text {
+        align-self: auto;
+        padding: 30px 24px
+    }
+    :where(body.page-resources) .hero-img {
+        width: 100%;
+        height: 180px;
+        min-height: 0;
+        align-self: auto
+    }
+    :where(body.page-resources) .section {
+        padding: 44px 0
+    }
+    :where(body.page-resources) .chips {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        width: 100%;
+        padding-bottom: 6px;
+        scrollbar-width: thin
+    }
+    :where(body.page-resources) .chip {
+        white-space: nowrap;
+        flex: none
+    }
+}
+@media (max-width:640px) {
+    :where(body.page-resources) .wrap {
+        padding: 0 16px
+    }
+    :where(body.page-resources) .cards {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 360px;
+        margin: 0 auto
+    }
+    :where(body.page-resources) .form-row {
+        grid-template-columns: auto 1fr;
+        gap: 12px 16px
+    }
+    :where(body.page-resources) .meta {
+        grid-column: 2
+    }
+    :where(body.page-resources) .form-row .btn {
+        grid-column: 1/-1;
+        width: 100%
+    }
+    :where(body.page-resources) .hero-actions .btn {
+        flex: 1 1 100%
+    }
+}
+@media (max-width:600px) {
+    :where(body.page-resources) .logo img {
+        height: 56px
+    }
+    :where(body.page-resources) .logo-text .brand {
+        font-size: clamp(23px, 7vw, 30px)
+    }
+    :where(body.page-resources) .logo-text .sub {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+        margin-left: 20px
+    }
+}
+@media (max-width:380px) {
+    :where(body.page-resources) .logo img {
+        height: 48px
+    }
+    :where(body.page-resources) .logo-text .brand {
+        font-size: 22px
+    }
+    :where(body.page-resources) .logo-text .sub {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+        margin-left: 12px
+    }
+}
+@media (prefers-reduced-motion:reduce) {
+    :where(body.page-resources) *,
+:where(body.page-resources) *::before,
+:where(body.page-resources) *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important
+    }
+}
+
+/* ==========================================================
+   ENHANCEMENTS  —  from enhancements.css (all pages, must stay last)
+   ========================================================== */
+/* Styles for the JavaScript features: form status messages,
+   booking confirmation, booked time slots and the FAQ accordion. */
+
+.form-status {
+  margin: 14px 0 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.form-status:not(:empty) {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid;
+}
+
+.form-status.is-success {
+  color: #1d5e32;
+  background: #e6f7ec;
+  border-color: #9fd8b2;
+}
+
+.form-status.is-error {
+  color: #8a1f14;
+  background: #fdeceb;
+  border-color: #f1aaa3;
+}
+
+.form-status.is-info {
+  color: #123a6b;
+  background: #eaf6ff;
+  border-color: #b7d3f6;
+}
+
+.field-error {
+  display: block;
+  margin-top: 4px;
+  font-size: 12.5px;
+  color: #d93025;
+}
+
+input.has-error,
+select.has-error {
+  border-color: #d93025 !important;
+}
+
+button[aria-busy="true"] {
+  opacity: .7;
+  cursor: progress;
+}
+
+/* Booking confirmation */
+.confirm-box {
+  text-align: left;
+}
+
+.confirm-box h2 {
+  margin-bottom: 10px;
+}
+
+.confirm-box dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 16px;
+  margin: 16px 0 22px;
+  font-size: 15px;
+}
+
+.confirm-box dt {
+  font-weight: 600;
+  color: #0c3b78;
+}
+
+.confirm-box dd {
+  margin: 0;
+}
+
+.confirm-box .btn-submit {
+  margin-top: 0;
+}
+
+/* Time slots that are already taken */
+.slots-note.is-full {
+  color: #d93025;
+}
+
+/* FAQ accordion (About page) */
+.faq-card .faq-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-card .faq-toggle::after {
+  content: "+";
+  flex: none;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.faq-card .faq-toggle[aria-expanded="true"]::after {
+  content: "\2212";
+}
+
+.faq-card .faq-answer {
+  margin-top: 10px;
+}
+
+.faq-card .faq-answer[hidden] {
+  display: none;
+}
+
+/* ===== Appointment page: form stays hidden until a date is picked ===== */
+.form-card[hidden] {
+  display: none;
+}
+
+.grid-two.no-date {
+  grid-template-columns: minmax(0, 520px);
+  justify-content: center;
+}
+
+/* =====================================================================
+   Shared footer (markup comes from layout.js)
+   Palette and fonts match the header: Outfit headings, Lexend body,
+   navy #0b2e6e, blue #1b4fd8, soft blue #c4e4fd.
+   Uses #site-footer so it overrides each page's own .site-footer rules.
+   ===================================================================== */
+#site-footer.site-footer {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  background: #c4e4fd;
+  color: #35598c;
+  text-align: center;
+  font-family: "Lexend", "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+#site-footer .footer-inner {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  padding: 36px clamp(16px, 3vw, 44px) 26px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1.5fr;
+  gap: 24px;
+  align-items: start;
+}
+
+#site-footer .brand {
+  display: block;
+  font-family: "Outfit", "Lexend", sans-serif;
+  font-weight: 800;
+  font-size: clamp(26px, 2.6vw, 34px);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  color: #0b2e6e;
+}
+
+#site-footer .footer-brand .sub {
+  display: block;
+  margin: 6px 0 0;
+  font-family: "Outfit", "Lexend", sans-serif;
+  font-weight: 600;
+  font-size: clamp(13px, 1.2vw, 16px);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #1b4fd8;
+}
+
+#site-footer .footer-brand p {
+  margin: 14px 0 0;
+  font-weight: 300;
+  color: #35598c;
+}
+
+#site-footer .footer-head {
+  display: block;
+  margin: 0 0 10px;
+  font-family: "Outfit", "Lexend", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #0b2e6e;
+  text-decoration: none;
+}
+
+#site-footer a.footer-head:hover,
+#site-footer .footer-col a:hover {
+  color: #1b4fd8;
+  text-decoration: underline;
+}
+
+#site-footer a:focus-visible {
+  outline: 3px solid #0c3b78;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+#site-footer .footer-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+#site-footer .footer-col a {
+  font-family: "Outfit", "Lexend", sans-serif;
+  font-weight: 600;
+  color: #1b4fd8;
+  text-decoration: none;
+}
+
+#site-footer .footer-col span {
+  color: #35598c;
+  font-weight: 400;
+}
+
+#site-footer .footer-contact li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#site-footer .footer-icon {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  color: #0b2e6e;
+}
+
+#site-footer .footer-bottom {
+  margin: 0 clamp(16px, 3vw, 44px);
+  padding: 16px 0 26px;
+  border-top: 1px solid #9fcbf0;
+}
+
+#site-footer .footer-bottom p {
+  margin: 0;
+  color: #35598c;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  #site-footer .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  #site-footer .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================================
+   Services page: search box and filtered cards
+   ===================================================================== */
+.service-search {
+  width: min(560px, calc(100% - 32px));
+  margin: 0 auto 28px;
+}
+
+.service-search label {
+  display: block;
+  margin: 0 0 6px;
+  font-family: "Outfit", "Lexend", sans-serif;
+  font-weight: 600;
+  color: #0b2e6e;
+}
+
+.service-search input {
+  display: block;
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  font: inherit;
+  font-family: "Lexend", "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  color: #123a6b;
+  background: #fff;
+  border: 2px solid #c3d4f8;
+  border-radius: 8px;
+}
+
+.service-search input:focus {
+  outline: 3px solid #1a6bc4;
+  outline-offset: 0;
+  border-color: #1a6bc4;
+}
+
+.service-empty {
+  margin: 0 auto 28px;
+  text-align: center;
+  color: #35598c;
+}
+
+.service-card[hidden],
+.service-empty[hidden] {
+  display: none !important;
+}
+
+.service-card.is-clickable {
+  cursor: pointer;
+}
