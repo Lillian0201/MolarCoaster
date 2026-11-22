@@ -3,8 +3,10 @@
    Combined from: layout, about, appointment, contact, resources,
    services. Include it ONCE on every page, at the end of <body>:
 
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
      <script src="/Patient/js/scripts.js" defer></script>
 
+   Bootstrap JS must come first (it powers the About FAQ accordion).
    The layout section runs first and builds the header/footer.
    Every other section checks that its own page's elements exist
    and quietly does nothing on the other pages.
@@ -205,11 +207,21 @@
     answer.setAttribute('role', 'region');
     answer.setAttribute('aria-labelledby', btn.id);
 
+    // Bootstrap loaded: let its Collapse component run the accordion.
+    if (window.bootstrap && window.bootstrap.Collapse) {
+      answer.classList.add('collapse');
+      btn.setAttribute('data-bs-toggle', 'collapse');
+      btn.setAttribute('data-bs-target', '#' + answer.id);
+      btn.setAttribute('aria-expanded', 'false');
+      return;
+    }
+
+    // Fallback when Bootstrap is not loaded.
     function open(state) {
       btn.setAttribute('aria-expanded', state ? 'true' : 'false');
       answer.hidden = !state;
     }
-    open(false); // first question starts open
+    open(false); // every question starts closed
     btn.addEventListener('click', function () {
       open(btn.getAttribute('aria-expanded') !== 'true');
     });
