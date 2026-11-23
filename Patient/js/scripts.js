@@ -4,7 +4,7 @@
    services. Include it ONCE on every page, at the end of <body>:
 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-     <script src="/Patient/js/scripts.js" defer></script>
+     <script src="/MolarCoaster/Patient/js/scripts.js" defer></script>
 
    Bootstrap JS must come first (it powers the About FAQ accordion).
    The layout section runs first and builds the header/footer.
@@ -23,12 +23,12 @@
   'use strict';
 
   var NAV = [
-    { key: 'home', label: 'Home', href: '/Patient/home.html' },
-    { key: 'appointments', label: 'Appointments', href: '/Patient/appointment.html' },
-    { key: 'about', label: 'About Us', href: '/Patient/about.html' },
-    { key: 'services', label: 'Services', href: '/Patient/services.html' },
-    { key: 'resources', label: 'Resources', href: '/Patient/resources.html' },
-    { key: 'contact', label: 'Contact Us', href: '/Patient/contact.html' }
+    { key: 'home', label: 'Home', href: '/MolarCoaster/Patient/home.html' },
+    { key: 'appointments', label: 'Appointments', href: '/MolarCoaster/Patient/appointment.html' },
+    { key: 'about', label: 'About Us', href: '/MolarCoaster/Patient/about.html' },
+    { key: 'services', label: 'Services', href: '/MolarCoaster/Patient/services.html' },
+    { key: 'resources', label: 'Resources', href: '/MolarCoaster/Patient/resources.html' },
+    { key: 'contact', label: 'Contact Us', href: '/MolarCoaster/Patient/contact.html' }
   ];
 
   var page = document.body.getAttribute('data-page') || 'home';
@@ -63,8 +63,8 @@
     header.innerHTML =
 
       // Logo
-      '<a href="/Patient/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">' +
-      '<img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo">' +
+      '<a href="/MolarCoaster/Patient/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">' +
+      '<img src="/MolarCoaster/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo">' +
       '<span class="logo-text">' +
       '<span class="brand">MolarCoaster</span>' +
       '<span class="sub">DENTAL CLINIC</span>' +
@@ -236,7 +236,7 @@
    so the next patient can no longer choose them, and a confirmation screen.
 
    To go live later, replace loadBookings() / saveBooking() with calls to
-   your server (e.g. /Patient/api/booked_slots.php and book_appointment.php). */
+   your server (e.g. /MolarCoaster/Patient/api/booked_slots.php and book_appointment.php). */
 (function () {
   'use strict';
 
@@ -540,7 +540,7 @@
    saved in this browser (localStorage) and a success message is shown.
 
    To go live later, replace saveMessage() with a fetch() to your server
-   (e.g. POST /Patient/api/send_message.php). */
+   (e.g. POST /MolarCoaster/Patient/api/send_message.php). */
 (function () {
   'use strict';
 
@@ -744,7 +744,7 @@
 (function () {
   'use strict';
 
-  var APPT_URL = '/Patient/appointment.html';
+  var APPT_URL = '/MolarCoaster/Patient/appointment.html';
 
   /* ---------- Detail pages ---------- */
   var title = document.querySelector('.detail-card h2');
