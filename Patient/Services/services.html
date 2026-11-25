@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Dental Services | MolarCoaster Dental Clinic</title>
   <link rel="stylesheet" href="services.css" />
+  <script src="/Patient/js/layout.js" defer></script>
+  <link rel="stylesheet" href="/Patient/css/enhancements.css">
+  <script src="services.js" defer></script>
 </head>
-<body>
+<body data-page="services">
 
   <!-- Reusable inline icons -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -25,31 +28,9 @@
   </svg>
 
   <!-- HEADER -->
-  <header class="site-header">
-  <a href="/Patient/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
-    <img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo" />
-    <span class="logo-text">
-      <span class="brand">MolarCoaster</span>
-      <span class="sub">DENTAL CLINIC</span>
-    </span>
-  </a>
-
-  <input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle menu" />
-  <label for="menu-check" class="menu-toggle"></label>
-
-  <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-    <ul>
-      <li><a href="/Patient/Home%20Page/home.html">Home</a></li>
-      <li><a href="/Patient/Appointment%20Booking/appointment.html">Appointments</a></li>
-      <li><a href="/Patient/About/about.html">About Us</a></li>
-      <li><a href="/Patient/Services/services.html" class="active" aria-current="page">Services</a></li>
-      <li><a href="/Patient/Contact/contact.html">Contact Us</a></li>
-    </ul>
-  </nav>
-</header>
+  <header id="site-header" class="site-header"></header>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-text">
         <h1>Our Dental Service</h1>
@@ -60,11 +41,16 @@
       </div>
     </section>
 
-    <!-- SERVICE CARDS -->
     <section class="services" aria-label="Dental services">
+      <div class="service-search">
+        <label for="service-search">Find a service</label>
+        <input type="search" id="service-search" placeholder="Try &ldquo;braces&rdquo;, &ldquo;whitening&rdquo; or &ldquo;extraction&rdquo;" autocomplete="off">
+      </div>
+      <p id="service-empty" class="service-empty" role="status" aria-live="polite" hidden></p>
+
       <div class="services-grid">
 
-        <article class="service-card card-general">
+        <article class="service-card card-general" data-keywords="cleaning checkup check-up x-ray fluoride sealant filling prophylaxis exam">
           <svg class="icon" aria-hidden="true"><use href="#tooth"/></svg>
           <h2>General Dentistry</h2>
           <p>Cleanings, checkups and preventive care.</p>
@@ -72,7 +58,7 @@
             <svg aria-hidden="true"><use href="#arrow"/></svg></a>
         </article>
 
-        <article class="service-card card-surgery">
+        <article class="service-card card-surgery" data-keywords="extraction wisdom tooth impacted soft tissue implant preparation">
           <svg class="icon" aria-hidden="true"><use href="#tooth"/></svg>
           <h2>Oral Surgery</h2>
           <p>Safe and effective surgical care.</p>
@@ -80,7 +66,7 @@
             <svg aria-hidden="true"><use href="#arrow"/></svg></a>
         </article>
 
-        <article class="service-card card-ortho">
+        <article class="service-card card-ortho" data-keywords="braces aligners retainer bite spacing straighten">
           <svg class="icon" aria-hidden="true"><use href="#tooth"/></svg>
           <h2>Orthodontics</h2>
           <p>Straighten your smile with confidence.</p>
@@ -88,7 +74,7 @@
             <svg aria-hidden="true"><use href="#arrow"/></svg></a>
         </article>
 
-        <article class="service-card card-cosmetic">
+        <article class="service-card card-cosmetic" data-keywords="whitening veneers bonding smile makeover">
           <svg class="icon" aria-hidden="true"><use href="#tooth"/></svg>
           <h2>Cosmetic Dentistry</h2>
           <p>Enhance your natural beauty.</p>
@@ -96,7 +82,7 @@
             <svg aria-hidden="true"><use href="#arrow"/></svg></a>
         </article>
 
-        <article class="service-card card-restorative">
+        <article class="service-card card-restorative" data-keywords="crowns bridges dentures root canal implants fillings inlays">
           <svg class="icon" aria-hidden="true"><use href="#tooth"/></svg>
           <h2>Restorative Dentistry</h2>
           <p>Restore function and confidence.</p>
@@ -108,9 +94,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
-  </footer>
+  <footer id="site-footer" class="site-footer"></footer>
 
 </body>
 </html>

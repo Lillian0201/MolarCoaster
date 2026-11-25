@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Orthodontics | MolarCoaster Dental Clinic</title>
   <link rel="stylesheet" href="services.css" />
+  <script src="/Patient/js/layout.js" defer></script>
+  <link rel="stylesheet" href="/Patient/css/enhancements.css">
+  <script src="services.js" defer></script>
 </head>
-<body>
+<body data-page="services">
 
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
@@ -23,28 +26,7 @@
     </defs>
   </svg>
 
-  <header class="site-header">
-  <a href="/Patient/Home%20Page/home.html" class="logo" aria-label="MolarCoaster Dental Clinic home">
-    <img src="/Patient/images/MolarCoaster.jpg" alt="MolarCoaster Dental Clinic logo" />
-    <span class="logo-text">
-      <span class="brand">MolarCoaster</span>
-      <span class="sub">DENTAL CLINIC</span>
-    </span>
-  </a>
-
-  <input type="checkbox" id="menu-check" class="menu-check" aria-label="Toggle menu" />
-  <label for="menu-check" class="menu-toggle"></label>
-
-  <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-    <ul>
-      <li><a href="/Patient/Home%20Page/home.html">Home</a></li>
-      <li><a href="/Patient/Appointment%20Booking/appointment.html">Appointments</a></li>
-      <li><a href="/Patient/About/about.html">About Us</a></li>
-      <li><a href="/Patient/Services/services.html" class="active" aria-current="page">Services</a></li>
-      <li><a href="/Patient/Contact/contact.html">Contact Us</a></li>
-    </ul>
-  </nav>
-</header>
+  <header id="site-header" class="site-header"></header>
 
   <main>
     <section class="hero">
@@ -84,14 +66,12 @@
 
       <div class="detail-actions">
         <a href="services.html" class="back-link"><svg aria-hidden="true"><use href="#arrow"/></svg> Back to Services</a>
-        <a href="/Patient/Appointment Booking/appointment.html" class="btn-book">Book an Appointment</a>
+        <a href="/Patient/Appointment%20Booking/appointment.html" class="btn-book">Book an Appointment</a>
       </div>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 MolarCoaster Dental Clinic. All rights reserved</p>
-  </footer>
+  <footer id="site-footer" class="site-footer"></footer>
 
 </body>
 </html>
